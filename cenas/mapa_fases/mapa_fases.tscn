@@ -1,0 +1,75 @@
+[gd_scene load_steps=8 format=3 uid="uid://4tw4qk3nx8sd"]
+
+[ext_resource type="Script" uid="uid://dijbuspkt0dvy" path="res://cenas/mapa_fases/b_tutorial.gd" id="1_jpuch"]
+[ext_resource type="Texture2D" uid="uid://82cphtrb2hy5" path="res://assets/cenarios/mapa.png" id="2_wrbcl"]
+[ext_resource type="Script" uid="uid://6d18qt7xbtfo" path="res://cenas/mapa_fases/voltar_load.gd" id="3_tbcqi"]
+[ext_resource type="Texture2D" uid="uid://c0w7eefxpp5ut" path="res://assets/botoes/b_voltar_img.jpg" id="4_hgwlt"]
+[ext_resource type="Texture2D" uid="uid://dw5w243mih82m" path="res://assets/elementos/painel_generico.png" id="5_beojq"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_h2twt"]
+load_path = "res://.godot/imported/b_salvar_img.jpg-f0e5375575a6d9471008779d677c52f6.ctex"
+
+[sub_resource type="LabelSettings" id="LabelSettings_h2twt"]
+paragraph_spacing = 1.0
+font_color = Color(0, 0, 0, 1)
+outline_color = Color(0, 0, 0, 1)
+
+[node name="Node2D" type="Node2D"]
+
+[node name="b_tutorial" type="Button" parent="."]
+offset_left = 160.0
+offset_top = 751.0
+offset_right = 296.0
+offset_bottom = 866.0
+mouse_default_cursor_shape = 2
+script = ExtResource("1_jpuch")
+
+[node name="mapa" type="Sprite2D" parent="."]
+position = Vector2(960.5, 540.5)
+scale = Vector2(1.25456, 1.06152)
+texture = ExtResource("2_wrbcl")
+
+[node name="voltar_load" type="Button" parent="."]
+offset_left = 72.0
+offset_top = 84.0
+offset_right = 336.0
+offset_bottom = 160.0
+mouse_default_cursor_shape = 2
+script = ExtResource("3_tbcqi")
+
+[node name="b_voltar_img" type="Sprite2D" parent="."]
+position = Vector2(204.75, 121.75)
+scale = Vector2(0.546843, 0.624031)
+texture = ExtResource("4_hgwlt")
+
+[node name="b_salvar_img" type="Sprite2D" parent="."]
+position = Vector2(205, 215)
+scale = Vector2(0.507576, 0.533333)
+texture = SubResource("CompressedTexture2D_h2twt")
+
+[node name="tutorial" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(230, 543.938)
+scale = Vector2(0.353075, 0.417014)
+texture = ExtResource("5_beojq")
+
+[node name="Label_tutorial" type="Label" parent="."]
+visible = false
+offset_left = 93.0
+offset_top = 405.0
+offset_right = 371.0
+offset_bottom = 688.0
+text = "Obrigado por jogar Lendas do Brasil!
+     Esperamos que você se divirta!
+Nas próximas fases, será preciso
+colocar suas habilidades à prova
+para ajudar a proteger nossa cultura
+e nosso folclore. Nossas histórias
+dependem de você!
+Visite a aba Personagens no menu
+para conhecer suas histórias.
+          Boa sorte nessa jornada!"
+label_settings = SubResource("LabelSettings_h2twt")
+
+[connection signal="pressed" from="b_tutorial" to="b_tutorial" method="_on_pressed"]
+[connection signal="pressed" from="voltar_load" to="voltar_load" method="_on_pressed"]

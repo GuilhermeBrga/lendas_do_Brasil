@@ -1,0 +1,737 @@
+[gd_scene load_steps=36 format=3 uid="uid://b2qx2h8ru37s3"]
+
+[ext_resource type="Texture2D" uid="uid://dw5w243mih82m" path="res://assets/elementos/painel_generico.png" id="1_k387e"]
+[ext_resource type="Texture2D" uid="uid://c0w7eefxpp5ut" path="res://assets/botoes/b_voltar_img.jpg" id="2_s3ttr"]
+[ext_resource type="Script" uid="uid://d3qqns0rj22qh" path="res://cenas/configuracoes/button.gd" id="3_7waos"]
+[ext_resource type="Texture2D" uid="uid://d0322jy1tru50" path="res://assets/personagens/saci_pixel_art.png" id="4_0woo3"]
+[ext_resource type="Texture2D" uid="uid://cp0q1jc3ne3g5" path="res://assets/elementos/moldura_personagem.png" id="4_7waos"]
+[ext_resource type="Texture2D" uid="uid://cohtlhbhv4i7h" path="res://assets/personagens/curupira_pixel_art.png" id="5_q75p4"]
+[ext_resource type="Texture2D" uid="uid://bfh3y5cxlceor" path="res://assets/personagens/iara_pixel_art.png" id="6_h4g65"]
+[ext_resource type="Texture2D" uid="uid://cecgf6rsln4i7" path="res://assets/personagens/mula_sem_cabeca_pixel_art.png" id="7_21d44"]
+[ext_resource type="Script" uid="uid://diji38ci0mck2" path="res://cenas/personagens/b_curupira.gd" id="7_hedpl"]
+[ext_resource type="Script" uid="uid://cgu1tbjjk5vf3" path="res://cenas/personagens/b_iara.gd" id="8_8ou23"]
+[ext_resource type="Texture2D" uid="uid://ccv1ylqb758bk" path="res://assets/personagens/anahanga_pixel_art.png" id="9_egquu"]
+[ext_resource type="Texture2D" uid="uid://dfx1hvefpmjgt" path="res://assets/personagens/mae_de_ouro_pixel_art.png" id="10_f6vqc"]
+[ext_resource type="Script" uid="uid://by45ylo5kakwl" path="res://cenas/personagens/b_mula.gd" id="11_rhvux"]
+[ext_resource type="Texture2D" uid="uid://cmrc2ujx4x0ls" path="res://assets/personagens/lobisomem_pixel_art.png" id="11_yl1x6"]
+[ext_resource type="Texture2D" uid="uid://e27axv46ovah" path="res://assets/personagens/boto_animal_chapeu_pixel_art.png" id="13_m7lvm"]
+[ext_resource type="Script" uid="uid://cktjedso6gmer" path="res://cenas/personagens/b_cuca.gd" id="13_p405d"]
+[ext_resource type="Texture2D" uid="uid://ci2j5dwkvhncy" path="res://assets/personagens/mapinguari_pixel_art_no_text_final.png" id="14_6adti"]
+[ext_resource type="Script" uid="uid://5550hngukrf3" path="res://cenas/personagens/b_anhanga.gd" id="15_25y4q"]
+[ext_resource type="Script" uid="uid://dpkmm21vipssk" path="res://cenas/personagens/b_saci.gd" id="15_f6vqc"]
+[ext_resource type="Script" uid="uid://bor7121ie0qd5" path="res://cenas/personagens/b_voltar_saci_obj.gd" id="16_yl1x6"]
+[ext_resource type="Script" uid="uid://5e2hpfor4k8e" path="res://cenas/personagens/b_mae_ouro.gd" id="17_cg8op"]
+[ext_resource type="Script" uid="uid://d0crfac6onk4m" path="res://cenas/personagens/b_voltar_iara_obj.gd" id="18_m7lvm"]
+[ext_resource type="Script" uid="uid://v7b8bwxgpywg" path="res://cenas/personagens/b_voltar_curupira_obj.gd" id="19_3etq7"]
+[ext_resource type="Script" uid="uid://bjmafhb00ccux" path="res://cenas/personagens/b_lobo.gd" id="19_q0wjr"]
+[ext_resource type="Script" uid="uid://dhg7vcfurfqr1" path="res://cenas/personagens/b_caipora.gd" id="21_0iqo5"]
+[ext_resource type="Texture2D" uid="uid://bu5diad2nhpuu" path="res://assets/personagens/corpo_seco_pixel_art.png" id="22_6adti"]
+[ext_resource type="Script" uid="uid://bef4auf36cq7a" path="res://cenas/personagens/b_voltar_mula_obj.gd" id="22_mrc2g"]
+[ext_resource type="Script" uid="uid://ckattg615jlqg" path="res://cenas/personagens/b_boto.gd" id="23_qjf2p"]
+[ext_resource type="Script" uid="uid://b8654r5fdl8er" path="res://cenas/personagens/b_voltar_cuca_obj.gd" id="24_25y4q"]
+[ext_resource type="Script" uid="uid://betlc2464rh0b" path="res://cenas/personagens/b_boltar_anhanga_obj.gd" id="26_xivhk"]
+[ext_resource type="Script" uid="uid://da0sh42lhpq2f" path="res://cenas/personagens/b_voltar_mae_ouro_obj.gd" id="28_wrvc5"]
+[ext_resource type="Script" uid="uid://bpibhobibsw5i" path="res://cenas/personagens/b_voltar_lobo_obj.gd" id="30_p13aq"]
+[ext_resource type="Script" uid="uid://d0v6maqp68o33" path="res://cenas/personagens/b_voltar_caipora_obj.gd" id="32_6ufpb"]
+[ext_resource type="Script" uid="uid://bm37ckghn0yru" path="res://cenas/personagens/b_voltar_boto_obj.gd" id="34_yctn6"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_egquu"]
+font_size = 35
+font_color = Color(0, 0, 0, 1)
+
+[node name="Node2D" type="Node2D"]
+
+[node name="painel" type="Sprite2D" parent="."]
+position = Vector2(960.5, 540.5)
+scale = Vector2(2.18565, 1.28605)
+texture = ExtResource("1_k387e")
+
+[node name="b_voltar menu" type="Button" parent="."]
+offset_left = 726.0
+offset_top = 893.0
+offset_right = 1176.0
+offset_bottom = 1005.0
+mouse_default_cursor_shape = 2
+script = ExtResource("3_7waos")
+
+[node name="b_voltar_person" type="Sprite2D" parent="."]
+position = Vector2(951, 949)
+scale = Vector2(0.923625, 0.887597)
+texture = ExtResource("2_s3ttr")
+
+[node name="b-saci" type="Button" parent="."]
+offset_left = 150.0
+offset_top = 80.0
+offset_right = 413.0
+offset_bottom = 405.0
+mouse_default_cursor_shape = 2
+script = ExtResource("15_f6vqc")
+
+[node name="SaciPixelArt" type="Sprite2D" parent="."]
+position = Vector2(280.5, 242)
+scale = Vector2(0.25293, 0.30842)
+texture = ExtResource("4_0woo3")
+
+[node name="moldura_1" type="Sprite2D" parent="."]
+position = Vector2(272, 248)
+scale = Vector2(0.867412, 0.936102)
+texture = ExtResource("4_7waos")
+
+[node name="b_curupira" type="Button" parent="."]
+offset_left = 476.0
+offset_top = 83.0
+offset_right = 731.0
+offset_bottom = 401.0
+mouse_default_cursor_shape = 2
+script = ExtResource("7_hedpl")
+
+[node name="CurupiraPixelArt" type="Sprite2D" parent="."]
+position = Vector2(604.5, 244.5)
+scale = Vector2(0.25293, 0.293956)
+texture = ExtResource("5_q75p4")
+
+[node name="moldura_3" type="Sprite2D" parent="."]
+position = Vector2(597, 248)
+scale = Vector2(0.867412, 0.936102)
+texture = ExtResource("4_7waos")
+
+[node name="b_iara" type="Button" parent="."]
+offset_left = 807.0
+offset_top = 83.0
+offset_right = 1070.0
+offset_bottom = 402.0
+mouse_default_cursor_shape = 2
+script = ExtResource("8_8ou23")
+
+[node name="IaraPixelArt" type="Sprite2D" parent="."]
+position = Vector2(937.5, 240)
+scale = Vector2(0.254883, 0.268836)
+texture = ExtResource("6_h4g65")
+
+[node name="moldura_4" type="Sprite2D" parent="."]
+position = Vector2(931, 248)
+scale = Vector2(0.867412, 0.936102)
+texture = ExtResource("4_7waos")
+
+[node name="b_mula" type="Button" parent="."]
+offset_left = 1148.0
+offset_top = 81.0
+offset_right = 1405.0
+offset_bottom = 403.0
+mouse_default_cursor_shape = 2
+script = ExtResource("11_rhvux")
+
+[node name="MulaSemCabecaPixelArt" type="Sprite2D" parent="."]
+position = Vector2(1277.5, 234.5)
+scale = Vector2(0.278384, 0.269001)
+texture = ExtResource("7_21d44")
+
+[node name="moldura_5" type="Sprite2D" parent="."]
+position = Vector2(1268, 245)
+scale = Vector2(0.867412, 0.936102)
+texture = ExtResource("4_7waos")
+
+[node name="b_mapinguari" type="Button" parent="."]
+offset_left = 1475.0
+offset_top = 83.0
+offset_right = 1734.0
+offset_bottom = 402.0
+mouse_default_cursor_shape = 2
+script = ExtResource("13_p405d")
+
+[node name="MapinguariPixelArtNoTextFinal" type="Sprite2D" parent="."]
+position = Vector2(1605.5, 243.5)
+scale = Vector2(0.284856, 0.263021)
+texture = ExtResource("14_6adti")
+
+[node name="moldura_6" type="Sprite2D" parent="."]
+position = Vector2(1596, 245)
+scale = Vector2(0.867412, 0.936102)
+texture = ExtResource("4_7waos")
+
+[node name="b_anhanga" type="Button" parent="."]
+offset_left = 150.0
+offset_top = 493.0
+offset_right = 409.0
+offset_bottom = 813.0
+mouse_default_cursor_shape = 2
+script = ExtResource("15_25y4q")
+
+[node name="AnahangaPixelArt" type="Sprite2D" parent="."]
+position = Vector2(280.938, 643)
+scale = Vector2(0.282387, 0.247961)
+texture = ExtResource("9_egquu")
+
+[node name="moldura_2" type="Sprite2D" parent="."]
+position = Vector2(272, 657)
+scale = Vector2(0.867412, 0.936102)
+texture = ExtResource("4_7waos")
+
+[node name="b_mae_ouro" type="Button" parent="."]
+offset_left = 478.0
+offset_top = 493.0
+offset_right = 735.0
+offset_bottom = 809.0
+mouse_default_cursor_shape = 2
+script = ExtResource("17_cg8op")
+
+[node name="MaeDeOuroPixelArt" type="Sprite2D" parent="."]
+position = Vector2(606, 653)
+scale = Vector2(0.226804, 0.186631)
+texture = ExtResource("10_f6vqc")
+
+[node name="moldura_7" type="Sprite2D" parent="."]
+position = Vector2(598, 657)
+scale = Vector2(0.867412, 0.936102)
+texture = ExtResource("4_7waos")
+
+[node name="b_lobo" type="Button" parent="."]
+offset_left = 812.0
+offset_top = 496.0
+offset_right = 1069.0
+offset_bottom = 813.0
+mouse_default_cursor_shape = 2
+script = ExtResource("19_q0wjr")
+
+[node name="LobisomemPixelArt" type="Sprite2D" parent="."]
+position = Vector2(940.5, 651)
+scale = Vector2(0.22168, 0.190104)
+texture = ExtResource("11_yl1x6")
+
+[node name="moldura_8" type="Sprite2D" parent="."]
+position = Vector2(932, 657)
+scale = Vector2(0.867412, 0.936102)
+texture = ExtResource("4_7waos")
+
+[node name="b_corpo_seco" type="Button" parent="."]
+offset_left = 1147.0
+offset_top = 493.0
+offset_right = 1408.0
+offset_bottom = 813.0
+mouse_default_cursor_shape = 2
+script = ExtResource("21_0iqo5")
+
+[node name="CorpoSecoPixelArt" type="Sprite2D" parent="."]
+position = Vector2(1281.06, 655.938)
+scale = Vector2(0.250133, 0.258559)
+texture = ExtResource("22_6adti")
+
+[node name="moldura_9" type="Sprite2D" parent="."]
+position = Vector2(1270, 657)
+scale = Vector2(0.867412, 0.936102)
+texture = ExtResource("4_7waos")
+
+[node name="b_boto" type="Button" parent="."]
+offset_left = 1478.0
+offset_top = 501.0
+offset_right = 1732.0
+offset_bottom = 812.0
+mouse_default_cursor_shape = 2
+script = ExtResource("23_qjf2p")
+
+[node name="BotoAnimalChapeuPixelArt" type="Sprite2D" parent="."]
+position = Vector2(1610.5, 658.5)
+scale = Vector2(0.225586, 0.226068)
+texture = ExtResource("13_m7lvm")
+
+[node name="moldura_10" type="Sprite2D" parent="."]
+position = Vector2(1597, 657)
+scale = Vector2(0.867412, 0.936102)
+texture = ExtResource("4_7waos")
+
+[node name="historia_saci" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(957.5, 540.75)
+scale = Vector2(1.05581, 1.03397)
+texture = ExtResource("1_k387e")
+
+[node name="SaciPixelArt2" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(944.375, 335.661)
+scale = Vector2(0.219394, 0.288713)
+texture = ExtResource("4_0woo3")
+
+[node name="moldura_11" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(937.002, 341.278)
+scale = Vector2(0.752404, 0.876287)
+texture = ExtResource("4_7waos")
+
+[node name="Label_saci" type="Label" parent="."]
+visible = false
+offset_left = 532.0
+offset_top = 500.0
+offset_right = 1433.0
+offset_bottom = 1017.0
+text = "O Saci-Pererê é retratado como um menino negro
+de uma perna só, com gorro vermelho e cachimbo. 
+Ele é travesso, gosta de assustar animais, 
+confundir viajantes e esconder objetos, mas 
+também pode ser um protetos das matas.
+Sua lenda tem origem indígena e africana,
+sendo popular no Sul e Sudeste."
+label_settings = SubResource("LabelSettings_egquu")
+
+[node name="b_voltar_saci_obj" type="Button" parent="."]
+visible = false
+offset_left = 849.0
+offset_top = 871.0
+offset_right = 1091.0
+offset_bottom = 940.0
+mouse_default_cursor_shape = 2
+script = ExtResource("16_yl1x6")
+
+[node name="b_voltar_saci" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(970, 906)
+scale = Vector2(0.506619, 0.583333)
+texture = ExtResource("2_s3ttr")
+
+[node name="historia_curupira" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(960.5, 540.75)
+scale = Vector2(1.05581, 1.03397)
+texture = ExtResource("1_k387e")
+
+[node name="CurupiraPixelArt2" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(947.008, 324.001)
+scale = Vector2(0.219394, 0.275173)
+texture = ExtResource("5_q75p4")
+
+[node name="moldura_12" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(940.502, 327.278)
+scale = Vector2(0.752404, 0.876287)
+texture = ExtResource("4_7waos")
+
+[node name="Label_curupira" type="Label" parent="."]
+visible = false
+offset_left = 535.0
+offset_top = 500.0
+offset_right = 1436.0
+offset_bottom = 1017.0
+text = "O Curupira é o guardião das florestas. Possui
+cabelos de fogo e pés virados para trás, o que
+confunde caçadores e exploradores. Sua missão é
+proteger a fauna e a flora, castigando aqueles que
+caçam por diversão ou destroem a mata. Essa
+figura vem da tradição indígena e é uma das mais 
+antigas do Brasil."
+label_settings = SubResource("LabelSettings_egquu")
+
+[node name="b_voltar_curupira_obj" type="Button" parent="."]
+visible = false
+offset_left = 852.0
+offset_top = 871.0
+offset_right = 1095.0
+offset_bottom = 941.0
+mouse_default_cursor_shape = 2
+script = ExtResource("19_3etq7")
+
+[node name="b_voltar_curupira" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(973, 906)
+scale = Vector2(0.506619, 0.583333)
+texture = ExtResource("2_s3ttr")
+
+[node name="historia_iara" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(960.5, 540.75)
+scale = Vector2(1.05581, 1.03397)
+texture = ExtResource("1_k387e")
+
+[node name="IaraPixelArt2" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(948.141, 321.789)
+scale = Vector2(0.221089, 0.251658)
+texture = ExtResource("6_h4g65")
+
+[node name="moldura_13" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(942.502, 329.278)
+scale = Vector2(0.752404, 0.876287)
+texture = ExtResource("4_7waos")
+
+[node name="Label_iara" type="Label" parent="."]
+visible = false
+offset_left = 535.0
+offset_top = 500.0
+offset_right = 1436.0
+offset_bottom = 1017.0
+text = "A Iara, conhecida como “mãe-d’água”, é uma sereia
+que vive nos rios brasileiros. De rara beleza, atrai
+os homens com seu canto encantador, levando-os
+para o fundo das águas. Essa lenda tem
+influência indígena e europeia, lembrando mitos 
+de sereias de outras culturas."
+label_settings = SubResource("LabelSettings_egquu")
+
+[node name="b_voltar_iara_obj" type="Button" parent="."]
+visible = false
+offset_left = 852.0
+offset_top = 871.0
+offset_right = 1092.0
+offset_bottom = 939.0
+mouse_default_cursor_shape = 2
+script = ExtResource("18_m7lvm")
+
+[node name="b_voltar_iara" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(973, 906)
+scale = Vector2(0.506619, 0.583333)
+texture = ExtResource("2_s3ttr")
+
+[node name="historia_mula" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(960.5, 540.75)
+scale = Vector2(1.05581, 1.03397)
+texture = ExtResource("1_k387e")
+
+[node name="MulaSemCabecaPixelArt2" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(949.175, 318.695)
+scale = Vector2(0.241474, 0.251812)
+texture = ExtResource("7_21d44")
+
+[node name="moldura_15" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(940.935, 328.524)
+scale = Vector2(0.752404, 0.876287)
+texture = ExtResource("4_7waos")
+
+[node name="Label_mula" type="Label" parent="."]
+visible = false
+offset_left = 535.0
+offset_top = 500.0
+offset_right = 1436.0
+offset_bottom = 1017.0
+text = "A Mula-sem-Cabeça é uma mulher amaldiçoada,
+geralmente por ter se envolvido com um padre.
+À noite, transforma-se em um cavalo sem cabeça,
+cuspindo fogo pelas narinas e relinchando alto.
+Corre pelas estradas e assombra viajantes, sendo
+um castigo ligado ao pecado e à religiosidade
+popular."
+label_settings = SubResource("LabelSettings_egquu")
+
+[node name="b_voltar_mula_obj" type="Button" parent="."]
+visible = false
+offset_left = 852.0
+offset_top = 871.0
+offset_right = 1095.0
+offset_bottom = 940.0
+mouse_default_cursor_shape = 2
+script = ExtResource("22_mrc2g")
+
+[node name="b_voltar_mula" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(973, 906)
+scale = Vector2(0.506619, 0.583333)
+texture = ExtResource("2_s3ttr")
+
+[node name="historia_mapinguari" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(960.5, 540.75)
+scale = Vector2(1.05581, 1.03397)
+texture = ExtResource("1_k387e")
+
+[node name="MapinguariPixelArtNoTextFinal2" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(947, 327.5)
+scale = Vector2(0.25, 0.24566)
+texture = ExtResource("14_6adti")
+
+[node name="moldura_14" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(941.503, 329.278)
+scale = Vector2(0.752404, 0.876287)
+texture = ExtResource("4_7waos")
+
+[node name="Label_mapinguari" type="Label" parent="."]
+visible = false
+offset_left = 522.0
+offset_top = 503.0
+offset_right = 1410.0
+offset_bottom = 866.0
+text = "O Mapinguari é uma criatura lendária da floresta
+amazônica. Descrito como um ser gigante e peludo,
+com apenas um olho na testa e a boca no estômago,
+espalha medo por onde passa. Diz-se que surge para
+punir caçadores gananciosos e destruir quem
+desrespeita a mata. A lenda tem origem indígena
+e simboliza a força e o mistério da natureza."
+label_settings = SubResource("LabelSettings_egquu")
+
+[node name="b_voltar_mapinguari_obj" type="Button" parent="."]
+visible = false
+offset_left = 852.0
+offset_top = 870.0
+offset_right = 1095.0
+offset_bottom = 940.0
+mouse_default_cursor_shape = 2
+script = ExtResource("24_25y4q")
+
+[node name="b_voltar_mapinguari" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(973, 906)
+scale = Vector2(0.506619, 0.583333)
+texture = ExtResource("2_s3ttr")
+
+[node name="historia_anhanga" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(960.5, 540.75)
+scale = Vector2(1.05581, 1.03397)
+texture = ExtResource("1_k387e")
+
+[node name="AnahangaPixelArt2" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(943.255, 317.172)
+scale = Vector2(0.244946, 0.232117)
+texture = ExtResource("9_egquu")
+
+[node name="moldura_17" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(935.502, 330.278)
+scale = Vector2(0.752404, 0.876287)
+texture = ExtResource("4_7waos")
+
+[node name="Label_anhanga" type="Label" parent="."]
+visible = false
+offset_left = 535.0
+offset_top = 500.0
+offset_right = 1436.0
+offset_bottom = 1017.0
+text = "O Anhangá é um espírito protetor dos animais da
+floresta. Geralmente aparece na forma de um
+veado branco com olhos de fogo, assustando
+caçadores e impedindo mortes cruéis. A lenda tem
+origem indígena e simboliza o respeito à natureza."
+label_settings = SubResource("LabelSettings_egquu")
+
+[node name="b_voltar_anhanga_obj" type="Button" parent="."]
+visible = false
+offset_left = 853.0
+offset_top = 870.0
+offset_right = 1093.0
+offset_bottom = 941.0
+mouse_default_cursor_shape = 2
+script = ExtResource("26_xivhk")
+
+[node name="b_voltar_anhanga" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(973, 906)
+scale = Vector2(0.506619, 0.583333)
+texture = ExtResource("2_s3ttr")
+
+[node name="historia_mae_ouro" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(960.5, 540.75)
+scale = Vector2(1.05581, 1.03397)
+texture = ExtResource("1_k387e")
+
+[node name="MaeDeOuroPixelArt2" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(939.442, 326.533)
+scale = Vector2(0.196733, 0.174706)
+texture = ExtResource("10_f6vqc")
+
+[node name="moldura_16" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(932.502, 330.278)
+scale = Vector2(0.752404, 0.876287)
+texture = ExtResource("4_7waos")
+
+[node name="Label_mae_ouro" type="Label" parent="."]
+visible = false
+offset_left = 535.0
+offset_top = 500.0
+offset_right = 1400.0
+offset_bottom = 1017.0
+text = "A Mãe-de-Ouro é descrita como uma bola de fogo
+dourada ou uma bela mulher que protege tesouros
+escondidos. Diz-se que surge para desviar curiosos
+da busca por ouro e pedras preciosas, sendo
+comum em regiões mineradoras, como
+Minas Gerais."
+label_settings = SubResource("LabelSettings_egquu")
+
+[node name="b_voltar_mae_ouro_obj" type="Button" parent="."]
+visible = false
+offset_left = 851.0
+offset_top = 871.0
+offset_right = 1096.0
+offset_bottom = 939.0
+mouse_default_cursor_shape = 2
+script = ExtResource("28_wrvc5")
+
+[node name="b_voltar_mae_ouro" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(973, 906)
+scale = Vector2(0.506619, 0.583333)
+texture = ExtResource("2_s3ttr")
+
+[node name="historia_lobo" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(960.5, 540.75)
+scale = Vector2(1.05581, 1.03397)
+texture = ExtResource("1_k387e")
+
+[node name="LobisomemPixelArt2" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(938.875, 322.661)
+scale = Vector2(0.192288, 0.177957)
+texture = ExtResource("11_yl1x6")
+
+[node name="moldura_19" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(931.502, 328.278)
+scale = Vector2(0.752404, 0.876287)
+texture = ExtResource("4_7waos")
+
+[node name="Label_lobo" type="Label" parent="."]
+visible = false
+offset_left = 535.0
+offset_top = 500.0
+offset_right = 1400.0
+offset_bottom = 1017.0
+text = "O Lobisomem é um mito de origem europeia que
+se consolidou no Brasil. A crença popular diz que,
+na noite de lua cheia, um homem amaldiçoado se
+transforma em lobo ou em uma criatura híbrida,
+espalhando terror pelas ruas. Muitas vezes, o
+destino de se tornar lobisomem está ligado a
+maldições familiares."
+label_settings = SubResource("LabelSettings_egquu")
+
+[node name="b_voltar_lobo_obj" type="Button" parent="."]
+visible = false
+offset_left = 851.0
+offset_top = 871.0
+offset_right = 1095.0
+offset_bottom = 941.0
+mouse_default_cursor_shape = 2
+script = ExtResource("30_p13aq")
+
+[node name="b_voltar_lobo" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(973, 906)
+scale = Vector2(0.506619, 0.583333)
+texture = ExtResource("2_s3ttr")
+
+[node name="historia_corpo_seco" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(960.5, 540.75)
+scale = Vector2(1.05581, 1.03397)
+texture = ExtResource("1_k387e")
+
+[node name="CorpoSecoPixelArt2" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(932.5, 327.5)
+scale = Vector2(0.225875, 0.237532)
+texture = ExtResource("22_6adti")
+
+[node name="moldura_18" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(929.503, 330.278)
+scale = Vector2(0.752404, 0.876287)
+texture = ExtResource("4_7waos")
+
+[node name="Label_corpo_seco" type="Label" parent="."]
+visible = false
+offset_left = 526.0
+offset_top = 500.0
+offset_right = 1391.0
+offset_bottom = 1017.0
+text = "O Corpo-Seco é o espírito de uma pessoa má, que
+em vida praticou muitas crueldades. Rejeitado pela
+terra, pelo céu e até pelo inferno, vaga em forma
+de cadáver ressecado. Assombra estradas e
+cemitérios, espalhando medo e lembrando o
+destino dos que vivem sem bondade."
+label_settings = SubResource("LabelSettings_egquu")
+
+[node name="b_voltar_corpo_seco_obj" type="Button" parent="."]
+visible = false
+offset_left = 849.0
+offset_top = 870.0
+offset_right = 1095.0
+offset_bottom = 941.0
+mouse_default_cursor_shape = 2
+script = ExtResource("32_6ufpb")
+
+[node name="b_voltar_corpo_seco" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(973, 906)
+scale = Vector2(0.506619, 0.583333)
+texture = ExtResource("2_s3ttr")
+
+[node name="historia_boto" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(960.5, 540.75)
+scale = Vector2(1.05581, 1.03397)
+texture = ExtResource("1_k387e")
+
+[node name="BotoAnimalChapeuPixelArt2" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(942.212, 332.682)
+scale = Vector2(0.195676, 0.211623)
+texture = ExtResource("13_m7lvm")
+
+[node name="moldura_21" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(930.502, 331.278)
+scale = Vector2(0.752404, 0.876287)
+texture = ExtResource("4_7waos")
+
+[node name="Label_boto" type="Label" parent="."]
+visible = false
+offset_left = 521.0
+offset_top = 502.0
+offset_right = 1398.0
+offset_bottom = 1019.0
+text = "O Boto-cor-de-rosa é um dos mitos mais conhecidos
+da Amazônia. Diz-se que, nas festas ribeirinhas,
+ele se transforma em um belo rapaz de chapéu
+branco que seduz as moças. Depois da noite de
+festa, volta a ser boto e retorna para o rio. A lenda
+era usada para explicar gestações inesperadas em
+comunidades ribeirinhas."
+label_settings = SubResource("LabelSettings_egquu")
+
+[node name="b_voltar_boto_obj" type="Button" parent="."]
+visible = false
+offset_left = 852.0
+offset_top = 872.0
+offset_right = 1094.0
+offset_bottom = 942.0
+mouse_default_cursor_shape = 2
+script = ExtResource("34_yctn6")
+
+[node name="b_voltar_boto" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(973, 906)
+scale = Vector2(0.506619, 0.583333)
+texture = ExtResource("2_s3ttr")
+
+[connection signal="pressed" from="b_voltar menu" to="b_voltar menu" method="_on_pressed"]
+[connection signal="pressed" from="b-saci" to="b-saci" method="_on_pressed"]
+[connection signal="pressed" from="b_curupira" to="b_curupira" method="_on_pressed"]
+[connection signal="pressed" from="b_iara" to="b_iara" method="_on_pressed"]
+[connection signal="pressed" from="b_mula" to="b_mula" method="_on_pressed"]
+[connection signal="pressed" from="b_mapinguari" to="b_mapinguari" method="_on_pressed"]
+[connection signal="pressed" from="b_anhanga" to="b_anhanga" method="_on_pressed"]
+[connection signal="pressed" from="b_mae_ouro" to="b_mae_ouro" method="_on_pressed"]
+[connection signal="pressed" from="b_lobo" to="b_lobo" method="_on_pressed"]
+[connection signal="pressed" from="b_corpo_seco" to="b_corpo_seco" method="_on_pressed"]
+[connection signal="pressed" from="b_boto" to="b_boto" method="_on_pressed"]
+[connection signal="pressed" from="b_voltar_saci_obj" to="b_voltar_saci_obj" method="_on_pressed"]
+[connection signal="pressed" from="b_voltar_curupira_obj" to="b_voltar_curupira_obj" method="_on_pressed"]
+[connection signal="pressed" from="b_voltar_iara_obj" to="b_voltar_iara_obj" method="_on_pressed"]
+[connection signal="pressed" from="b_voltar_mula_obj" to="b_voltar_mula_obj" method="_on_pressed"]
+[connection signal="pressed" from="b_voltar_mapinguari_obj" to="b_voltar_mapinguari_obj" method="_on_pressed"]
+[connection signal="pressed" from="b_voltar_anhanga_obj" to="b_voltar_anhanga_obj" method="_on_pressed"]
+[connection signal="pressed" from="b_voltar_mae_ouro_obj" to="b_voltar_mae_ouro_obj" method="_on_pressed"]
+[connection signal="pressed" from="b_voltar_lobo_obj" to="b_voltar_lobo_obj" method="_on_pressed"]
+[connection signal="pressed" from="b_voltar_corpo_seco_obj" to="b_voltar_corpo_seco_obj" method="_on_pressed"]
+[connection signal="pressed" from="b_voltar_boto_obj" to="b_voltar_boto_obj" method="_on_pressed"]
