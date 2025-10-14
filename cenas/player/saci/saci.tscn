@@ -177,8 +177,8 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_l50kp"]
-radius = 45.0
-height = 180.0
+radius = 22.0
+height = 74.0
 
 [node name="Saci" type="CharacterBody2D"]
 script = ExtResource("1_cu2ef")
@@ -191,5 +191,5 @@ animation = &"idle_frente"
 frame = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(238, 117)
+position = Vector2(240, 185)
 shape = SubResource("CapsuleShape2D_l50kp")

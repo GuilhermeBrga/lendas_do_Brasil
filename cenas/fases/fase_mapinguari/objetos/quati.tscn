@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://i6pi464ketyo"]
+
+[ext_resource type="Texture2D" uid="uid://byq1mqr7mw0da" path="res://assets/elementos/mapa_mapinguari/quati_caindo.png" id="1_mfexx"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_6nrst"]
+radius = 30.2655
+
+[node name="Quati" type="RigidBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.102295, 0.12085)
+texture = ExtResource("1_mfexx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 27)
+shape = SubResource("CircleShape2D_6nrst")

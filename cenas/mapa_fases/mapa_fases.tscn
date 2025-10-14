@@ -1,18 +1,18 @@
-[gd_scene load_steps=8 format=3 uid="uid://4tw4qk3nx8sd"]
+[gd_scene load_steps=10 format=3 uid="uid://4tw4qk3nx8sd"]
 
 [ext_resource type="Script" uid="uid://dijbuspkt0dvy" path="res://cenas/mapa_fases/b_tutorial.gd" id="1_jpuch"]
 [ext_resource type="Texture2D" uid="uid://82cphtrb2hy5" path="res://assets/cenarios/mapa.png" id="2_wrbcl"]
+[ext_resource type="Script" uid="uid://dgtmgsvrno4cv" path="res://cenas/mapa_fases/b_fase_2.gd" id="3_hgwlt"]
 [ext_resource type="Script" uid="uid://6d18qt7xbtfo" path="res://cenas/mapa_fases/voltar_load.gd" id="3_tbcqi"]
 [ext_resource type="Texture2D" uid="uid://c0w7eefxpp5ut" path="res://assets/botoes/b_voltar_img.jpg" id="4_hgwlt"]
 [ext_resource type="Texture2D" uid="uid://dw5w243mih82m" path="res://assets/elementos/painel_generico.png" id="5_beojq"]
+[ext_resource type="Script" uid="uid://4dyudlj2uqhf" path="res://cenas/mapa_fases/b_fase_1.gd" id="6_wrbcl"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_h2twt"]
 load_path = "res://.godot/imported/b_salvar_img.jpg-f0e5375575a6d9471008779d677c52f6.ctex"
 
-[sub_resource type="LabelSettings" id="LabelSettings_h2twt"]
-paragraph_spacing = 1.0
+[sub_resource type="LabelSettings" id="LabelSettings_tbcqi"]
 font_color = Color(0, 0, 0, 1)
-outline_color = Color(0, 0, 0, 1)
 
 [node name="Node2D" type="Node2D"]
 
@@ -23,6 +23,22 @@ offset_right = 296.0
 offset_bottom = 866.0
 mouse_default_cursor_shape = 2
 script = ExtResource("1_jpuch")
+
+[node name="b_fase_1" type="Button" parent="."]
+offset_left = 253.0
+offset_top = 354.0
+offset_right = 395.0
+offset_bottom = 476.0
+mouse_default_cursor_shape = 2
+script = ExtResource("6_wrbcl")
+
+[node name="b_fase_2" type="Button" parent="."]
+offset_left = 650.0
+offset_top = 308.0
+offset_right = 792.0
+offset_bottom = 430.0
+mouse_default_cursor_shape = 2
+script = ExtResource("3_hgwlt")
 
 [node name="mapa" type="Sprite2D" parent="."]
 position = Vector2(960.5, 540.5)
@@ -55,21 +71,26 @@ texture = ExtResource("5_beojq")
 
 [node name="Label_tutorial" type="Label" parent="."]
 visible = false
-offset_left = 93.0
-offset_top = 405.0
-offset_right = 371.0
-offset_bottom = 688.0
-text = "Obrigado por jogar Lendas do Brasil!
-     Esperamos que você se divirta!
-Nas próximas fases, será preciso
-colocar suas habilidades à prova
-para ajudar a proteger nossa cultura
-e nosso folclore. Nossas histórias
-dependem de você!
-Visite a aba Personagens no menu
-para conhecer suas histórias.
-          Boa sorte nessa jornada!"
-label_settings = SubResource("LabelSettings_h2twt")
+offset_left = 91.0
+offset_top = 380.0
+offset_right = 372.0
+offset_bottom = 687.0
+text = "                      Bem vindo ao 
+                    Lendas do Brasil
+Em cada fase você poderá ter uma
+vivencia única e conhecer mais da
+nossa história e cultura por meio dos
+personagens do folclore brasileiro!!!
+
+Não esqueça de explorar e conhecer
+o máximo possível, pois... como já
+ouvi falar conhecimento é poder...
+
+             Boa sorte e bom jogo!
+"
+label_settings = SubResource("LabelSettings_tbcqi")
 
 [connection signal="pressed" from="b_tutorial" to="b_tutorial" method="_on_pressed"]
+[connection signal="pressed" from="b_fase_1" to="b_fase_1" method="_on_pressed"]
+[connection signal="pressed" from="b_fase_2" to="b_fase_2" method="_on_pressed"]
 [connection signal="pressed" from="voltar_load" to="voltar_load" method="_on_pressed"]

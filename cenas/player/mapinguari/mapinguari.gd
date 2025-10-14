@@ -3,7 +3,14 @@ extends CharacterBody2D
 @export var speed: float = 200.0
 @onready var anim_sprite = $AnimatedSprite2D
 
-var ultima_direcao := "baixo"  # começa olhando para frente
+var ultima_direcao := "baixo"
+
+var ninho = preload("res://cenas/fases/fase_mapinguari/objetos/ninho.tscn")
+var quati = preload("res://cenas/fases/fase_mapinguari/objetos/quati.tscn")
+var banana = preload("res://cenas/fases/fase_mapinguari/objetos/banana.tscn")
+var guarana = preload("res://cenas/fases/fase_mapinguari/objetos/guarana.tscn")
+var madeira = preload("res://cenas/fases/fase_mapinguari/objetos/madeira.tscn")
+
 
 func _physics_process(delta):
 	var direction = Vector2.ZERO
@@ -46,7 +53,3 @@ func _physics_process(delta):
 				anim_sprite.play("idle_frente")
 			"cima":
 				anim_sprite.play("idle_costas")
-			"direita":
-				anim_sprite.play("idle_direita")
-			"esquerda":
-				anim_sprite.play("idle_esquerda")

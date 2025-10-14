@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://dgq2ga6hdm2kl"]
+
+[ext_resource type="Texture2D" uid="uid://dju4gfm14y3i8" path="res://assets/elementos/mapa_mapinguari/tora_madeira.png" id="1_mlrjp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_epgnc"]
+size = Vector2(90, 42)
+
+[node name="Madeira" type="RigidBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("1_mlrjp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, -1)
+shape = SubResource("RectangleShape2D_epgnc")

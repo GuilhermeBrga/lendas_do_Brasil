@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://1llhv5h3oo2k"]
+
+[ext_resource type="Texture2D" uid="uid://cpmda3jeu8u61" path="res://assets/elementos/mapa_mapinguari/ninho.png" id="1_h68ll"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hnx2a"]
+radius = 30.0666
+
+[node name="Ninho" type="RigidBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -2.38419e-07)
+scale = Vector2(0.0751953, 0.0727539)
+texture = ExtResource("1_h68ll")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_hnx2a")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

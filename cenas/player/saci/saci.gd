@@ -2,8 +2,7 @@ extends CharacterBody2D
 
 @export var speed: float = 200.0
 @onready var anim_sprite = $AnimatedSprite2D
-
-var ultima_direcao := "baixo"  # começa olhando para frente
+var ultima_direcao := "baixo"
 
 func _physics_process(delta):
 	var direction = Vector2.ZERO

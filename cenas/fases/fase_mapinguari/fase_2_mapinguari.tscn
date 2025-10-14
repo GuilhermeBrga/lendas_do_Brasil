@@ -1,0 +1,279 @@
+[gd_scene load_steps=33 format=3 uid="uid://cp7s0ryvdyfks"]
+
+[ext_resource type="PackedScene" uid="uid://baey0x4yo5o6l" path="res://cenas/player/mapinguari/mapinguari.tscn" id="1_0abp5"]
+[ext_resource type="Texture2D" uid="uid://cceairc2p8h3g" path="res://assets/cenarios/mapa_campo_arvores_pixel_art.png" id="1_ae5rn"]
+[ext_resource type="Script" uid="uid://b3tdnil33e6rb" path="res://cenas/fases/fase_mapinguari/fase_2_mapinguari.gd" id="1_x2ckb"]
+[ext_resource type="Script" uid="uid://dqluc03f3evhi" path="res://cenas/fases/fase_mapinguari/parede_baixo.gd" id="3_eph4h"]
+[ext_resource type="Script" uid="uid://cxpe0j5mbo7pe" path="res://cenas/fases/fase_mapinguari/sumidouro.gd" id="4_3gasl"]
+[ext_resource type="Script" uid="uid://be6vs5vwfd8o7" path="res://cenas/fases/fase_mapinguari/colisao_player.gd" id="6_pvwd2"]
+[ext_resource type="Texture2D" uid="uid://dxgvlftiykjsm" path="res://assets/elementos/mapa_mapinguari/dead_life.png" id="8_eph4h"]
+[ext_resource type="Texture2D" uid="uid://ctwv8khygp4jn" path="res://assets/elementos/mapa_mapinguari/low_life.png" id="9_3gasl"]
+[ext_resource type="Texture2D" uid="uid://slgdb23lwd6y" path="res://assets/cutscenes/mapinguari_cutscene.png" id="9_sdx1u"]
+[ext_resource type="Texture2D" uid="uid://d2r45phh5yi3w" path="res://assets/elementos/mapa_mapinguari/mid_life.png" id="10_3iubb"]
+[ext_resource type="Texture2D" uid="uid://dw5w243mih82m" path="res://assets/elementos/painel_generico.png" id="10_f2ybp"]
+[ext_resource type="Script" uid="uid://b8nysb20y5irs" path="res://cenas/fases/fase_mapinguari/b_cutscene.gd" id="11_adsy4"]
+[ext_resource type="Texture2D" uid="uid://d0ck0cqi5mhly" path="res://assets/elementos/mapa_mapinguari/full_life.png" id="11_e8fnv"]
+[ext_resource type="Texture2D" uid="uid://db3yi1pt5x5q1" path="res://assets/elementos/setas.png" id="12_q5iml"]
+[ext_resource type="Texture2D" uid="uid://cp0q1jc3ne3g5" path="res://assets/elementos/moldura_personagem.png" id="14_eph4h"]
+[ext_resource type="Script" uid="uid://y23nflhlkew7" path="res://cenas/fases/fase_mapinguari/b_fechar_menu_obj.gd" id="15_3gasl"]
+[ext_resource type="Texture2D" uid="uid://c0w7eefxpp5ut" path="res://assets/botoes/b_voltar_img.jpg" id="16_3iubb"]
+[ext_resource type="Script" uid="uid://dkbhd0ys5dc2" path="res://cenas/fases/fase_mapinguari/b_salvar_prog_obj.gd" id="17_e8fnv"]
+[ext_resource type="Texture2D" uid="uid://glmyn6v1wrfc" path="res://assets/botoes/b_salvar_img.jpg" id="18_loaxs"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0abp5"]
+size = Vector2(1944, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ae5rn"]
+size = Vector2(20, 1094)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8wfgj"]
+size = Vector2(20, 1094)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5rini"]
+size = Vector2(1941, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3iubb"]
+size = Vector2(1950, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6dexe"]
+size = Vector2(70, 427)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_iqqwn"]
+size = Vector2(63, 192)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_efji8"]
+size = Vector2(88, 621)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_id5kr"]
+radius = 94.2424
+
+[sub_resource type="LabelSettings" id="LabelSettings_loaxs"]
+font_size = 60
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_skx1n"]
+font_size = 25
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_pymld"]
+font_size = 80
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_qoj2q"]
+font_color = Color(0, 0, 0, 1)
+
+[node name="Fase2Mapinguari" type="Node2D"]
+script = ExtResource("1_x2ckb")
+
+[node name="MapaCampoArvoresPixelArt" type="Sprite2D" parent="."]
+position = Vector2(966.5, 539)
+scale = Vector2(1.26758, 1.07617)
+texture = ExtResource("1_ae5rn")
+
+[node name="parede_cima" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="parede_cima"]
+position = Vector2(962, 0)
+shape = SubResource("RectangleShape2D_0abp5")
+
+[node name="parede_esquerda" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="parede_esquerda"]
+position = Vector2(0, 537)
+shape = SubResource("RectangleShape2D_ae5rn")
+
+[node name="parede_direita" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="parede_direita"]
+position = Vector2(1926, 538)
+shape = SubResource("RectangleShape2D_8wfgj")
+
+[node name="parede_baixo" type="StaticBody2D" parent="."]
+position = Vector2(931, 189)
+script = ExtResource("3_eph4h")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="parede_baixo"]
+position = Vector2(28.5, 891)
+shape = SubResource("RectangleShape2D_5rini")
+
+[node name="sumidouro" type="Area2D" parent="."]
+script = ExtResource("4_3gasl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="sumidouro"]
+position = Vector2(964, 1075)
+shape = SubResource("RectangleShape2D_3iubb")
+
+[node name="arvore_1" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="arvore_1"]
+position = Vector2(457, 204.5)
+shape = SubResource("RectangleShape2D_6dexe")
+
+[node name="arvore_2" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="arvore_2"]
+position = Vector2(993.5, 87)
+shape = SubResource("RectangleShape2D_iqqwn")
+
+[node name="arvore_3" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="arvore_3"]
+position = Vector2(1483, 305.5)
+shape = SubResource("RectangleShape2D_efji8")
+
+[node name="Mapinguari" parent="." instance=ExtResource("1_0abp5")]
+position = Vector2(301, 748)
+scale = Vector2(0.7, 0.7)
+collision_layer = 5
+
+[node name="colisao_player" type="Area2D" parent="Mapinguari"]
+position = Vector2(235.714, 124.286)
+script = ExtResource("6_pvwd2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Mapinguari/colisao_player"]
+position = Vector2(0, -1.42857)
+shape = SubResource("CircleShape2D_id5kr")
+
+[node name="painel_pontos" type="Sprite2D" parent="."]
+position = Vector2(1804.58, 981.087)
+scale = Vector2(0.219988, 0.159505)
+texture = ExtResource("10_f2ybp")
+
+[node name="Label_pontos" type="Label" parent="."]
+offset_left = 1712.0
+offset_top = 965.0
+offset_right = 1896.0
+offset_bottom = 1048.0
+text = "0"
+label_settings = SubResource("LabelSettings_loaxs")
+horizontal_alignment = 1
+
+[node name="DeadLife" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(1804, 952)
+scale = Vector2(0.263, 0.246)
+texture = ExtResource("8_eph4h")
+
+[node name="LowLife" type="Sprite2D" parent="."]
+position = Vector2(1804, 952)
+scale = Vector2(0.263, 0.246)
+texture = ExtResource("9_3gasl")
+
+[node name="MidLife" type="Sprite2D" parent="."]
+position = Vector2(1804, 952)
+scale = Vector2(0.2632, 0.2457)
+texture = ExtResource("10_3iubb")
+
+[node name="FullLife" type="Sprite2D" parent="."]
+position = Vector2(1804, 952)
+scale = Vector2(0.263185, 0.245988)
+texture = ExtResource("11_e8fnv")
+
+[node name="MapinguariCutscene" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(962, 537)
+scale = Vector2(1.58987, 1.34559)
+texture = ExtResource("9_sdx1u")
+
+[node name="painel_cutscene" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(987.5, 978.875)
+scale = Vector2(1.43394, 0.166567)
+texture = ExtResource("10_f2ybp")
+
+[node name="Label_cutscene" type="Label" parent="."]
+visible = false
+offset_left = 412.0
+offset_top = 918.0
+offset_right = 1535.0
+offset_bottom = 1038.0
+text = "No meio da floresta o Mapinguari viu humanos desmatando a floresta por granancia e vários
+seres estavam sofrendo por conta desses atos... Viva o mapinguari nessa fase e ajude a
+proteger a fauna e flora brasileira!"
+label_settings = SubResource("LabelSettings_skx1n")
+
+[node name="b_cutscene" type="Button" parent="."]
+offset_left = 1518.0
+offset_top = 993.0
+offset_right = 1565.0
+offset_bottom = 1026.0
+mouse_default_cursor_shape = 2
+script = ExtResource("11_adsy4")
+
+[node name="Setas" type="Sprite2D" parent="."]
+position = Vector2(1540, 1010)
+scale = Vector2(0.77, 0.572)
+texture = ExtResource("12_q5iml")
+
+[node name="painel_sair" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(1024, 562)
+texture = ExtResource("10_f2ybp")
+
+[node name="moldura_sair" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(1007, 569)
+scale = Vector2(2.87939, 2.58946)
+texture = ExtResource("14_eph4h")
+
+[node name="Label_pause" type="Label" parent="."]
+visible = false
+offset_left = 723.0
+offset_top = 308.0
+offset_right = 1354.0
+offset_bottom = 469.0
+text = "JOGO PAUSADO!"
+label_settings = SubResource("LabelSettings_pymld")
+
+[node name="b_fechar_menu_obj" type="Button" parent="."]
+visible = false
+offset_left = 801.0
+offset_top = 542.0
+offset_right = 1288.0
+offset_bottom = 669.0
+mouse_default_cursor_shape = 2
+script = ExtResource("15_3gasl")
+
+[node name="b_fechar_menu" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(1044, 606)
+texture = ExtResource("16_3iubb")
+
+[node name="b_salvar_prog_obj" type="Button" parent="."]
+visible = false
+offset_left = 800.0
+offset_top = 696.0
+offset_right = 1287.0
+offset_bottom = 823.0
+mouse_default_cursor_shape = 2
+script = ExtResource("17_e8fnv")
+
+[node name="b_salvar_prog" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(1044, 761)
+scale = Vector2(0.933712, 0.871666)
+texture = ExtResource("18_loaxs")
+
+[node name="Label_aviso" type="Label" parent="."]
+visible = false
+offset_left = 870.0
+offset_top = 831.0
+offset_right = 1472.0
+offset_bottom = 918.0
+text = "Será salvo apenas o seu progresso no mapa,
+                 a fase começará do inicio!"
+label_settings = SubResource("LabelSettings_qoj2q")
+
+[node name="painel_status" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(1748, 1006.13)
+scale = Vector2(0.348519, 0.105185)
+texture = ExtResource("10_f2ybp")
+
+[connection signal="ready" from="." to="." method="_on_ready"]
+[connection signal="body_entered" from="sumidouro" to="sumidouro" method="_on_body_entered"]
+[connection signal="body_entered" from="Mapinguari/colisao_player" to="Mapinguari/colisao_player" method="_on_body_entered"]
+[connection signal="pressed" from="b_cutscene" to="." method="_on_b_cutscene_pressed"]
+[connection signal="pressed" from="b_cutscene" to="b_cutscene" method="_on_pressed"]
+[connection signal="pressed" from="b_fechar_menu_obj" to="b_fechar_menu_obj" method="_on_pressed"]
+[connection signal="pressed" from="b_salvar_prog_obj" to="b_salvar_prog_obj" method="_on_pressed"]
