@@ -1,0 +1,64 @@
+[gd_scene load_steps=6 format=3 uid="uid://b6u6h7jm8ynvp"]
+
+[ext_resource type="PackedScene" uid="uid://c1hsnwubt7hly" path="res://cenas/player/curupira/curupira.tscn" id="1_fwclt"]
+[ext_resource type="PackedScene" uid="uid://by7dnckompj8h" path="res://cenas/fases/fase_curupira/objetos/barreira/barreira.tscn" id="1_wsbxb"]
+[ext_resource type="PackedScene" uid="uid://wps4xfokbxp4" path="res://cenas/fases/fase_curupira/inimigos/inimigo_spawn.tscn" id="2_wsbxb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bmpif"]
+size = Vector2(130, 1080)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fwclt"]
+size = Vector2(128, 362)
+
+[node name="MainCurupira" type="Node"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+visible = false
+
+[node name="paredes" type="Node" parent="."]
+
+[node name="parede_esquerda" type="Area2D" parent="paredes"]
+position = Vector2(-704, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="paredes/parede_esquerda"]
+shape = SubResource("RectangleShape2D_bmpif")
+
+[node name="parede_direita" type="Area2D" parent="paredes"]
+position = Vector2(704, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="paredes/parede_direita"]
+shape = SubResource("RectangleShape2D_bmpif")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="paredes"]
+position = Vector2(-704, 256)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="paredes/StaticBody2D"]
+shape = SubResource("RectangleShape2D_fwclt")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="paredes"]
+position = Vector2(704, 256)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="paredes/StaticBody2D2"]
+shape = SubResource("RectangleShape2D_fwclt")
+
+[node name="barreiras" type="Node" parent="."]
+
+[node name="barreira" parent="barreiras" instance=ExtResource("1_wsbxb")]
+position = Vector2(-384, 128)
+
+[node name="barreira2" parent="barreiras" instance=ExtResource("1_wsbxb")]
+position = Vector2(0, 128)
+
+[node name="barreira3" parent="barreiras" instance=ExtResource("1_wsbxb")]
+position = Vector2(384, 128)
+
+[node name="Curupira" parent="." instance=ExtResource("1_fwclt")]
+position = Vector2(0, 320)
+
+[node name="InimigoSpawn" parent="." instance=ExtResource("2_wsbxb")]
+position = Vector2(-8, -376)
+
+[connection signal="area_entered" from="paredes/parede_esquerda" to="InimigoSpawn" method="_on_parede_esquerda_area_entered"]
+[connection signal="body_entered" from="paredes/parede_esquerda" to="Curupira" method="_on_parede_esquerda_body_entered"]
+[connection signal="area_entered" from="paredes/parede_direita" to="InimigoSpawn" method="_on_parede_direita_area_entered"]
+[connection signal="body_entered" from="paredes/parede_direita" to="Curupira" method="_on_parede_direita_body_entered"]

@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://c62ivwk2wu4em"]
+
+[ext_resource type="Script" uid="uid://bfnl3axlg3up5" path="res://cenas/fases/fase_curupira/inimigos/inimigo.gd" id="1_c1wlf"]
+[ext_resource type="Texture2D" uid="uid://biqtbmua4gqnu" path="res://icon.svg" id="1_y7nl4"]
+[ext_resource type="AudioStream" uid="uid://1v62ghw0e8b4" path="res://cenas/fases/fase_curupira/resources/audio-editor-output.mp3" id="3_ppreo"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c1wlf"]
+size = Vector2(128, 128)
+
+[node name="Inimigo" type="Area2D"]
+script = ExtResource("1_c1wlf")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(1, 0, 0, 1)
+self_modulate = Color(1, 0, 0, 1)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_y7nl4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(0.5, 0.5)
+shape = SubResource("RectangleShape2D_c1wlf")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_ppreo")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

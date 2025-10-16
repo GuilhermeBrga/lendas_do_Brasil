@@ -1,0 +1,18 @@
+[gd_scene load_steps=5 format=3 uid="uid://c1hsnwubt7hly"]
+
+[ext_resource type="Texture2D" uid="uid://biqtbmua4gqnu" path="res://icon.svg" id="1_7txh5"]
+[ext_resource type="Script" uid="uid://c76xy45r4sir6" path="res://cenas/player/curupira/curupira.gd" id="1_ppvy8"]
+[ext_resource type="PackedScene" uid="uid://jucx0ucitr32" path="res://cenas/fases/fase_curupira/objetos/bala_jogador.tscn" id="2_3rpbx"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yq4sr"]
+size = Vector2(128, 128)
+
+[node name="Curupira" type="CharacterBody2D"]
+script = ExtResource("1_ppvy8")
+bala_cena = ExtResource("2_3rpbx")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_7txh5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_yq4sr")

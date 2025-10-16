@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="InimigoResource" load_steps=2 format=3 uid="uid://cho1fcr0n2bph"]
+
+[ext_resource type="Script" uid="uid://cb2apkitumkcg" path="res://cenas/fases/fase_curupira/resources/inimigo_resource.gd" id="1_0pwxl"]
+
+[resource]
+script = ExtResource("1_0pwxl")
+width = 8
+animation_name = ""

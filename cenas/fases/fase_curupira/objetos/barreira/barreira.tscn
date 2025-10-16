@@ -1,0 +1,30 @@
+[gd_scene load_steps=4 format=3 uid="uid://by7dnckompj8h"]
+
+[ext_resource type="Texture2D" uid="uid://biqtbmua4gqnu" path="res://icon.svg" id="1_7vmty"]
+[ext_resource type="Script" uid="uid://dont4guhulaqj" path="res://cenas/fases/fase_curupira/objetos/barreira/barreira.gd" id="1_xotb8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k7itn"]
+size = Vector2(128, 128)
+
+[node name="barreira" type="Area2D"]
+script = ExtResource("1_xotb8")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(0, 1, 0, 1)
+self_modulate = Color(0, 1, 0, 1)
+texture = ExtResource("1_7vmty")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_k7itn")
+
+[node name="hitboxes" type="Node2D" parent="."]
+
+[node name="Label" type="Label" parent="."]
+offset_left = 80.0
+offset_top = -64.0
+offset_right = 132.0
+offset_bottom = -41.0
+text = "qweasd"
+metadata/_edit_use_anchors_ = true
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
