@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://by7dnckompj8h"]
+[gd_scene load_steps=8 format=3 uid="uid://by7dnckompj8h"]
 
 [ext_resource type="Script" uid="uid://dont4guhulaqj" path="res://cenas/fases/fase_curupira/objetos/barreira/barreira.gd" id="1_xotb8"]
 [ext_resource type="Texture2D" uid="uid://ckphgowce4guh" path="res://cenas/fases/fase_curupira/resources/arvore-cheia.png" id="2_ir0aq"]
@@ -27,6 +27,10 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_k7itn"]
 size = Vector2(128, 128)
 
+[sub_resource type="Curve" id="Curve_rmmch"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
 [node name="barreira" type="Area2D"]
 script = ExtResource("1_xotb8")
 
@@ -39,8 +43,6 @@ animation = &"vida-cheia"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_k7itn")
 
-[node name="hitboxes" type="Node2D" parent="."]
-
 [node name="Label" type="Label" parent="."]
 offset_left = 80.0
 offset_top = -64.0
@@ -51,5 +53,19 @@ metadata/_edit_use_anchors_ = true
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_ir0aq")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+emitting = false
+amount = 120
+lifetime = 0.2
+one_shot = true
+explosiveness = 1.0
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 50.0
+initial_velocity_max = 500.0
+scale_amount_min = 2.0
+scale_amount_max = 4.0
+scale_amount_curve = SubResource("Curve_rmmch")
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]

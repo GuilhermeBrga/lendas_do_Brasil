@@ -22,6 +22,7 @@ func _on_area_entered(area):
 		area.queue_free()
 		$AnimatedSprite2D.visible = false
 		$CollisionShape2D.disabled = true
+		emitir_particulas()
 		await efeito_sonoro.finished
 		queue_free()
 		inimigo_destruido.emit()
@@ -29,3 +30,6 @@ func _on_area_entered(area):
 func _on_animation_player_animation_finished(anim_name):
 	if anim_name == "destroy":
 		queue_free()
+
+func emitir_particulas():
+	$CPUParticles2D.emitting = true

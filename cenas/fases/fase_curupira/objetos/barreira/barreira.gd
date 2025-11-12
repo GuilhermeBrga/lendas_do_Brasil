@@ -16,6 +16,7 @@ func _on_area_entered(area: Area2D) -> void:
 		ta_vivo()
 		$AudioStreamPlayer.play()
 		atualizar_sprites()
+		emitir_particulas()
 
 	elif area is Inimigo:
 		queue_free()
@@ -32,3 +33,6 @@ func atualizar_sprites():
 		$AnimatedSprite2D.play("vida-cheia")
 	else:
 		$AnimatedSprite2D.play("morrendo")
+
+func emitir_particulas():
+	$CPUParticles2D.emitting = true

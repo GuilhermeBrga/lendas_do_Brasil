@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://c13hxp8ddjjpk"]
+[gd_scene load_steps=5 format=3 uid="uid://c13hxp8ddjjpk"]
 
 [ext_resource type="Script" uid="uid://dnpa1edaorc30" path="res://cenas/fases/fase_curupira/objetos/bala_inimigo.gd" id="1_u7x1i"]
 [ext_resource type="Texture2D" uid="uid://ckj2ap2ru2ed5" path="res://cenas/fases/fase_curupira/resources/bala.png" id="2_u7x1i"]
@@ -6,6 +6,10 @@
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_uj2bw"]
 radius = 12.0
 height = 64.0
+
+[sub_resource type="Curve" id="Curve_u7x1i"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
 
 [node name="Bala" type="Area2D"]
 texture_filter = 1
@@ -24,6 +28,16 @@ shape = SubResource("CapsuleShape2D_uj2bw")
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
 position = Vector2(-9.53674e-07, -1.5)
 scale = Vector2(1.2, 3.35)
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+position = Vector2(0, -33)
+emission_shape = 1
+emission_sphere_radius = 20.0
+spread = 180.0
+gravity = Vector2(0, -980)
+scale_amount_min = 2.0
+scale_amount_max = 5.0
+scale_amount_curve = SubResource("Curve_u7x1i")
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

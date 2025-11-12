@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://c62ivwk2wu4em"]
+[gd_scene load_steps=11 format=3 uid="uid://c62ivwk2wu4em"]
 
 [ext_resource type="Script" uid="uid://bfnl3axlg3up5" path="res://cenas/fases/fase_curupira/inimigos/inimigo.gd" id="1_c1wlf"]
 [ext_resource type="Texture2D" uid="uid://dnl3tb052067i" path="res://assets/personagens_sprites/caçador.png" id="2_ppreo"]
@@ -36,6 +36,12 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c1wlf"]
 size = Vector2(96, 176)
 
+[sub_resource type="Curve" id="Curve_ppreo"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Gradient" id="Gradient_ppreo"]
+
 [node name="Inimigo" type="Area2D"]
 script = ExtResource("1_c1wlf")
 
@@ -53,5 +59,20 @@ shape = SubResource("RectangleShape2D_c1wlf")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_ppreo")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+emitting = false
+amount = 120
+one_shot = true
+explosiveness = 1.0
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 50.0
+initial_velocity_max = 500.0
+scale_amount_min = 2.0
+scale_amount_max = 20.0
+scale_amount_curve = SubResource("Curve_ppreo")
+color = Color(1, 0, 0, 1)
+color_initial_ramp = SubResource("Gradient_ppreo")
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
