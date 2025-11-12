@@ -2,6 +2,8 @@ extends Node2D
 
 const LINHAS = 5
 const COLUNAS = 11
+#const LINHAS = 1
+#const COLUNAS  = 1
 const ESPACAMENTO_HORIZONTAL = 32
 const ESPACAMENTO_VERTICAL = 32
 const ALTURA_INIMIGOS = 24
@@ -9,11 +11,10 @@ const ALTURA_INIMIGOS = 24
 var inimigo_cena
 const POSICAO_INICIAL_Y = -50
 
-#const INVADERS_POSITION_X_INCREMENT = 10
-#const INVADERS_POSITION_Y_INCREMENT = 20
 const INIMIGOS_POSICAO_X_INCREMENTAR = 20
 const INIMIGOS_POSICAO_Y_INCREMENTAR = 20
 var direcao_movimento = 1
+var inimigos_vivos = 0
 
 @onready var movimento_timer: Timer = $movimento_timer
 @onready var tiro_timer: Timer = $tiro_timer
@@ -55,19 +56,32 @@ func adicionar_inimigo(inimigo_configuracao,posicao_spawn:Vector2):
 	var inimigo = inimigo_cena.instantiate() as Inimigo
 	inimigo.config = inimigo_configuracao
 	inimigo.global_position = posicao_spawn
+	inimigo.inimigo_destruido.connect(verificar_inimigos)
 	#inimigo.
 	add_child(inimigo)
-	
+	inimigos_vivos+=1
+
+func verificar_inimigos():
+	inimigos_vivos -= 1
+	if inimigos_vivos <= 0:
+		# GANHAR
+		get_tree().change_scene_to_file("res://cenas/fases/fase_curupira/tela_vitoria.tscn")
+		#get_tree().paused = true
+
 func mover_inimigos():
 	position.x += INIMIGOS_POSICAO_X_INCREMENTAR * direcao_movimento
 
 func tiro_inimigo():
-	var inimigo_aleatorio = get_children().filter(func (filho ): return filho is Inimigo).map(func (inimigo): return inimigo.global_position).pick_random()
+	var inimigos = get_children().filter(func (filho): return filho is Inimigo)
+	if inimigos.is_empty():
+		return # não atira se não houver inimigos
+
+	var inimigo_aleatorio = inimigos.pick_random()
 	
 	var tiro_inimigo = tiro_inimigo_cena.instantiate() as BalaInimigo
-	tiro_inimigo.global_position = inimigo_aleatorio
-	#get_tree().root.add_child(tiro_inimigo)
+	tiro_inimigo.global_position = inimigo_aleatorio.global_position
 	get_parent().add_child(tiro_inimigo)
+
 
 func _on_parede_esquerda_area_entered(area: Area2D) -> void:
 	if direcao_movimento == -1:
@@ -78,3 +92,10 @@ func _on_parede_direita_area_entered(area: Area2D) -> void:
 	if direcao_movimento == 1:
 		position.y += INIMIGOS_POSICAO_Y_INCREMENTAR
 		direcao_movimento *= -1
+
+func _on_chao_area_entered(area: Area2D) -> void:
+	if area is Inimigo:
+		# PERDER
+		get_tree().change_scene_to_file("res://cenas/fases/fase_curupira/tela_derrota.tscn")
+		#get_tree().paused = true
+		print("acabou") # Replace with function body.

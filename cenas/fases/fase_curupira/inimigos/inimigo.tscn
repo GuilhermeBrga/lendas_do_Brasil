@@ -1,26 +1,55 @@
-[gd_scene load_steps=5 format=3 uid="uid://c62ivwk2wu4em"]
+[gd_scene load_steps=9 format=3 uid="uid://c62ivwk2wu4em"]
 
 [ext_resource type="Script" uid="uid://bfnl3axlg3up5" path="res://cenas/fases/fase_curupira/inimigos/inimigo.gd" id="1_c1wlf"]
-[ext_resource type="Texture2D" uid="uid://biqtbmua4gqnu" path="res://icon.svg" id="1_y7nl4"]
-[ext_resource type="AudioStream" uid="uid://1v62ghw0e8b4" path="res://cenas/fases/fase_curupira/resources/audio-editor-output.mp3" id="3_ppreo"]
+[ext_resource type="Texture2D" uid="uid://dnl3tb052067i" path="res://assets/personagens_sprites/caçador.png" id="2_ppreo"]
+[ext_resource type="AudioStream" uid="uid://gqmvc55qmydc" path="res://cenas/fases/fase_curupira/resources/mixkit-scream-in-pain-2200.mp3" id="3_ppreo"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ppreo"]
+atlas = ExtResource("2_ppreo")
+region = Rect2(31, 0, 31, 31)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8571y"]
+atlas = ExtResource("2_ppreo")
+region = Rect2(0, 0, 31, 31)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lq5dd"]
+atlas = ExtResource("2_ppreo")
+region = Rect2(62, 0, 31, 31)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_c1wlf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ppreo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8571y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lq5dd")
+}],
+"loop": true,
+"name": &"andar",
+"speed": 5.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c1wlf"]
-size = Vector2(128, 128)
+size = Vector2(96, 176)
 
 [node name="Inimigo" type="Area2D"]
 script = ExtResource("1_c1wlf")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-modulate = Color(1, 0, 0, 1)
-self_modulate = Color(1, 0, 0, 1)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("1_y7nl4")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(-3, 0)
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_c1wlf")
+animation = &"andar"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -4)
 scale = Vector2(0.5, 0.5)
 shape = SubResource("RectangleShape2D_c1wlf")
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_ppreo")

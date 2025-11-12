@@ -1,27 +1,29 @@
 [gd_scene load_steps=4 format=3 uid="uid://c13hxp8ddjjpk"]
 
 [ext_resource type="Script" uid="uid://dnpa1edaorc30" path="res://cenas/fases/fase_curupira/objetos/bala_inimigo.gd" id="1_u7x1i"]
-[ext_resource type="Texture2D" uid="uid://d2h0cf8tyfww8" path="res://assets/elementos/mapa_curupira/fle.jpg.png" id="2_lupx2"]
+[ext_resource type="Texture2D" uid="uid://ckj2ap2ru2ed5" path="res://cenas/fases/fase_curupira/resources/bala.png" id="2_u7x1i"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_uj2bw"]
-radius = 4.0
-height = 54.0
+radius = 12.0
+height = 64.0
 
 [node name="Bala" type="Area2D"]
+texture_filter = 1
 script = ExtResource("1_u7x1i")
 direcao = "BAIXO"
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-1.99561e-05, -4.88343)
 rotation = 3.14159
-scale = Vector2(0.1, 0.1)
-texture = ExtResource("2_lupx2")
+scale = Vector2(0.0669204, 0.0701959)
+texture = ExtResource("2_u7x1i")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_uj2bw")
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
-position = Vector2(0, 3.57628e-06)
-scale = Vector2(1, 3.2)
+position = Vector2(-9.53674e-07, -1.5)
+scale = Vector2(1.2, 3.35)
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

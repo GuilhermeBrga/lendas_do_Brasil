@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://b82w1fqpknadg"]
+
+[ext_resource type="Texture2D" uid="uid://rym07tcpdlpt" path="res://cenas/fases/fase_curupira/resources/ganhou.png" id="1_t3ybr"]
+
+[node name="TelaVitoria" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_t3ybr")
+stretch_mode = 5

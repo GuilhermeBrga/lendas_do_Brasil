@@ -19,6 +19,4 @@ func _on_body_entered(body: Node2D) -> void:
 	if body is Jogador:
 		body.queue_free()
 		queue_free()
-
-func _on_area_entered(area: Area2D) -> void:
-	pass # Replace with function body.
+		get_tree().change_scene_to_file("res://cenas/fases/fase_curupira/tela_derrota.tscn")

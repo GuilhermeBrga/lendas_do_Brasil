@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://b6u6h7jm8ynvp"]
+[gd_scene load_steps=8 format=3 uid="uid://d18xdwmlk4eea"]
 
-[ext_resource type="PackedScene" uid="uid://c1hsnwubt7hly" path="res://cenas/player/curupira/curupira.tscn" id="1_fwclt"]
-[ext_resource type="PackedScene" uid="uid://by7dnckompj8h" path="res://cenas/fases/fase_curupira/objetos/barreira/barreira.tscn" id="1_wsbxb"]
-[ext_resource type="PackedScene" uid="uid://wps4xfokbxp4" path="res://cenas/fases/fase_curupira/inimigos/inimigo_spawn.tscn" id="2_wsbxb"]
+[ext_resource type="Texture2D" uid="uid://daydicq1wmnvl" path="res://cenas/fases/fase_curupira/resources/floresta.jpg" id="1_p8t3s"]
+[ext_resource type="PackedScene" uid="uid://by7dnckompj8h" path="res://cenas/fases/fase_curupira/objetos/barreira/barreira.tscn" id="2_rt8ef"]
+[ext_resource type="PackedScene" uid="uid://c1hsnwubt7hly" path="res://cenas/player/curupira/curupira.tscn" id="3_5b2op"]
+[ext_resource type="PackedScene" uid="uid://wps4xfokbxp4" path="res://cenas/fases/fase_curupira/inimigos/inimigo_spawn.tscn" id="4_6q1pn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bmpif"]
 size = Vector2(130, 1080)
@@ -10,7 +11,17 @@ size = Vector2(130, 1080)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fwclt"]
 size = Vector2(128, 362)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wsbxb"]
+size = Vector2(1264, 80)
+
 [node name="MainCurupira" type="Node"]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = -768.0
+offset_top = -536.0
+offset_right = 768.0
+offset_bottom = 456.0
+texture = ExtResource("1_p8t3s")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 visible = false
@@ -41,24 +52,31 @@ position = Vector2(704, 256)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="paredes/StaticBody2D2"]
 shape = SubResource("RectangleShape2D_fwclt")
 
+[node name="chao" type="Area2D" parent="paredes"]
+position = Vector2(0, 416)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="paredes/chao"]
+shape = SubResource("RectangleShape2D_wsbxb")
+
 [node name="barreiras" type="Node" parent="."]
 
-[node name="barreira" parent="barreiras" instance=ExtResource("1_wsbxb")]
-position = Vector2(-384, 128)
+[node name="barreira" parent="barreiras" instance=ExtResource("2_rt8ef")]
+position = Vector2(-384, 64)
 
-[node name="barreira2" parent="barreiras" instance=ExtResource("1_wsbxb")]
-position = Vector2(0, 128)
+[node name="barreira2" parent="barreiras" instance=ExtResource("2_rt8ef")]
+position = Vector2(0, 64)
 
-[node name="barreira3" parent="barreiras" instance=ExtResource("1_wsbxb")]
-position = Vector2(384, 128)
+[node name="barreira3" parent="barreiras" instance=ExtResource("2_rt8ef")]
+position = Vector2(384, 64)
 
-[node name="Curupira" parent="." instance=ExtResource("1_fwclt")]
-position = Vector2(0, 320)
+[node name="Curupira" parent="." instance=ExtResource("3_5b2op")]
+position = Vector2(0, 256)
 
-[node name="InimigoSpawn" parent="." instance=ExtResource("2_wsbxb")]
+[node name="InimigoSpawn" parent="." instance=ExtResource("4_6q1pn")]
 position = Vector2(-8, -376)
 
 [connection signal="area_entered" from="paredes/parede_esquerda" to="InimigoSpawn" method="_on_parede_esquerda_area_entered"]
 [connection signal="body_entered" from="paredes/parede_esquerda" to="Curupira" method="_on_parede_esquerda_body_entered"]
 [connection signal="area_entered" from="paredes/parede_direita" to="InimigoSpawn" method="_on_parede_direita_area_entered"]
 [connection signal="body_entered" from="paredes/parede_direita" to="Curupira" method="_on_parede_direita_body_entered"]
+[connection signal="area_entered" from="paredes/chao" to="InimigoSpawn" method="_on_chao_area_entered"]

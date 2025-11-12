@@ -2,6 +2,7 @@ extends Area2D
 
 class_name Inimigo
 
+signal inimigo_destruido
 var config:Resource
 
 @onready var sprite = $Sprite2D
@@ -9,18 +10,21 @@ var config:Resource
 @onready var efeito_sonoro:AudioStreamPlayer = $AudioStreamPlayer
 
 func _ready():
-	pass
+	$AnimatedSprite2D.play("andar")
 	#sprite.texture = config.sprite_1
 	#animation_player.play(config.animation_name)
 
 func _on_area_entered(area):
-	if area is BalaJogador:
+	if area is BalaJogador and not $CollisionShape2D.disabled:
 		#animation_player.play("destroy")
-		#efeito_sonoro.play()
-		print("tome")
+		efeito_sonoro.play()
+		#print("tome")
 		area.queue_free()
-		#await efeito_sonoro.finished
+		$AnimatedSprite2D.visible = false
+		$CollisionShape2D.disabled = true
+		await efeito_sonoro.finished
 		queue_free()
+		inimigo_destruido.emit()
 
 func _on_animation_player_animation_finished(anim_name):
 	if anim_name == "destroy":

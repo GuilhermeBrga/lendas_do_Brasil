@@ -1,7 +1,28 @@
-[gd_scene load_steps=4 format=3 uid="uid://by7dnckompj8h"]
+[gd_scene load_steps=7 format=3 uid="uid://by7dnckompj8h"]
 
-[ext_resource type="Texture2D" uid="uid://biqtbmua4gqnu" path="res://icon.svg" id="1_7vmty"]
 [ext_resource type="Script" uid="uid://dont4guhulaqj" path="res://cenas/fases/fase_curupira/objetos/barreira/barreira.gd" id="1_xotb8"]
+[ext_resource type="Texture2D" uid="uid://ckphgowce4guh" path="res://cenas/fases/fase_curupira/resources/arvore-cheia.png" id="2_ir0aq"]
+[ext_resource type="Texture2D" uid="uid://c2pjc3mcwy243" path="res://cenas/fases/fase_curupira/resources/arvore-quase-morta.png" id="2_rmmch"]
+[ext_resource type="AudioStream" uid="uid://p204tek2ognt" path="res://cenas/fases/fase_curupira/resources/impacto-sfx.mp3" id="3_ir0aq"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fypnw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_rmmch")
+}],
+"loop": false,
+"name": &"morrendo",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_ir0aq")
+}],
+"loop": false,
+"name": &"vida-cheia",
+"speed": 5.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_k7itn"]
 size = Vector2(128, 128)
@@ -9,10 +30,11 @@ size = Vector2(128, 128)
 [node name="barreira" type="Area2D"]
 script = ExtResource("1_xotb8")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-modulate = Color(0, 1, 0, 1)
-self_modulate = Color(0, 1, 0, 1)
-texture = ExtResource("1_7vmty")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(1.90735e-06, 9.53674e-07)
+scale = Vector2(0.125, 0.177778)
+sprite_frames = SubResource("SpriteFrames_fypnw")
+animation = &"vida-cheia"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_k7itn")
@@ -26,5 +48,8 @@ offset_right = 132.0
 offset_bottom = -41.0
 text = "qweasd"
 metadata/_edit_use_anchors_ = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_ir0aq")
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]

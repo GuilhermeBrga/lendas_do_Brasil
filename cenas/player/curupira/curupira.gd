@@ -22,6 +22,7 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed("ui_ação"):  # Espaço por padrão
 		atirar()
 
+
 func atirar():
 	if bala_cena and pode_atirar:
 		pode_atirar = false
@@ -31,5 +32,9 @@ func atirar():
 		
 		bala.connect("tree_exited", Callable(self, "bala_sumiu"))
 		
+		$AnimatedSprite2D.play("lançar")
+		await $AnimatedSprite2D.animation_finished
+		$AnimatedSprite2D.play("idle")
+
 func bala_sumiu():
 	pode_atirar = true
