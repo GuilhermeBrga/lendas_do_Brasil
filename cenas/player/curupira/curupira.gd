@@ -5,6 +5,7 @@ class_name Jogador
 @export var speed = 400
 @export var bala_cena: PackedScene
 var pode_atirar = true
+var ta_vivo = true
 
 func get_input():
 	var direction = 0
@@ -15,8 +16,9 @@ func get_input():
 	velocity.x = direction * speed
 
 func _physics_process(delta):
-	get_input()
-	move_and_slide()
+	if ta_vivo:
+		get_input()
+		move_and_slide()
 	
 	# Disparo
 	if Input.is_action_just_pressed("ui_ação"):  # Espaço por padrão
@@ -38,3 +40,14 @@ func atirar():
 
 func bala_sumiu():
 	pode_atirar = true
+	
+func morrer():
+	emitir_particulas(true)
+	ta_vivo = false
+	$AudioStreamPlayer.play()
+	$CollisionShape2D.disabled = true
+	await $AudioStreamPlayer.finished
+	get_tree().change_scene_to_file("res://cenas/fases/fase_curupira/tela_derrota.tscn")
+
+func emitir_particulas(pode_emitir:bool):
+	$CPUParticles2D.emitting = pode_emitir
