@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://b82w1fqpknadg"]
 
-[ext_resource type="Texture2D" uid="uid://rym07tcpdlpt" path="res://cenas/fases/fase_curupira/resources/ganhou.png" id="1_t3ybr"]
+[ext_resource type="Texture2D" uid="uid://rym07tcpdlpt" path="res://cenas/fases/fase_curupira/assets/estaticos/ganhou.png" id="1_t3ybr"]
 
 [node name="TelaVitoria" type="Control"]
 layout_mode = 3

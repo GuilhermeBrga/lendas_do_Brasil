@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://fkb7rerb7m6j"]
 
 [ext_resource type="Texture2D" uid="uid://bkxw55nt03ja0" path="res://cenas/fases/fase_curupira/resources/perdeu.png" id="1_ck0pp"]
-[ext_resource type="FontFile" uid="uid://dcgork77dfg8o" path="res://cenas/fases/fase_curupira/resources/lemon_milk/LEMONMILK-Light.otf" id="2_p7lpm"]
+[ext_resource type="FontFile" uid="uid://dcgork77dfg8o" path="res://cenas/fases/fase_curupira/resources/fontes/lemon_milk/LEMONMILK-Light.otf" id="2_p7lpm"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_y1jo8"]
 font = ExtResource("2_p7lpm")

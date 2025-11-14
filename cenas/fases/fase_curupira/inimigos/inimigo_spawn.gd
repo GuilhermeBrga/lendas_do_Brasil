@@ -19,8 +19,7 @@ var inimigos_vivos = 0
 @onready var movimento_timer: Timer = $movimento_timer
 @onready var tiro_timer: Timer = $tiro_timer
 
-var tiro_inimigo_cena = preload("res://cenas/fases/fase_curupira/objetos/bala_inimigo.tscn")
-
+var tiro_inimigo_cena = preload("res://cenas/fases/fase_curupira/assets/projeteis/inimigo/bala_inimigo.tscn")
 var inimigos_totais = LINHAS * COLUNAS
 
 func _ready() -> void:

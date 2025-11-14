@@ -1,8 +1,8 @@
 [gd_scene load_steps=8 format=3 uid="uid://d18xdwmlk4eea"]
 
-[ext_resource type="Texture2D" uid="uid://daydicq1wmnvl" path="res://cenas/fases/fase_curupira/resources/floresta.jpg" id="1_p8t3s"]
-[ext_resource type="PackedScene" uid="uid://by7dnckompj8h" path="res://cenas/fases/fase_curupira/objetos/barreira/barreira.tscn" id="2_rt8ef"]
-[ext_resource type="PackedScene" uid="uid://c1hsnwubt7hly" path="res://cenas/player/curupira/curupira.tscn" id="3_5b2op"]
+[ext_resource type="Texture2D" uid="uid://daydicq1wmnvl" path="res://cenas/fases/fase_curupira/assets/estaticos/floresta.jpg" id="1_p8t3s"]
+[ext_resource type="PackedScene" uid="uid://by7dnckompj8h" path="res://cenas/fases/fase_curupira/barreira/barreira.tscn" id="2_rt8ef"]
+[ext_resource type="PackedScene" uid="uid://c1hsnwubt7hly" path="res://cenas/fases/fase_curupira/curupira/curupira.tscn" id="3_5b2op"]
 [ext_resource type="PackedScene" uid="uid://wps4xfokbxp4" path="res://cenas/fases/fase_curupira/inimigos/inimigo_spawn.tscn" id="4_6q1pn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bmpif"]
