@@ -1,13 +1,47 @@
-[gd_scene load_steps=2 format=3 uid="uid://b82w1fqpknadg"]
+[gd_scene load_steps=6 format=3 uid="uid://b82w1fqpknadg"]
 
 [ext_resource type="Texture2D" uid="uid://rym07tcpdlpt" path="res://cenas/fases/fase_curupira/assets/estaticos/ganhou.png" id="1_t3ybr"]
+[ext_resource type="FontFile" uid="uid://dcgork77dfg8o" path="res://cenas/fases/fase_curupira/resources/fontes/lemon_milk/LEMONMILK-Light.otf" id="2_8sh4d"]
+[ext_resource type="Texture2D" uid="uid://db3yi1pt5x5q1" path="res://assets/elementos/setas.png" id="3_qo304"]
+[ext_resource type="Script" uid="uid://uinkr0s5koeg" path="res://cenas/fases/fase_curupira/btn_voltar.gd" id="4_lqo31"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_qo304"]
+font = ExtResource("2_8sh4d")
+font_size = 50
+font_color = Color(0, 0, 0, 1)
 
 [node name="TelaVitoria" type="Control"]
 layout_mode = 3
-anchors_preset = 0
+anchor_right = 0.708
+anchor_bottom = 0.704
+offset_right = -1359.36
+offset_bottom = -760.32
+size_flags_horizontal = 6
+size_flags_vertical = 4
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 0
 offset_right = 1368.0
 offset_bottom = 768.0
 texture = ExtResource("1_t3ybr")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 152.0
+offset_top = 40.0
+offset_right = 1224.0
+offset_bottom = 108.0
+text = "e a floresta sobreviveu mais um dia"
+label_settings = SubResource("LabelSettings_qo304")
+autowrap_mode = 2
+
+[node name="btn_voltar" type="Button" parent="."]
+layout_mode = 0
+offset_left = 1272.0
+offset_top = 672.0
+offset_right = 1367.0
+offset_bottom = 767.0
+icon = ExtResource("3_qo304")
+script = ExtResource("4_lqo31")
+
+[connection signal="pressed" from="btn_voltar" to="btn_voltar" method="_on_pressed"]
