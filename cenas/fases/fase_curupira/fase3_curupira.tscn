@@ -24,7 +24,6 @@ offset_bottom = 456.0
 texture = ExtResource("1_p8t3s")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-visible = false
 
 [node name="paredes" type="Node" parent="."]
 

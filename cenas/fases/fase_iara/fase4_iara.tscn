@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://n51uxuf1od1v"]
+
+[ext_resource type="Texture2D" uid="uid://dvhpr07u5w35i" path="res://cenas/fases/fase_iara/estaticos/rio_pixel_art.png" id="1_2plfc"]
+[ext_resource type="PackedScene" uid="uid://dlr3vq0coj82u" path="res://cenas/fases/fase_iara/iara/iara.tscn" id="2_xcssl"]
+[ext_resource type="PackedScene" uid="uid://5nvek2byo5l8" path="res://cenas/fases/fase_iara/pescador/pescador.tscn" id="3_78bdd"]
+
+[node name="MainIara" type="Node"]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = -696.0
+offset_top = -384.0
+offset_right = 3749.0
+offset_bottom = 2219.0
+scale = Vector2(0.315, 0.295)
+texture = ExtResource("1_2plfc")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="pescador" parent="." instance=ExtResource("3_78bdd")]
+position = Vector2(480, 192)
+
+[node name="iara" parent="." instance=ExtResource("2_xcssl")]
+frame_progress = 0.652036

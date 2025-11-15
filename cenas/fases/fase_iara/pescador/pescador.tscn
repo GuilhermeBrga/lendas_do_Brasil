@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=3 uid="uid://5nvek2byo5l8"]
+
+[ext_resource type="Texture2D" uid="uid://bk3hncpt4ygrc" path="res://cenas/fases/fase_iara/pescador/pescador.png" id="1_yp83c"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2sfv4"]
+atlas = ExtResource("1_yp83c")
+region = Rect2(0, 0, 80, 33)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uhq45"]
+atlas = ExtResource("1_yp83c")
+region = Rect2(0, 37, 80, 33)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fk54f"]
+animations = [{
+"frames": [{
+"duration": 50.0,
+"texture": SubResource("AtlasTexture_2sfv4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uhq45")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[node name="pescador" type="AnimatedSprite2D"]
+texture_filter = 1
+position = Vector2(0, -24)
+scale = Vector2(4.129, 4.129)
+sprite_frames = SubResource("SpriteFrames_fk54f")
+animation = &"idle"
+frame_progress = 0.945483

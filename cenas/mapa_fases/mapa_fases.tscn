@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://4tw4qk3nx8sd"]
+[gd_scene load_steps=12 format=3 uid="uid://4tw4qk3nx8sd"]
 
 [ext_resource type="Script" uid="uid://dijbuspkt0dvy" path="res://cenas/mapa_fases/b_tutorial.gd" id="1_jpuch"]
 [ext_resource type="Texture2D" uid="uid://82cphtrb2hy5" path="res://assets/cenarios/mapa.png" id="2_wrbcl"]
@@ -7,6 +7,7 @@
 [ext_resource type="Script" uid="uid://b31nry8tgkor8" path="res://cenas/mapa_fases/b_fase_3.gd" id="4_beojq"]
 [ext_resource type="Texture2D" uid="uid://c0w7eefxpp5ut" path="res://assets/botoes/b_voltar_img.jpg" id="4_hgwlt"]
 [ext_resource type="Texture2D" uid="uid://dw5w243mih82m" path="res://assets/elementos/painel_generico.png" id="5_beojq"]
+[ext_resource type="Script" uid="uid://bqy5tb3ubw1i1" path="res://cenas/mapa_fases/b_fase_4.gd" id="5_wgau1"]
 [ext_resource type="Script" uid="uid://4dyudlj2uqhf" path="res://cenas/mapa_fases/b_fase_1.gd" id="6_wrbcl"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_h2twt"]
@@ -49,6 +50,13 @@ offset_top = 288.0
 offset_right = 1160.0
 offset_bottom = 440.0
 script = ExtResource("4_beojq")
+
+[node name="b_fase_4" type="Button" parent="."]
+offset_left = 1173.0
+offset_top = 576.0
+offset_right = 1293.0
+offset_bottom = 704.0
+script = ExtResource("5_wgau1")
 
 [node name="mapa" type="Sprite2D" parent="."]
 position = Vector2(960.5, 540.5)
@@ -104,4 +112,5 @@ label_settings = SubResource("LabelSettings_tbcqi")
 [connection signal="pressed" from="b_fase_1" to="b_fase_1" method="_on_pressed"]
 [connection signal="pressed" from="b_fase_2" to="b_fase_2" method="_on_pressed"]
 [connection signal="pressed" from="b_fase_3" to="b_fase_3" method="_on_pressed"]
+[connection signal="pressed" from="b_fase_4" to="b_fase_4" method="_on_pressed"]
 [connection signal="pressed" from="voltar_load" to="voltar_load" method="_on_pressed"]
