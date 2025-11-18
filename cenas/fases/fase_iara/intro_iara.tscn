@@ -1,3 +1,43 @@
-[gd_scene format=3 uid="uid://dckogp4vn4fj7"]
+[gd_scene load_steps=6 format=3 uid="uid://dckogp4vn4fj7"]
+
+[ext_resource type="Texture2D" uid="uid://db3yi1pt5x5q1" path="res://assets/elementos/setas.png" id="1_ftarl"]
+[ext_resource type="Texture2D" uid="uid://c28b6alsefvv3" path="res://cenas/fases/fase_iara/estaticos/iara_intro.png" id="1_huqhn"]
+[ext_resource type="Texture2D" uid="uid://dw5w243mih82m" path="res://assets/elementos/painel_generico.png" id="2_re6pl"]
+[ext_resource type="Script" uid="uid://dxkttgeoqmuk4" path="res://cenas/fases/fase_iara/btn_intro_iara.gd" id="4_p5jgo"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_huqhn"]
+font_size = 25
+font_color = Color(0, 0, 0, 1)
 
 [node name="IaraIntro" type="Node2D"]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+texture_filter = 1
+offset_right = 1368.0
+offset_bottom = 768.0
+size_flags_horizontal = 4
+texture = ExtResource("1_huqhn")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(672, 654.875)
+scale = Vector2(1.36674, 0.264303)
+texture = ExtResource("2_re6pl")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 112.0
+offset_top = 568.0
+offset_right = 1240.0
+offset_bottom = 752.0
+text = "O curupira teve sua floresta invadida, cabe a ele defender seus amigos dos lenhadores fortementes armados."
+label_settings = SubResource("LabelSettings_huqhn")
+autowrap_mode = 2
+
+[node name="btn_intro_iara" type="Button" parent="."]
+offset_left = 1144.0
+offset_top = 664.0
+offset_right = 1239.0
+offset_bottom = 759.0
+icon = ExtResource("1_ftarl")
+script = ExtResource("4_p5jgo")
+
+[connection signal="pressed" from="btn_intro_iara" to="btn_intro_iara" method="_on_pressed"]

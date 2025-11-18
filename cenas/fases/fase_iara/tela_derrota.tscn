@@ -1,3 +1,37 @@
-[gd_scene format=3 uid="uid://doim0h8hfkslg"]
+[gd_scene load_steps=6 format=3 uid="uid://doim0h8hfkslg"]
+
+[ext_resource type="Texture2D" uid="uid://d24ppgxh17myg" path="res://cenas/fases/fase_iara/estaticos/iara_game_lose.png" id="1_iife0"]
+[ext_resource type="Texture2D" uid="uid://db3yi1pt5x5q1" path="res://assets/elementos/setas.png" id="3_ku6vq"]
+[ext_resource type="Script" uid="uid://dwvn4xunvpdlq" path="res://cenas/fases/fase_iara/btn_voltar_iara.gd" id="3_ujybl"]
+[ext_resource type="FontFile" uid="uid://dcgork77dfg8o" path="res://assets/fontes/lemon_milk/LEMONMILK-Light.otf" id="4_iife0"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_1cg1o"]
+font = ExtResource("4_iife0")
+font_size = 64
 
 [node name="TelaDerrota" type="Node2D"]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+texture_filter = 1
+offset_right = 1368.0
+offset_bottom = 768.0
+size_flags_horizontal = 4
+texture = ExtResource("1_iife0")
+
+[node name="btn_voltar" type="Button" parent="."]
+offset_left = 1269.0
+offset_top = 616.0
+offset_right = 1364.0
+offset_bottom = 711.0
+icon = ExtResource("3_ku6vq")
+script = ExtResource("3_ujybl")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 88.0
+offset_top = 152.0
+offset_right = 1289.0
+offset_bottom = 238.0
+text = "e o pescador viveu mais um dia..."
+label_settings = SubResource("LabelSettings_1cg1o")
+
+[connection signal="pressed" from="btn_voltar" to="btn_voltar" method="_on_pressed"]

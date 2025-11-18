@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cqj4j24lwjmjp"
-path="res://.godot/imported/iara_game_win.png-58e48083417558c3abf495ba65da6005.ctex"
+uid="uid://c8ug880svusic"
+path="res://.godot/imported/pescador_supreso.png-26049fe9fe3d1c46fd41b288a67c67b4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://cenas/fases/fase_iara/estaticos/iara_game_win.png"
-dest_files=["res://.godot/imported/iara_game_win.png-58e48083417558c3abf495ba65da6005.ctex"]
+source_file="res://cenas/fases/fase_iara/pescador/sprites/pescador_supreso.png"
+dest_files=["res://.godot/imported/pescador_supreso.png-26049fe9fe3d1c46fd41b288a67c67b4.ctex"]
 
 [params]
 

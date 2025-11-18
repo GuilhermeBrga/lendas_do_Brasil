@@ -1,33 +1,103 @@
-[gd_scene load_steps=5 format=3 uid="uid://5nvek2byo5l8"]
+[gd_scene load_steps=16 format=3 uid="uid://5nvek2byo5l8"]
 
-[ext_resource type="Texture2D" uid="uid://bk3hncpt4ygrc" path="res://cenas/fases/fase_iara/pescador/pescador.png" id="1_yp83c"]
+[ext_resource type="Script" uid="uid://b75fgf2vuuhp6" path="res://cenas/fases/fase_iara/pescador/pescador.gd" id="1_2sfv4"]
+[ext_resource type="Texture2D" uid="uid://bk3hncpt4ygrc" path="res://cenas/fases/fase_iara/pescador/sprites/pescador.png" id="1_yp83c"]
+[ext_resource type="Texture2D" uid="uid://dtoj3oxk327x" path="res://cenas/fases/fase_iara/pescador/sprites/pescador_apaixonado.png" id="2_uhq45"]
+[ext_resource type="Texture2D" uid="uid://c8ug880svusic" path="res://cenas/fases/fase_iara/pescador/sprites/pescador_supreso.png" id="4_fk54f"]
+[ext_resource type="Texture2D" uid="uid://diar7xna0quv1" path="res://cenas/fases/fase_iara/pescador/sprites/heart pixel art 254x254.png" id="5_ed13w"]
+[ext_resource type="AudioStream" uid="uid://dw8ghrj3yoxei" path="res://cenas/fases/fase_iara/pescador/sfx/surpreso_sfx.mp3" id="5_vbmm6"]
+[ext_resource type="AudioStream" uid="uid://b8641h4hk23e7" path="res://cenas/fases/fase_iara/pescador/sfx/assobio_sfx.mp3" id="7_s06yx"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_2sfv4"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_fk54f"]
+atlas = ExtResource("2_uhq45")
+region = Rect2(0, 0, 80, 33)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vbmm6"]
+atlas = ExtResource("2_uhq45")
+region = Rect2(0, 37, 80, 33)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yp83c"]
 atlas = ExtResource("1_yp83c")
 region = Rect2(0, 0, 80, 33)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_uhq45"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_2sfv4"]
 atlas = ExtResource("1_yp83c")
 region = Rect2(0, 37, 80, 33)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_fk54f"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_ed13w"]
+atlas = ExtResource("4_fk54f")
+region = Rect2(0, 0, 80, 33)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s06yx"]
+atlas = ExtResource("4_fk54f")
+region = Rect2(0, 37, 80, 33)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_uhq45"]
 animations = [{
 "frames": [{
-"duration": 50.0,
-"texture": SubResource("AtlasTexture_2sfv4")
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fk54f")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_uhq45")
+"texture": SubResource("AtlasTexture_vbmm6")
+}],
+"loop": true,
+"name": &"apaixonado",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 9.0,
+"texture": SubResource("AtlasTexture_yp83c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2sfv4")
 }],
 "loop": true,
 "name": &"idle",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ed13w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s06yx")
+}],
+"loop": true,
+"name": &"surpreso",
+"speed": 5.0
 }]
 
-[node name="pescador" type="AnimatedSprite2D"]
+[sub_resource type="Curve" id="Curve_gmav7"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[node name="pescador" type="Sprite2D"]
 texture_filter = 1
 position = Vector2(0, -24)
 scale = Vector2(4.129, 4.129)
-sprite_frames = SubResource("SpriteFrames_fk54f")
-animation = &"idle"
-frame_progress = 0.945483
+script = ExtResource("1_2sfv4")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_uhq45")
+animation = &"apaixonado"
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+emitting = false
+texture = ExtResource("5_ed13w")
+lifetime = 1.5
+emission_shape = 2
+emission_sphere_radius = 27.0
+spread = 180.0
+gravity = Vector2(0, -980)
+initial_velocity_min = 5.0
+initial_velocity_max = 10.0
+scale_amount_min = 0.0
+scale_amount_max = 0.5
+scale_amount_curve = SubResource("Curve_gmav7")
+
+[node name="AudioSurpreso" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_vbmm6")
+
+[node name="AudioAssobio" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_s06yx")

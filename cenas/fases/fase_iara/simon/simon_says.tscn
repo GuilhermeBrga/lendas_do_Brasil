@@ -1,0 +1,100 @@
+[gd_scene load_steps=16 format=3 uid="uid://ci3luptcdfg2j"]
+
+[ext_resource type="Script" uid="uid://csqbis756g82h" path="res://cenas/fases/fase_iara/simon/simon_says.gd" id="1_1ljsn"]
+[ext_resource type="Texture2D" uid="uid://dyggqjt2xv1i6" path="res://cenas/fases/fase_iara/assets/butões/sprites/btn_verde.png" id="2_2um4v"]
+[ext_resource type="Texture2D" uid="uid://pccbqjdwd0j2" path="res://cenas/fases/fase_iara/assets/butões/sprites/btn_verde_apagado.png" id="3_g5eli"]
+[ext_resource type="AudioStream" uid="uid://s361eeb0qmrm" path="res://cenas/fases/fase_iara/assets/butões/sfx/btn_verde_sfx.mp3" id="4_ipeu7"]
+[ext_resource type="Texture2D" uid="uid://d3xo1lpqukkha" path="res://cenas/fases/fase_iara/assets/butões/sprites/btn_vermelho.png" id="4_tlny8"]
+[ext_resource type="Texture2D" uid="uid://bk8rlhnubmn02" path="res://cenas/fases/fase_iara/assets/butões/sprites/btn_vermelho_apagado.png" id="5_t6e4u"]
+[ext_resource type="Texture2D" uid="uid://cl5ck2j1rgbe7" path="res://cenas/fases/fase_iara/assets/butões/sprites/btn_amarelo.png" id="6_ipeu7"]
+[ext_resource type="Texture2D" uid="uid://ck0tjrrud5ycb" path="res://cenas/fases/fase_iara/assets/butões/sprites/btn_amarelo_apagado.png" id="7_b3p2a"]
+[ext_resource type="AudioStream" uid="uid://bumahoti4tlnu" path="res://cenas/fases/fase_iara/assets/butões/sfx/btn_vermelho_sfx.mp3.mp3" id="7_ipeu7"]
+[ext_resource type="Texture2D" uid="uid://oa6q5n8skx3g" path="res://cenas/fases/fase_iara/assets/butões/sprites/btn_azul.png" id="8_hga40"]
+[ext_resource type="Texture2D" uid="uid://bt08py30vroax" path="res://cenas/fases/fase_iara/assets/butões/sprites/btn_azul_apagado.png" id="9_ichg0"]
+[ext_resource type="AudioStream" uid="uid://cocbxtv878ak7" path="res://cenas/fases/fase_iara/assets/butões/sfx/btn_amarelo_sfx.mp3.mp3" id="10_ichg0"]
+[ext_resource type="AudioStream" uid="uid://dlpe3eqqr8lbj" path="res://cenas/fases/fase_iara/assets/butões/sfx/btn_azul_sfx.mp3.mp3" id="13_8n5hw"]
+[ext_resource type="FontFile" uid="uid://dcgork77dfg8o" path="res://cenas/fases/fase_curupira/resources/fontes/lemon_milk/LEMONMILK-Light.otf" id="14_b3p2a"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_2um4v"]
+font = ExtResource("14_b3p2a")
+font_size = 32
+
+[node name="simon_says" type="Node2D"]
+script = ExtResource("1_1ljsn")
+
+[node name="Panel" type="Panel" parent="."]
+offset_right = 320.0
+offset_bottom = 320.0
+
+[node name="btn_verde" type="TextureButton" parent="Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.5
+anchor_bottom = 0.5
+texture_normal = ExtResource("2_2um4v")
+texture_pressed = ExtResource("3_g5eli")
+ignore_texture_size = true
+stretch_mode = 0
+metadata/_edit_use_anchors_ = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Panel/btn_verde"]
+stream = ExtResource("4_ipeu7")
+
+[node name="btn_vermelho" type="TextureButton" parent="Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+texture_normal = ExtResource("4_tlny8")
+texture_pressed = ExtResource("5_t6e4u")
+ignore_texture_size = true
+stretch_mode = 0
+metadata/_edit_use_anchors_ = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Panel/btn_vermelho"]
+stream = ExtResource("7_ipeu7")
+
+[node name="btn_amarelo" type="TextureButton" parent="Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+texture_normal = ExtResource("6_ipeu7")
+texture_pressed = ExtResource("7_b3p2a")
+ignore_texture_size = true
+stretch_mode = 0
+metadata/_edit_use_anchors_ = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Panel/btn_amarelo"]
+stream = ExtResource("10_ichg0")
+
+[node name="btn_azul" type="TextureButton" parent="Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture_normal = ExtResource("8_hga40")
+texture_pressed = ExtResource("9_ichg0")
+ignore_texture_size = true
+stretch_mode = 0
+metadata/_edit_use_anchors_ = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Panel/btn_azul"]
+stream = ExtResource("13_8n5hw")
+
+[node name="Label" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = -40.0
+offset_top = -88.0
+offset_right = 353.0
+text = "RODADAS RESTANTES: 0"
+label_settings = SubResource("LabelSettings_2um4v")
+
+[connection signal="pressed" from="Panel/btn_verde" to="." method="_on_btn_verde_pressed"]
+[connection signal="pressed" from="Panel/btn_vermelho" to="." method="_on_btn_vermelho_pressed"]
+[connection signal="pressed" from="Panel/btn_amarelo" to="." method="_on_btn_amarelo_pressed"]
+[connection signal="pressed" from="Panel/btn_azul" to="." method="_on_btn_azul_pressed"]

@@ -1,31 +1,63 @@
-[gd_scene load_steps=5 format=3 uid="uid://dlr3vq0coj82u"]
+[gd_scene load_steps=10 format=3 uid="uid://dlr3vq0coj82u"]
 
 [ext_resource type="Texture2D" uid="uid://d3wtx5e0q3a3s" path="res://cenas/fases/fase_iara/iara/sprites/iara.png" id="1_47scq"]
+[ext_resource type="Script" uid="uid://nhue4lisrlkn" path="res://cenas/fases/fase_iara/iara/iara.gd" id="2_ls6ka"]
+[ext_resource type="AudioStream" uid="uid://ya6st88wj8gs" path="res://cenas/fases/fase_curupira/assets/sons/curupira/grito-sfx.mp3" id="2_pxlae"]
+[ext_resource type="Texture2D" uid="uid://b8h37bycei10q" path="res://cenas/fases/fase_iara/iara/sprites/particulas/nota_musical.png" id="3_qr8mt"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_47scq"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_ls6ka"]
 atlas = ExtResource("1_47scq")
 region = Rect2(64, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_pxlae"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_qr8mt"]
 atlas = ExtResource("1_47scq")
 region = Rect2(64, 32, 32, 32)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_ls6ka"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_pxlae"]
 animations = [{
 "frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_47scq")
+"duration": 2.0,
+"texture": SubResource("AtlasTexture_ls6ka")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_pxlae")
+"texture": SubResource("AtlasTexture_qr8mt")
 }],
 "loop": true,
-"name": &"default",
+"name": &"idle",
 "speed": 5.0
 }]
 
-[node name="iara" type="AnimatedSprite2D"]
+[sub_resource type="CanvasTexture" id="CanvasTexture_ls6ka"]
+diffuse_texture = ExtResource("3_qr8mt")
+texture_filter = 1
+
+[sub_resource type="Curve" id="Curve_47scq"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[node name="iara" type="Sprite2D"]
 texture_filter = 1
 scale = Vector2(4.129, 4.129)
-sprite_frames = SubResource("SpriteFrames_ls6ka")
-frame_progress = 0.850177
+script = ExtResource("2_ls6ka")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_pxlae")
+animation = &"idle"
+frame_progress = 0.863614
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+amount = 15
+texture = SubResource("CanvasTexture_ls6ka")
+lifetime = 1.5
+emission_shape = 2
+emission_sphere_radius = 11.0
+spread = 180.0
+gravity = Vector2(0, -980)
+initial_velocity_min = 5.0
+initial_velocity_max = 10.0
+scale_amount_min = 0.0
+scale_amount_max = 0.5
+scale_amount_curve = SubResource("Curve_47scq")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_pxlae")

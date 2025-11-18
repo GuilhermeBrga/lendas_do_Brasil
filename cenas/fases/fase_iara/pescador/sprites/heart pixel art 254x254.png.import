@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bk3hncpt4ygrc"
-path="res://.godot/imported/pescador.png-9cbd0160c23fd3a120faf99454e23893.ctex"
+uid="uid://diar7xna0quv1"
+path="res://.godot/imported/heart pixel art 254x254.png-6e3bda378334450699e601c02c132585.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://cenas/fases/fase_iara/pescador/pescador.png"
-dest_files=["res://.godot/imported/pescador.png-9cbd0160c23fd3a120faf99454e23893.ctex"]
+source_file="res://cenas/fases/fase_iara/pescador/sprites/heart pixel art 254x254.png"
+dest_files=["res://.godot/imported/heart pixel art 254x254.png-6e3bda378334450699e601c02c132585.ctex"]
 
 [params]
 

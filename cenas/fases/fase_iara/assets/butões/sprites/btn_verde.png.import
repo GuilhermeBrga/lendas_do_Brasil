@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cqj4j24lwjmjp"
-path="res://.godot/imported/iara_game_win.png-58e48083417558c3abf495ba65da6005.ctex"
+uid="uid://dyggqjt2xv1i6"
+path="res://.godot/imported/btn_verde.png-2a891312d279c91b1ccbc380def105d8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://cenas/fases/fase_iara/estaticos/iara_game_win.png"
-dest_files=["res://.godot/imported/iara_game_win.png-58e48083417558c3abf495ba65da6005.ctex"]
+source_file="res://cenas/fases/fase_iara/assets/butões/sprites/btn_verde.png"
+dest_files=["res://.godot/imported/btn_verde.png-2a891312d279c91b1ccbc380def105d8.ctex"]
 
 [params]
 

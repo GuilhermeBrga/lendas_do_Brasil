@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cqj4j24lwjmjp"
-path="res://.godot/imported/iara_game_win.png-58e48083417558c3abf495ba65da6005.ctex"
+uid="uid://14hyhkuvx6gs"
+path="res://.godot/imported/Lemon Milk Demo 3.png-95380fecce99653c357070582eda6669.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://cenas/fases/fase_iara/estaticos/iara_game_win.png"
-dest_files=["res://.godot/imported/iara_game_win.png-58e48083417558c3abf495ba65da6005.ctex"]
+source_file="res://assets/fontes/lemon_milk/Lemon Milk Demo 3.png"
+dest_files=["res://.godot/imported/Lemon Milk Demo 3.png-95380fecce99653c357070582eda6669.ctex"]
 
 [params]
 

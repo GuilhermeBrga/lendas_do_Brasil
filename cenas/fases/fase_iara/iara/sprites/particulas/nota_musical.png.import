@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cqj4j24lwjmjp"
-path="res://.godot/imported/iara_game_win.png-58e48083417558c3abf495ba65da6005.ctex"
+uid="uid://b8h37bycei10q"
+path="res://.godot/imported/nota_musical.png-32793632382e2b996f252d91cfb2f148.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://cenas/fases/fase_iara/estaticos/iara_game_win.png"
-dest_files=["res://.godot/imported/iara_game_win.png-58e48083417558c3abf495ba65da6005.ctex"]
+source_file="res://cenas/fases/fase_iara/iara/sprites/particulas/nota_musical.png"
+dest_files=["res://.godot/imported/nota_musical.png-32793632382e2b996f252d91cfb2f148.ctex"]
 
 [params]
 

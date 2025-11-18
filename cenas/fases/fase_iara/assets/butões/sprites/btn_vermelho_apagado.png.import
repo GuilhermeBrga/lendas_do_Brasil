@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://qmpn3me5t3nh"
-path="res://.godot/imported/musga.png-ac4b9f498ff96f669f4084586fddf7bd.ctex"
+uid="uid://bk8rlhnubmn02"
+path="res://.godot/imported/btn_vermelho_apagado.png-6d18714b115e09f2c88647d3b0040595.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://cenas/fases/fase_iara/musga.png"
-dest_files=["res://.godot/imported/musga.png-ac4b9f498ff96f669f4084586fddf7bd.ctex"]
+source_file="res://cenas/fases/fase_iara/assets/butões/sprites/btn_vermelho_apagado.png"
+dest_files=["res://.godot/imported/btn_vermelho_apagado.png-6d18714b115e09f2c88647d3b0040595.ctex"]
 
 [params]
 
