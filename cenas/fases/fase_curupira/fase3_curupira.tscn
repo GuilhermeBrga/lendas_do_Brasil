@@ -1,25 +1,29 @@
-[gd_scene load_steps=8 format=3 uid="uid://d18xdwmlk4eea"]
+[gd_scene load_steps=11 format=3 uid="uid://d18xdwmlk4eea"]
 
 [ext_resource type="Texture2D" uid="uid://daydicq1wmnvl" path="res://cenas/fases/fase_curupira/assets/estaticos/floresta.jpg" id="1_p8t3s"]
 [ext_resource type="PackedScene" uid="uid://by7dnckompj8h" path="res://cenas/fases/fase_curupira/barreira/barreira.tscn" id="2_rt8ef"]
 [ext_resource type="PackedScene" uid="uid://c1hsnwubt7hly" path="res://cenas/fases/fase_curupira/curupira/curupira.tscn" id="3_5b2op"]
 [ext_resource type="PackedScene" uid="uid://wps4xfokbxp4" path="res://cenas/fases/fase_curupira/inimigos/inimigo_spawn.tscn" id="4_6q1pn"]
+[ext_resource type="PackedScene" uid="uid://cl6rxb0ysh84n" path="res://cenas/fases/fase_curupira/tutorial/curupira-tutorial.tscn" id="5_rt8ef"]
+[ext_resource type="PackedScene" uid="uid://cqnkglns7a60h" path="res://cenas/fases/fase_curupira/tutorial/btn_duvida.tscn" id="6_5b2op"]
+[ext_resource type="Script" uid="uid://bncg6luk7migr" path="res://cenas/fases/fase_curupira/tutorial/tutorial_curupira.gd" id="7_6q1pn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bmpif"]
-size = Vector2(130, 1080)
+size = Vector2(41, 848)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fwclt"]
-size = Vector2(128, 362)
+size = Vector2(40, 365)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wsbxb"]
 size = Vector2(1264, 80)
 
 [node name="MainCurupira" type="Node"]
+process_mode = 1
 
 [node name="TextureRect" type="TextureRect" parent="."]
-offset_left = -768.0
-offset_top = -536.0
-offset_right = 768.0
+offset_left = -680.0
+offset_top = -392.0
+offset_right = 688.0
 offset_bottom = 456.0
 texture = ExtResource("1_p8t3s")
 
@@ -31,24 +35,28 @@ texture = ExtResource("1_p8t3s")
 position = Vector2(-704, 0)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="paredes/parede_esquerda"]
+position = Vector2(44.5, 32)
 shape = SubResource("RectangleShape2D_bmpif")
 
 [node name="parede_direita" type="Area2D" parent="paredes"]
 position = Vector2(704, 0)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="paredes/parede_direita"]
+position = Vector2(-40, 32)
 shape = SubResource("RectangleShape2D_bmpif")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="paredes"]
 position = Vector2(-704, 256)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="paredes/StaticBody2D"]
+position = Vector2(44, 16)
 shape = SubResource("RectangleShape2D_fwclt")
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="paredes"]
 position = Vector2(704, 256)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="paredes/StaticBody2D2"]
+position = Vector2(-40, 17.5)
 shape = SubResource("RectangleShape2D_fwclt")
 
 [node name="chao" type="Area2D" parent="paredes"]
@@ -68,14 +76,29 @@ position = Vector2(0, 64)
 [node name="barreira3" parent="barreiras" instance=ExtResource("2_rt8ef")]
 position = Vector2(384, 64)
 
+[node name="InimigoSpawn" parent="." instance=ExtResource("4_6q1pn")]
+position = Vector2(-8, -376)
+
 [node name="Curupira" parent="." instance=ExtResource("3_5b2op")]
 position = Vector2(0, 256)
 
-[node name="InimigoSpawn" parent="." instance=ExtResource("4_6q1pn")]
-position = Vector2(-8, -376)
+[node name="BtnDuvida" parent="." instance=ExtResource("6_5b2op")]
+offset_left = 619.0
+offset_top = -384.0
+offset_right = 619.0
+offset_bottom = -384.0
+
+[node name="Control" parent="." instance=ExtResource("5_rt8ef")]
+clip_children = 2
+offset_left = -304.0
+offset_top = -304.0
+offset_right = -304.0
+offset_bottom = -304.0
+script = ExtResource("7_6q1pn")
 
 [connection signal="area_entered" from="paredes/parede_esquerda" to="InimigoSpawn" method="_on_parede_esquerda_area_entered"]
 [connection signal="body_entered" from="paredes/parede_esquerda" to="Curupira" method="_on_parede_esquerda_body_entered"]
 [connection signal="area_entered" from="paredes/parede_direita" to="InimigoSpawn" method="_on_parede_direita_area_entered"]
 [connection signal="body_entered" from="paredes/parede_direita" to="Curupira" method="_on_parede_direita_body_entered"]
 [connection signal="area_entered" from="paredes/chao" to="InimigoSpawn" method="_on_chao_area_entered"]
+[connection signal="aparecer_pop_up" from="BtnDuvida" to="Control" method="_on_btn_duvida_aparecer_pop_up"]
