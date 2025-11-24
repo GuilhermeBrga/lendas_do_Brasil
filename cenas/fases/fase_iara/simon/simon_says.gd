@@ -30,7 +30,6 @@ signal ganhar_signal
 func _ready() -> void:
 	randomize()
 	texto.text = "RODADAS RESTANTES: " + str(rodadas)
-	iniciar_jogo()
 
 func travar_butoes():
 	for butao:TextureButton in butoes:
@@ -109,7 +108,7 @@ func diminuir_rodada():
 	rodadas -= 1
 
 func ganhar_simon():
-	if rodadas == 4:
+	if rodadas == 5:
 		ganhar()
 		return
 

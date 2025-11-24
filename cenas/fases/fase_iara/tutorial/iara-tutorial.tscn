@@ -1,0 +1,74 @@
+[gd_scene load_steps=7 format=3 uid="uid://b1mab1aqs15aw"]
+
+[ext_resource type="Texture2D" uid="uid://dw5w243mih82m" path="res://assets/elementos/painel_generico.png" id="1_kp44s"]
+[ext_resource type="Script" uid="uid://c1cc5h6w73qjm" path="res://tutorial_iara.gd" id="1_rmfbd"]
+[ext_resource type="FontFile" uid="uid://dcgork77dfg8o" path="res://cenas/fases/fase_curupira/resources/fontes/lemon_milk/LEMONMILK-Light.otf" id="2_p0m65"]
+[ext_resource type="Texture2D" uid="uid://db3yi1pt5x5q1" path="res://assets/elementos/setas.png" id="3_0mowe"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_0mowe"]
+font = ExtResource("2_p0m65")
+font_size = 30
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_rmfbd"]
+font = ExtResource("2_p0m65")
+font_size = 46
+font_color = Color(0, 0, 0, 1)
+
+[node name="Control" type="Control"]
+process_mode = 3
+layout_mode = 3
+anchor_right = 0.329167
+anchor_bottom = 0.533333
+script = ExtResource("1_rmfbd")
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 632.0
+offset_bottom = 576.0
+texture = ExtResource("1_kp44s")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="TextureRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -252.0
+offset_top = -64.0
+offset_right = 260.0
+offset_bottom = 197.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "TENTE ACERTAR A SEQUÊNCIA DE BOTÕES MOSTRADA NO GENIUS.
+USE O MOUSE PARA INTERAGIR COM OS BOTÕES.
+"
+label_settings = SubResource("LabelSettings_0mowe")
+autowrap_mode = 2
+
+[node name="Label2" type="Label" parent="TextureRect"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -180.0
+offset_top = 128.0
+offset_right = 162.0
+offset_bottom = 190.0
+grow_horizontal = 2
+text = "como jogar"
+label_settings = SubResource("LabelSettings_rmfbd")
+
+[node name="Button" type="Button" parent="TextureRect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.822785
+anchor_top = 0.0277778
+anchor_right = 0.973101
+anchor_bottom = 0.192708
+icon = ExtResource("3_0mowe")
+
+[connection signal="pressed" from="TextureRect/Button" to="." method="_on_button_pressed"]
