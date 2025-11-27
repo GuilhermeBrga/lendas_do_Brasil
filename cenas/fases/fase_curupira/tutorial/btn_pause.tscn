@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://tqlesjxutx7u"]
+
+[ext_resource type="Texture2D" uid="uid://d3jf6a73ixil4" path="res://assets/botoes/btn-despause.png" id="1_3v04v"]
+[ext_resource type="Script" uid="uid://c4cn6w8ywxf8x" path="res://cenas/fases/fase_curupira/tutorial/btn_pause.gd" id="1_e8xxx"]
+[ext_resource type="Texture2D" uid="uid://dyff5oropyhh6" path="res://assets/botoes/btn-pause-amarelo.png" id="2_e8xxx"]
+[ext_resource type="Texture2D" uid="uid://bi2x7bhjaxuyc" path="res://assets/botoes/btn-despause-amarelo.png" id="3_k2ayb"]
+
+[node name="btn-curupira-pause" type="Control"]
+layout_mode = 3
+anchor_right = 0.0333333
+anchor_bottom = 0.0592593
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_e8xxx")
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureButton" type="TextureButton" parent="."]
+layout_mode = 0
+anchor_right = 0.0333333
+anchor_bottom = 0.0592593
+offset_right = -24.0
+offset_bottom = -24.0
+toggle_mode = true
+texture_normal = ExtResource("1_3v04v")
+texture_hover = ExtResource("3_k2ayb")
+texture_focused = ExtResource("2_e8xxx")
+metadata/_edit_use_anchors_ = true
+
+[connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]

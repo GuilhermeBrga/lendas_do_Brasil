@@ -1,0 +1,61 @@
+[gd_scene load_steps=6 format=3 uid="uid://bhu0oqhplp0wr"]
+
+[ext_resource type="Texture2D" uid="uid://dw5w243mih82m" path="res://assets/elementos/painel_generico.png" id="1_p2r8d"]
+[ext_resource type="Script" uid="uid://ciwsr8vq8jg5b" path="res://cenas/fases/fase_curupira/tutorial/curupira_pause.gd" id="1_xcx7k"]
+[ext_resource type="FontFile" uid="uid://dcgork77dfg8o" path="res://cenas/fases/fase_curupira/resources/fontes/lemon_milk/LEMONMILK-Light.otf" id="2_xcx7k"]
+[ext_resource type="Texture2D" uid="uid://31gdwlcvy6ur" path="res://assets/botoes/btn_fechar.png" id="3_giqx8"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_qhjfd"]
+font = ExtResource("2_xcx7k")
+font_size = 99
+font_color = Color(0, 0, 0, 1)
+
+[node name="Curupira-pause" type="Control"]
+process_mode = 3
+layout_mode = 3
+anchor_right = 0.329167
+anchor_bottom = 0.533333
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_xcx7k")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+z_index = 1
+layout_mode = 0
+offset_right = 632.0
+offset_bottom = 576.0
+texture = ExtResource("1_p2r8d")
+expand_mode = 1
+
+[node name="Label2" type="Label" parent="TextureRect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.352
+anchor_right = 0.5
+anchor_bottom = 0.352
+offset_left = -244.0
+offset_top = -66.752
+offset_right = 239.0
+offset_bottom = 66.248
+grow_horizontal = 2
+grow_vertical = 2
+text = "pausado"
+label_settings = SubResource("LabelSettings_qhjfd")
+
+[node name="Button" type="TextureButton" parent="TextureRect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.525
+anchor_top = 0.716
+anchor_right = 0.525
+anchor_bottom = 0.716
+offset_left = -219.8
+offset_top = -60.416
+offset_right = 220.2
+offset_bottom = 60.584
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("3_giqx8")
+
+[connection signal="pressed" from="TextureRect/Button" to="." method="_on_button_pressed"]
