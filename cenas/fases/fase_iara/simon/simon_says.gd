@@ -1,5 +1,8 @@
 extends Node2D
 
+@export var rodadas_min: int = 4
+@export var rodadas_max: int = 15
+
 @onready var texto:Label = $Panel/Label
 @onready var butoes = [
 	$Panel/btn_verde,
@@ -20,7 +23,7 @@ var show_speed: float = 0.5
 var currentPatternIndex: int = 0
 var playerTurn: bool = false
 var gameStarted: bool = false
-var rodadas:int = 5
+var rodadas:int
 var ganhou:bool = false
 var perdeu:bool = false
 
@@ -29,6 +32,10 @@ signal ganhar_signal
 
 func _ready() -> void:
 	randomize()
+
+	# Sorteia o número de rodadas
+	rodadas = randi_range(rodadas_min, rodadas_max)
+
 	texto.text = "RODADAS RESTANTES: " + str(rodadas)
 
 func travar_butoes():
@@ -108,7 +115,7 @@ func diminuir_rodada():
 	rodadas -= 1
 
 func ganhar_simon():
-	if rodadas == 5:
+	if rodadas == 0:
 		ganhar()
 		return
 
@@ -119,7 +126,6 @@ func ganhar():
 	playerTurn = false
 	gameStarted = false
 	ganhar_signal.emit()
-
 
 func perder():
 	if perdeu:

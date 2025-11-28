@@ -1,0 +1,25 @@
+[gd_scene load_steps=3 format=3 uid="uid://bfe50bw1kx6db"]
+
+[ext_resource type="FontFile" uid="uid://dcgork77dfg8o" path="res://assets/fontes/lemon_milk/LEMONMILK-Light.otf" id="1_d3g8j"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_uib7a"]
+font = ExtResource("1_d3g8j")
+font_size = 32
+
+[node name="pontuação-iara" type="Control"]
+layout_mode = 3
+anchor_right = 0.133333
+anchor_bottom = 0.037037
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.075
+offset_right = -437.867
+offset_bottom = -61.4074
+text = "pontuação: 0"
+label_settings = SubResource("LabelSettings_uib7a")
+metadata/_edit_use_anchors_ = true

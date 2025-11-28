@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://bkhxbgv4nwch"]
+
+[ext_resource type="Script" uid="uid://bsuf4evoek827" path="res://cenas/fases/fase_iara/pausar/btn_pausar.gd" id="1_jw521"]
+[ext_resource type="Texture2D" uid="uid://d3jf6a73ixil4" path="res://assets/botoes/btn-despause.png" id="2_fa4b8"]
+[ext_resource type="Texture2D" uid="uid://bi2x7bhjaxuyc" path="res://assets/botoes/btn-despause-amarelo.png" id="3_vf8yf"]
+[ext_resource type="Texture2D" uid="uid://dyff5oropyhh6" path="res://assets/botoes/btn-pause-amarelo.png" id="4_jq8tm"]
+
+[node name="BtnPausar" type="Control"]
+layout_mode = 3
+anchor_right = 0.0333333
+anchor_bottom = 0.0592593
+size_flags_horizontal = 4
+script = ExtResource("1_jw521")
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureButton" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("2_fa4b8")
+texture_hover = ExtResource("3_vf8yf")
+texture_focused = ExtResource("4_jq8tm")
+metadata/_edit_use_anchors_ = true
+
+[connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]

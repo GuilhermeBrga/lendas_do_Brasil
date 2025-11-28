@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://n51uxuf1od1v"]
+[gd_scene load_steps=9 format=3 uid="uid://n51uxuf1od1v"]
 
 [ext_resource type="Texture2D" uid="uid://dn17626rsdbu6" path="res://cenas/fases/fase_iara/estaticos/rio_pixel_art.png" id="1_2plfc"]
 [ext_resource type="PackedScene" uid="uid://dlr3vq0coj82u" path="res://cenas/fases/fase_iara/iara/iara.tscn" id="2_xcssl"]
@@ -6,6 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://ci3luptcdfg2j" path="res://cenas/fases/fase_iara/simon/simon_says.tscn" id="4_0u6rp"]
 [ext_resource type="PackedScene" uid="uid://b1mab1aqs15aw" path="res://cenas/fases/fase_iara/tutorial/iara-tutorial.tscn" id="5_r0any"]
 [ext_resource type="PackedScene" uid="uid://7fxohjm2hd56" path="res://cenas/fases/fase_iara/tutorial/btn_duvida.tscn" id="6_8evqp"]
+[ext_resource type="PackedScene" uid="uid://b6en5g8cfs4s8" path="res://cenas/fases/fase_iara/pausar/iara-pause.tscn" id="7_soed4"]
+[ext_resource type="PackedScene" uid="uid://bkhxbgv4nwch" path="res://cenas/fases/fase_iara/pausar/btn_pausar.tscn" id="8_ht7cm"]
 
 [node name="MainIara" type="Node"]
 
@@ -28,7 +30,9 @@ position = Vector2(-472, 200)
 [node name="SimonSays" parent="." instance=ExtResource("4_0u6rp")]
 position = Vector2(-160, -160)
 
-[node name="Control" parent="." instance=ExtResource("5_r0any")]
+[node name="UI" type="Node" parent="."]
+
+[node name="Control" parent="UI" instance=ExtResource("5_r0any")]
 anchors_preset = 0
 anchor_right = 0.0
 anchor_bottom = 0.0
@@ -37,13 +41,27 @@ offset_top = -288.0
 offset_right = -304.0
 offset_bottom = -288.0
 
-[node name="BtnDuvida" parent="." instance=ExtResource("6_8evqp")]
+[node name="BtnPausar" parent="UI" instance=ExtResource("8_ht7cm")]
+offset_left = 512.0
+offset_top = -375.0
+offset_right = 512.0
+offset_bottom = -375.0
+
+[node name="BtnDuvida" parent="UI" instance=ExtResource("6_8evqp")]
 offset_left = 619.0
 offset_top = -384.0
 offset_right = 619.0
 offset_bottom = -384.0
 
+[node name="Iara-pause" parent="UI" instance=ExtResource("7_soed4")]
+visible = false
+offset_left = -304.0
+offset_top = -248.0
+offset_right = -304.0
+offset_bottom = -248.0
+
 [connection signal="ganhar_signal" from="SimonSays" to="pescador" method="_on_simon_says_ganhar_signal"]
 [connection signal="perder_signal" from="SimonSays" to="pescador" method="_on_simon_says_perder_signal"]
-[connection signal="pausado" from="Control" to="SimonSays" method="_on_control_pausado"]
-[connection signal="aparecer_pop_up" from="BtnDuvida" to="Control" method="_on_btn_duvida_aparecer_pop_up"]
+[connection signal="pausado" from="UI/Control" to="SimonSays" method="_on_control_pausado"]
+[connection signal="aparecer_pop_up_pause" from="UI/BtnPausar" to="UI/Iara-pause" method="_on_btn_pausar_aparecer_pop_up_pause"]
+[connection signal="aparecer_pop_up" from="UI/BtnDuvida" to="UI/Control" method="_on_btn_duvida_aparecer_pop_up"]

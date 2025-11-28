@@ -84,6 +84,7 @@ animation = &"apaixonado"
 
 [node name="CPUParticles2D" type="CPUParticles2D" parent="."]
 emitting = false
+amount = 35
 texture = ExtResource("5_ed13w")
 lifetime = 1.5
 emission_shape = 2
