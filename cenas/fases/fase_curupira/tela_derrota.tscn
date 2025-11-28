@@ -1,17 +1,27 @@
-[gd_scene load_steps=6 format=3 uid="uid://fkb7rerb7m6j"]
+[gd_scene load_steps=8 format=3 uid="uid://fkb7rerb7m6j"]
 
+[ext_resource type="Script" uid="uid://cioda30ga6ob7" path="res://cenas/fases/fase_curupira/tela_derrota.gd" id="1_8ln50"]
 [ext_resource type="Texture2D" uid="uid://c23gtwryuxyde" path="res://cenas/fases/fase_curupira/assets/estaticos/perdeu.jpg.png" id="1_ck0pp"]
 [ext_resource type="FontFile" uid="uid://dcgork77dfg8o" path="res://cenas/fases/fase_curupira/resources/fontes/lemon_milk/LEMONMILK-Light.otf" id="2_p7lpm"]
 [ext_resource type="Texture2D" uid="uid://db3yi1pt5x5q1" path="res://assets/elementos/setas.png" id="3_y1jo8"]
-[ext_resource type="Script" uid="uid://uinkr0s5koeg" path="res://cenas/fases/fase_curupira/btn_voltar.gd" id="4_y0o6k"]
+[ext_resource type="Texture2D" uid="uid://dw5w243mih82m" path="res://assets/elementos/painel_generico.png" id="5_8ln50"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_y1jo8"]
 font = ExtResource("2_p7lpm")
 font_size = 50
 
+[sub_resource type="LabelSettings" id="LabelSettings_y0o6k"]
+font = ExtResource("2_p7lpm")
+font_size = 65
+font_color = Color(0, 0, 0, 1)
+
 [node name="TelaDerrota" type="Control"]
 layout_mode = 3
-anchors_preset = 0
+anchor_right = 0.712
+anchor_bottom = 0.711
+offset_right = -1367.04
+offset_bottom = -767.88
+script = ExtResource("1_8ln50")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 0
@@ -19,22 +29,53 @@ offset_right = 1368.0
 offset_bottom = 768.0
 texture = ExtResource("1_ck0pp")
 
-[node name="Label" type="Label" parent="."]
-layout_mode = 0
-offset_left = 256.0
-offset_top = 67.0
-offset_right = 1166.0
-offset_bottom = 147.0
+[node name="Label" type="Label" parent="TextureRect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.187135
+anchor_top = 0.0559896
+anchor_right = 0.85307
+anchor_bottom = 0.160156
 text = "E curupira jamais se levantou..."
 label_settings = SubResource("LabelSettings_y1jo8")
+metadata/_edit_use_anchors_ = true
 
-[node name="btn_voltar" type="Button" parent="."]
+[node name="btn_voltar" type="Button" parent="TextureRect"]
 layout_mode = 0
-offset_left = 1272.0
-offset_top = 672.0
-offset_right = 1367.0
-offset_bottom = 767.0
+anchor_left = 0.929825
+anchor_top = 0.875
+anchor_right = 0.999269
+anchor_bottom = 0.998698
 icon = ExtResource("3_y1jo8")
-script = ExtResource("4_y0o6k")
+metadata/_edit_use_anchors_ = true
 
-[connection signal="pressed" from="btn_voltar" to="btn_voltar" method="_on_pressed"]
+[node name="fundo_label_pontos" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+offset_left = 440.0
+offset_top = 136.0
+offset_right = 1016.0
+offset_bottom = 240.0
+texture = ExtResource("5_8ln50")
+expand_mode = 1
+
+[node name="label_pontos" type="Label" parent="fundo_label_pontos"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -288.0
+offset_top = -44.0
+offset_right = 288.0
+offset_bottom = 44.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "pontos: 0"
+label_settings = SubResource("LabelSettings_y0o6k")
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[connection signal="pressed" from="TextureRect/btn_voltar" to="." method="_on_btn_voltar_pressed"]
+[connection signal="pressed" from="TextureRect/btn_voltar" to="TextureRect/btn_voltar" method="_on_pressed"]

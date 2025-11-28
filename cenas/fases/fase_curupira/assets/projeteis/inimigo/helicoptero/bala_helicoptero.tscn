@@ -1,0 +1,45 @@
+[gd_scene load_steps=5 format=3 uid="uid://h2ymnrvjn20e"]
+
+[ext_resource type="Script" uid="uid://dnpa1edaorc30" path="res://cenas/fases/fase_curupira/assets/projeteis/inimigo/caçador/bala_inimigo.gd" id="1_7oat0"]
+[ext_resource type="Texture2D" uid="uid://cyjfy5avqu41d" path="res://cenas/fases/fase_curupira/assets/projeteis/inimigo/helicoptero/sprites/projetil_helicoptero.png" id="2_7oat0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7oat0"]
+size = Vector2(40, 96)
+
+[sub_resource type="Curve" id="Curve_u7x1i"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[node name="Bala" type="Area2D"]
+texture_filter = 1
+script = ExtResource("1_7oat0")
+VELOCIDADE = 350.0
+direcao = "BAIXO"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+rotation = 4.71239
+scale = Vector2(0.0669204, 0.0701959)
+texture = ExtResource("2_7oat0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-4, 0)
+shape = SubResource("RectangleShape2D_7oat0")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+position = Vector2(-4, -1.43051e-06)
+scale = Vector2(2, 4.8)
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+position = Vector2(0, -33)
+amount = 150
+emission_shape = 3
+emission_rect_extents = Vector2(35, 90)
+spread = 180.0
+gravity = Vector2(0, -980)
+scale_amount_min = 2.0
+scale_amount_max = 5.0
+scale_amount_curve = SubResource("Curve_u7x1i")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

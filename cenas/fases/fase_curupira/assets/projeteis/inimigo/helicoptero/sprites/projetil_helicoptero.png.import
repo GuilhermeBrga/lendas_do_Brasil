@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ckj2ap2ru2ed5"
-path="res://.godot/imported/bala.png-ccb66a572225e8028872620a214daec8.ctex"
+uid="uid://cyjfy5avqu41d"
+path="res://.godot/imported/projetil_helicoptero.png-743346d3b9c45a76279955ecc3abf275.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://cenas/fases/fase_curupira/assets/projeteis/inimigo/sprites/bala.png"
-dest_files=["res://.godot/imported/bala.png-ccb66a572225e8028872620a214daec8.ctex"]
+source_file="res://cenas/fases/fase_curupira/assets/projeteis/inimigo/helicoptero/sprites/projetil_helicoptero.png"
+dest_files=["res://.godot/imported/projetil_helicoptero.png-743346d3b9c45a76279955ecc3abf275.ctex"]
 
 [params]
 

@@ -62,7 +62,8 @@ stream = ExtResource("3_ppreo")
 
 [node name="CPUParticles2D" type="CPUParticles2D" parent="."]
 emitting = false
-amount = 120
+amount = 200
+lifetime = 0.5
 one_shot = true
 explosiveness = 1.0
 spread = 180.0

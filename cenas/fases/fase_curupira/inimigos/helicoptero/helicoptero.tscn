@@ -1,8 +1,8 @@
 [gd_scene load_steps=17 format=3 uid="uid://bgklfwd338a36"]
 
 [ext_resource type="Script" uid="uid://dq1jt02fqaf7p" path="res://cenas/fases/fase_curupira/inimigos/helicoptero/helicoptero.gd" id="1_w23rb"]
+[ext_resource type="PackedScene" uid="uid://h2ymnrvjn20e" path="res://cenas/fases/fase_curupira/assets/projeteis/inimigo/helicoptero/bala_helicoptero.tscn" id="2_fykan"]
 [ext_resource type="Texture2D" uid="uid://c23s7myohjmbq" path="res://cenas/fases/fase_curupira/inimigos/helicoptero/sprites/helicoptero.png" id="2_w23rb"]
-[ext_resource type="PackedScene" uid="uid://c13hxp8ddjjpk" path="res://cenas/fases/fase_curupira/assets/projeteis/inimigo/bala_inimigo.tscn" id="2_wyrgm"]
 [ext_resource type="AudioStream" uid="uid://dksy3gffw3ibi" path="res://cenas/fases/fase_curupira/inimigos/helicoptero/sfx/explosao.mp3" id="4_7t5xw"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wyrgm"]
@@ -81,7 +81,7 @@ colors = PackedColorArray(1, 0, 0, 1, 1, 1, 0, 1)
 
 [node name="Helicoptero" type="Node2D"]
 script = ExtResource("1_w23rb")
-bala_cena = ExtResource("2_wyrgm")
+bala_cena = ExtResource("2_fykan")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
@@ -107,7 +107,7 @@ autostart = true
 
 [node name="CPUParticles2D" type="CPUParticles2D" parent="."]
 emitting = false
-amount = 120
+amount = 500
 one_shot = true
 explosiveness = 1.0
 spread = 180.0

@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://c13hxp8ddjjpk"]
 
-[ext_resource type="Script" uid="uid://dnpa1edaorc30" path="res://cenas/fases/fase_curupira/assets/projeteis/inimigo/bala_inimigo.gd" id="1_u7x1i"]
-[ext_resource type="Texture2D" uid="uid://ckj2ap2ru2ed5" path="res://cenas/fases/fase_curupira/assets/projeteis/inimigo/sprites/bala.png" id="2_u7x1i"]
+[ext_resource type="Script" uid="uid://dnpa1edaorc30" path="res://cenas/fases/fase_curupira/assets/projeteis/inimigo/caçador/bala_inimigo.gd" id="1_u7x1i"]
+[ext_resource type="Texture2D" uid="uid://ckj2ap2ru2ed5" path="res://cenas/fases/fase_curupira/assets/projeteis/inimigo/caçador/sprites/bala.png" id="2_u7x1i"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_uj2bw"]
 radius = 12.0
