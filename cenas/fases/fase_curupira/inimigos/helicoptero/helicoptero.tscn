@@ -1,0 +1,127 @@
+[gd_scene load_steps=17 format=3 uid="uid://bgklfwd338a36"]
+
+[ext_resource type="Script" uid="uid://dq1jt02fqaf7p" path="res://cenas/fases/fase_curupira/inimigos/helicoptero/helicoptero.gd" id="1_w23rb"]
+[ext_resource type="Texture2D" uid="uid://c23s7myohjmbq" path="res://cenas/fases/fase_curupira/inimigos/helicoptero/sprites/helicoptero.png" id="2_w23rb"]
+[ext_resource type="PackedScene" uid="uid://c13hxp8ddjjpk" path="res://cenas/fases/fase_curupira/assets/projeteis/inimigo/bala_inimigo.tscn" id="2_wyrgm"]
+[ext_resource type="AudioStream" uid="uid://dksy3gffw3ibi" path="res://cenas/fases/fase_curupira/inimigos/helicoptero/sfx/explosao.mp3" id="4_7t5xw"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wyrgm"]
+atlas = ExtResource("2_w23rb")
+region = Rect2(0, 0, 96, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fykan"]
+atlas = ExtResource("2_w23rb")
+region = Rect2(96, 0, 96, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7t5xw"]
+atlas = ExtResource("2_w23rb")
+region = Rect2(192, 0, 96, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2q0qf"]
+atlas = ExtResource("2_w23rb")
+region = Rect2(288, 0, 96, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fdkjy"]
+atlas = ExtResource("2_w23rb")
+region = Rect2(384, 0, 96, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cdbim"]
+atlas = ExtResource("2_w23rb")
+region = Rect2(480, 0, 96, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_whupj"]
+atlas = ExtResource("2_w23rb")
+region = Rect2(576, 0, 96, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3nvwp"]
+atlas = ExtResource("2_w23rb")
+region = Rect2(672, 0, 96, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_73sqt"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wyrgm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fykan")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7t5xw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2q0qf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fdkjy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cdbim")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_whupj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3nvwp")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e6as3"]
+size = Vector2(112, 48)
+
+[sub_resource type="Curve" id="Curve_w23rb"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Gradient" id="Gradient_wyrgm"]
+colors = PackedColorArray(1, 0, 0, 1, 1, 1, 0, 1)
+
+[node name="Helicoptero" type="Node2D"]
+script = ExtResource("1_w23rb")
+bala_cena = ExtResource("2_wyrgm")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(-16, 0)
+scale = Vector2(1.66667, 1.5)
+sprite_frames = SubResource("SpriteFrames_73sqt")
+animation = &"idle"
+frame_progress = 0.165956
+speed_scale = 10.0
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-16, 0)
+shape = SubResource("RectangleShape2D_e6as3")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+position = Vector2(-16, 0)
+scale = Vector2(5.6, 2.4)
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+emitting = false
+amount = 120
+one_shot = true
+explosiveness = 1.0
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 50.0
+initial_velocity_max = 500.0
+scale_amount_min = 5.0
+scale_amount_max = 20.0
+scale_amount_curve = SubResource("Curve_w23rb")
+color_initial_ramp = SubResource("Gradient_wyrgm")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_7t5xw")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

@@ -1,9 +1,9 @@
 extends Node2D
 
-const LINHAS = 5
-const COLUNAS = 11
-#const LINHAS = 1
-#const COLUNAS  = 1
+@export var LINHAS = 5
+@export var COLUNAS = 11
+#const LINHAS = 5
+#const COLUNAS  = 11
 const ESPACAMENTO_HORIZONTAL = 32
 const ESPACAMENTO_VERTICAL = 32
 const ALTURA_INIMIGOS = 24
@@ -22,6 +22,8 @@ var inimigos_vivos = 0
 var tiro_inimigo_cena = preload("res://cenas/fases/fase_curupira/assets/projeteis/inimigo/bala_inimigo.tscn")
 var inimigos_totais = LINHAS * COLUNAS
 
+signal adicionar_pontos
+
 func _ready() -> void:
 	movimento_timer.timeout.connect(mover_inimigos)
 	tiro_timer.timeout.connect(tiro_inimigo)
@@ -33,6 +35,7 @@ func _ready() -> void:
 		var inimigo_1_res = preload("res://cenas/fases/fase_curupira/resources/inimigo1.tres")
 		var inimigo_2_res = preload("res://cenas/fases/fase_curupira/resources/inimigo2.tres")
 		var inimigo_3_res = preload("res://cenas/fases/fase_curupira/resources/inimigo3.tres")
+		
 		if linha == 0:
 			inimigo_configuracao = inimigo_1_res
 			inimigo_configuracao = inimigo_1_res
@@ -62,6 +65,7 @@ func adicionar_inimigo(inimigo_configuracao,posicao_spawn:Vector2):
 
 func verificar_inimigos():
 	inimigos_vivos -= 1
+	adicionar_pontos.emit()
 	if inimigos_vivos <= 0:
 		# GANHAR
 		get_tree().change_scene_to_file("res://cenas/fases/fase_curupira/tela_vitoria.tscn")
@@ -83,14 +87,15 @@ func tiro_inimigo():
 
 
 func _on_parede_esquerda_area_entered(area: Area2D) -> void:
-	if direcao_movimento == -1:
+	if direcao_movimento == -1 and area is Inimigo:
 		position.y += INIMIGOS_POSICAO_Y_INCREMENTAR
 		direcao_movimento *= -1
 
 func _on_parede_direita_area_entered(area: Area2D) -> void:
-	if direcao_movimento == 1:
+	if direcao_movimento == 1 and area is Inimigo:
 		position.y += INIMIGOS_POSICAO_Y_INCREMENTAR
 		direcao_movimento *= -1
+
 
 func _on_chao_area_entered(area: Area2D) -> void:
 	if area is Inimigo:

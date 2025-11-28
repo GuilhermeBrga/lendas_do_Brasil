@@ -21,9 +21,8 @@ func _physics_process(delta):
 		move_and_slide()
 	
 	# Disparo
-	if Input.is_action_just_pressed("ui_ação"):  # Espaço por padrão
-		atirar()
-
+		if Input.is_action_just_pressed("ui_ação"):  # Espaço por padrão
+			atirar()
 
 func atirar():
 	if bala_cena and pode_atirar:

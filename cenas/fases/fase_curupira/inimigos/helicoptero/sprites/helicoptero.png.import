@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dnl3tb052067i"
-path="res://.godot/imported/inimigos.png-311bd7afdc2256c1eb5bc9f8c03d2a4e.ctex"
+uid="uid://c23s7myohjmbq"
+path="res://.godot/imported/helicoptero.png-6ba2be780611f1cd7a7a86a6ea660a59.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://cenas/fases/fase_curupira/inimigos/sprites/inimigos.png"
-dest_files=["res://.godot/imported/inimigos.png-311bd7afdc2256c1eb5bc9f8c03d2a4e.ctex"]
+source_file="res://cenas/fases/fase_curupira/inimigos/helicoptero/sprites/helicoptero.png"
+dest_files=["res://.godot/imported/helicoptero.png-6ba2be780611f1cd7a7a86a6ea660a59.ctex"]
 
 [params]
 

@@ -12,10 +12,10 @@ var config:Resource
 func _ready():
 	$AnimatedSprite2D.play("andar")
 	#sprite.texture = config.sprite_1
-	#animation_player.play(config.animation_name)
 
 func _on_area_entered(area):
 	if area is BalaJogador and not $CollisionShape2D.disabled:
+		inimigo_destruido.emit()
 		#animation_player.play("destroy")
 		efeito_sonoro.play()
 		#print("tome")
@@ -25,7 +25,6 @@ func _on_area_entered(area):
 		emitir_particulas()
 		await efeito_sonoro.finished
 		queue_free()
-		inimigo_destruido.emit()
 
 func _on_animation_player_animation_finished(anim_name):
 	if anim_name == "destroy":

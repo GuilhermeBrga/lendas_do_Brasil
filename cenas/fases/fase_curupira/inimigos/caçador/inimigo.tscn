@@ -1,7 +1,7 @@
 [gd_scene load_steps=11 format=3 uid="uid://c62ivwk2wu4em"]
 
-[ext_resource type="Script" uid="uid://bfnl3axlg3up5" path="res://cenas/fases/fase_curupira/inimigos/inimigo.gd" id="1_c1wlf"]
-[ext_resource type="Texture2D" uid="uid://dnl3tb052067i" path="res://cenas/fases/fase_curupira/inimigos/sprites/inimigos.png" id="2_ppreo"]
+[ext_resource type="Script" uid="uid://bfnl3axlg3up5" path="res://cenas/fases/fase_curupira/inimigos/caçador/inimigo.gd" id="1_c1wlf"]
+[ext_resource type="Texture2D" uid="uid://dnl3tb052067i" path="res://cenas/fases/fase_curupira/inimigos/caçador/sprites/inimigos.png" id="2_ppreo"]
 [ext_resource type="AudioStream" uid="uid://gqmvc55qmydc" path="res://cenas/fases/fase_curupira/assets/sons/inimigos/mixkit-scream-in-pain-2200.mp3" id="3_ppreo"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ppreo"]

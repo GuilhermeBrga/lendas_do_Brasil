@@ -1,8 +1,12 @@
-[gd_resource type="Resource" script_class="InimigoResource" load_steps=2 format=3 uid="uid://cho1fcr0n2bph"]
+[gd_resource type="Resource" script_class="InimigoResource" load_steps=3 format=3 uid="uid://cho1fcr0n2bph"]
 
 [ext_resource type="Script" uid="uid://cb2apkitumkcg" path="res://cenas/fases/fase_curupira/resources/inimigo_resource.gd" id="1_0pwxl"]
+[ext_resource type="Texture2D" uid="uid://biqtbmua4gqnu" path="res://icon.svg" id="2_a2brv"]
 
 [resource]
 script = ExtResource("1_0pwxl")
+sprite_1 = ExtResource("2_a2brv")
+sprite_2 = ExtResource("2_a2brv")
+sprite_3 = ExtResource("2_a2brv")
 width = 8
-animation_name = ""
+animation_name = "fds"

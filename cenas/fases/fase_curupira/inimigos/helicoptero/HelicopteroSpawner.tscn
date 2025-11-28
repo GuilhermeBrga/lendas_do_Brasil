@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://cl3pjfnu5w71a"]
+
+[ext_resource type="Script" uid="uid://c0fptbyworqvx" path="res://cenas/fases/fase_curupira/inimigos/helicoptero/helicoptero_spawner.gd" id="1_n07qt"]
+[ext_resource type="PackedScene" uid="uid://bgklfwd338a36" path="res://cenas/fases/fase_curupira/inimigos/helicoptero/helicoptero.tscn" id="2_jso8m"]
+
+[node name="HelicopteroSpawner" type="Node2D"]
+script = ExtResource("1_n07qt")
+helicoptero_cena = ExtResource("2_jso8m")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 7.5
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
