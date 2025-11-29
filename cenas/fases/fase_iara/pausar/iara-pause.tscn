@@ -1,0 +1,56 @@
+[gd_scene load_steps=6 format=3 uid="uid://b6en5g8cfs4s8"]
+
+[ext_resource type="Script" uid="uid://cnye18vjww31w" path="res://cenas/fases/fase_iara/pausar/iara_pause.gd" id="1_7uyts"]
+[ext_resource type="Texture2D" uid="uid://dw5w243mih82m" path="res://assets/elementos/painel_generico.png" id="1_u2ev8"]
+[ext_resource type="Texture2D" uid="uid://31gdwlcvy6ur" path="res://assets/botoes/btn_fechar.png" id="2_bpjnf"]
+[ext_resource type="FontFile" uid="uid://dcgork77dfg8o" path="res://assets/fontes/lemon_milk/LEMONMILK-Light.otf" id="2_knleu"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_7uyts"]
+font = ExtResource("2_knleu")
+font_size = 105
+font_color = Color(0, 0, 0, 1)
+
+[node name="Iara-pause" type="Control"]
+process_mode = 3
+layout_mode = 3
+anchor_right = 0.333333
+anchor_bottom = 0.466667
+offset_bottom = 3.05176e-05
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_7uyts")
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+offset_right = 640.0
+offset_bottom = 576.0
+texture = ExtResource("1_u2ev8")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="TextureRect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0992187
+anchor_top = 0.197917
+anchor_right = 0.900781
+anchor_bottom = 0.440972
+grow_horizontal = 2
+grow_vertical = 2
+text = "pausado"
+label_settings = SubResource("LabelSettings_7uyts")
+metadata/_edit_use_anchors_ = true
+
+[node name="Button" type="Button" parent="TextureRect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.08125
+anchor_top = 0.557292
+anchor_right = 0.91875
+anchor_bottom = 0.831597
+grow_horizontal = 2
+grow_vertical = 2
+icon = ExtResource("2_bpjnf")
+metadata/_edit_use_anchors_ = true
+
+[connection signal="pressed" from="TextureRect/Button" to="." method="_on_button_pressed"]
