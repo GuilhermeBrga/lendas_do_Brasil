@@ -2,6 +2,11 @@ extends CharacterBody2D
 
 class_name Jogador
 
+@onready var audio_grito:AudioStreamPlayer = $audio_grito
+@onready var audio_vitoria:AudioStreamPlayer = $audio_vitoria
+@onready var particulas_sangue:CPUParticles2D = $particulas_sangue
+@onready var particulas_vitoria:CPUParticles2D = $particulas_vitoria
+
 @export var speed = 400
 @export var bala_cena: PackedScene
 var pode_atirar = true
@@ -41,12 +46,27 @@ func bala_sumiu():
 	pode_atirar = true
 	
 func morrer():
-	emitir_particulas(true)
+	emitir_particulas_sangue(true)
 	ta_vivo = false
-	$AudioStreamPlayer.play()
+	audio_grito.play()
 	$CollisionShape2D.disabled = true
-	await $AudioStreamPlayer.finished
+	await audio_grito.finished
 	get_tree().change_scene_to_file("res://cenas/fases/fase_curupira/tela_derrota.tscn")
 
-func emitir_particulas(pode_emitir:bool):
-	$CPUParticles2D.emitting = pode_emitir
+func _on_inimigo_spawn_ganhou() -> void:
+	vitoria_animacao()
+
+
+func vitoria_animacao():
+	ta_vivo = false
+	$AnimatedSprite2D.play("vitoria")
+	emitir_particulas_vitoria(true)
+	$audio_vitoria.play()
+	await $audio_vitoria.finished
+	get_tree().change_scene_to_file("res://cenas/fases/fase_curupira/tela_vitoria.tscn")
+
+func emitir_particulas_sangue(pode_emitir:bool):
+	particulas_sangue.emitting = pode_emitir
+
+func emitir_particulas_vitoria(pode_emitir:bool):
+	particulas_vitoria.emitting = pode_emitir

@@ -23,6 +23,7 @@ var tiro_inimigo_cena = preload("res://cenas/fases/fase_curupira/assets/projetei
 var inimigos_totais = LINHAS * COLUNAS
 
 signal adicionar_pontos
+signal ganhou
 
 func _ready() -> void:
 	movimento_timer.timeout.connect(mover_inimigos)
@@ -67,10 +68,7 @@ func verificar_inimigos():
 	inimigos_vivos -= 1
 	adicionar_pontos.emit()
 	if inimigos_vivos <= 0:
-		# GANHAR
-		get_tree().change_scene_to_file("res://cenas/fases/fase_curupira/tela_vitoria.tscn")
-		#get_tree().paused = true
-
+		ganhou.emit()
 func mover_inimigos():
 	position.x += INIMIGOS_POSICAO_X_INCREMENTAR * direcao_movimento
 
@@ -95,7 +93,6 @@ func _on_parede_direita_area_entered(area: Area2D) -> void:
 	if direcao_movimento == 1 and area is Inimigo:
 		position.y += INIMIGOS_POSICAO_Y_INCREMENTAR
 		direcao_movimento *= -1
-
 
 func _on_chao_area_entered(area: Area2D) -> void:
 	if area is Inimigo:

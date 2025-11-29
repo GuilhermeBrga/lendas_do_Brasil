@@ -1,9 +1,28 @@
-[gd_scene load_steps=11 format=3 uid="uid://c1hsnwubt7hly"]
+[gd_scene load_steps=17 format=3 uid="uid://c1hsnwubt7hly"]
 
 [ext_resource type="Script" uid="uid://c76xy45r4sir6" path="res://cenas/fases/fase_curupira/curupira/curupira.gd" id="1_ppvy8"]
 [ext_resource type="PackedScene" uid="uid://jucx0ucitr32" path="res://cenas/fases/fase_curupira/assets/projeteis/jogador/bala_jogador.tscn" id="2_3rpbx"]
 [ext_resource type="Texture2D" uid="uid://cs8itsgxbx1wn" path="res://cenas/fases/fase_curupira/curupira/sprites/curupira.png" id="3_3rpbx"]
 [ext_resource type="AudioStream" uid="uid://ya6st88wj8gs" path="res://cenas/fases/fase_curupira/assets/sons/curupira/grito-sfx.mp3" id="4_b30f6"]
+[ext_resource type="AudioStream" uid="uid://dxal2j3o2weyd" path="res://cenas/fases/fase_curupira/assets/sons/curupira/vitoria-sfx.mp3" id="5_vxmjy"]
+
+[sub_resource type="Curve" id="Curve_r34aa"]
+_limits = [-360.0, 360.0, 0.0, 1.0]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1e-05, 360), 0.0, 0.0, 0, 0, Vector2(2e-05, 360), 0.0, 0.0, 0, 0, Vector2(1, -360), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="Curve" id="Curve_vxmjy"]
+_limits = [-360.0, 360.0, 0.0, 1.0]
+_data = [Vector2(0, 360), 0.0, 0.0, 0, 0, Vector2(1, 343.82), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_odie2"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Gradient" id="Gradient_odie2"]
+offsets = PackedFloat32Array(0, 0.986928)
+colors = PackedColorArray(1, 0.584314, 0, 1, 1, 1, 0, 1)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_b30f6"]
 atlas = ExtResource("3_3rpbx")
@@ -12,6 +31,10 @@ region = Rect2(62, 62, 31, 31)
 [sub_resource type="AtlasTexture" id="AtlasTexture_050jj"]
 atlas = ExtResource("3_3rpbx")
 region = Rect2(0, 62, 31, 31)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_odie2"]
+atlas = ExtResource("3_3rpbx")
+region = Rect2(104, 0, 16, 29)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_lav0i"]
 animations = [{
@@ -33,6 +56,14 @@ animations = [{
 "loop": false,
 "name": &"lançar",
 "speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_odie2")
+}],
+"loop": true,
+"name": &"vitoria",
+"speed": 5.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3rpbx"]
@@ -49,6 +80,23 @@ metadata/_snap_enabled = true
 script = ExtResource("1_ppvy8")
 bala_cena = ExtResource("2_3rpbx")
 
+[node name="particulas_vitoria" type="CPUParticles2D" parent="."]
+emitting = false
+amount = 90
+emission_shape = 1
+emission_sphere_radius = 71.76
+gravity = Vector2(0, -150)
+angular_velocity_min = 5.0
+angular_velocity_max = 250.0
+angular_velocity_curve = SubResource("Curve_r34aa")
+angle_min = 5.0
+angle_max = 15.0
+angle_curve = SubResource("Curve_vxmjy")
+scale_amount_min = 2.0
+scale_amount_max = 20.0
+scale_amount_curve = SubResource("Curve_odie2")
+color_ramp = SubResource("Gradient_odie2")
+
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 position = Vector2(-8, 0)
@@ -61,7 +109,7 @@ speed_scale = 2.0
 position = Vector2(4, 4)
 shape = SubResource("RectangleShape2D_3rpbx")
 
-[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+[node name="particulas_sangue" type="CPUParticles2D" parent="."]
 rotation = -1.57079
 emitting = false
 amount = 5000
@@ -79,5 +127,8 @@ scale_amount_curve = SubResource("Curve_3rpbx")
 color = Color(1, 0, 0, 1)
 color_initial_ramp = SubResource("Gradient_3rpbx")
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+[node name="audio_grito" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_b30f6")
+
+[node name="audio_vitoria" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_vxmjy")

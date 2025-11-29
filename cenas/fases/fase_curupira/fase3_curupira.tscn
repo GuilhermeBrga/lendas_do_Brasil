@@ -128,6 +128,7 @@ position = Vector2(651, -352)
 [connection signal="body_entered" from="paredes/parede_direita" to="Curupira" method="_on_parede_direita_body_entered"]
 [connection signal="area_entered" from="paredes/chao" to="InimigoSpawn" method="_on_chao_area_entered"]
 [connection signal="adicionar_pontos" from="InimigoSpawn" to="Pontuação" method="_on_inimigo_spawn_adicionar_pontos"]
+[connection signal="ganhou" from="InimigoSpawn" to="Curupira" method="_on_inimigo_spawn_ganhou"]
 [connection signal="aparecer_pop_up" from="UI/BtnDuvida" to="UI/Control" method="_on_btn_duvida_aparecer_pop_up"]
 [connection signal="aparecer_pop_up_pause" from="UI/curupira-pause" to="UI/Curupira-pause" method="_on_curupirapause_aparecer_pop_up_pause"]
 [connection signal="mudar_sprite_btn" from="UI/Curupira-pause" to="UI/curupira-pause" method="_on_curupirapause_mudar_sprite_btn"]
