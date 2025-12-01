@@ -24,6 +24,7 @@ var inimigos_totais = LINHAS * COLUNAS
 
 signal adicionar_pontos
 signal ganhou
+signal perdeu
 
 func _ready() -> void:
 	movimento_timer.timeout.connect(mover_inimigos)
@@ -96,7 +97,8 @@ func _on_parede_direita_area_entered(area: Area2D) -> void:
 
 func _on_chao_area_entered(area: Area2D) -> void:
 	if area is Inimigo:
+		perdeu.emit()
 		# PERDER
-		get_tree().change_scene_to_file("res://cenas/fases/fase_curupira/tela_derrota.tscn")
-		#get_tree().paused = true
-		print("acabou") # Replace with function body.
+		#get_tree().change_scene_to_file("res://cenas/fases/fase_curupira/tela_derrota.tscn")
+		##get_tree().paused = true
+		#print("acabou") # Replace with function body.
