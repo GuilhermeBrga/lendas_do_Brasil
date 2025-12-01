@@ -25,10 +25,7 @@ func _on_area_entered(area):
 		emitir_particulas()
 		await efeito_sonoro.finished
 		queue_free()
-
-func _on_animation_player_animation_finished(anim_name):
-	if anim_name == "destroy":
-		queue_free()
+		
 
 func emitir_particulas():
 	$CPUParticles2D.emitting = true

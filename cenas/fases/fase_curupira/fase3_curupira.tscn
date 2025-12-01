@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://cl6rxb0ysh84n" path="res://cenas/fases/fase_curupira/tutorial/curupira-tutorial.tscn" id="5_rt8ef"]
 [ext_resource type="PackedScene" uid="uid://cqnkglns7a60h" path="res://cenas/fases/fase_curupira/tutorial/btn_duvida.tscn" id="6_5b2op"]
 [ext_resource type="PackedScene" uid="uid://tqlesjxutx7u" path="res://cenas/fases/fase_curupira/tutorial/btn_pause.tscn" id="8_jn7qf"]
-[ext_resource type="PackedScene" uid="uid://d2ireonfquauv" path="res://cenas/fases/fase_curupira/pontos/pontuação-curupira.tscn" id="9_iu8bf"]
+[ext_resource type="PackedScene" uid="uid://d2ireonfquauv" path="res://cenas/fases/fase_curupira/pontos/pontuação.tscn" id="9_iu8bf"]
 [ext_resource type="PackedScene" uid="uid://bhu0oqhplp0wr" path="res://cenas/fases/fase_curupira/tutorial/curupira-pause.tscn" id="9_ogakp"]
 [ext_resource type="PackedScene" uid="uid://cl3pjfnu5w71a" path="res://cenas/fases/fase_curupira/inimigos/helicoptero/HelicopteroSpawner.tscn" id="10_iu8bf"]
 
@@ -68,6 +68,11 @@ position = Vector2(0, 416)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="paredes/chao"]
 shape = SubResource("RectangleShape2D_wsbxb")
 
+[node name="InimigoSpawn" parent="." instance=ExtResource("4_6q1pn")]
+position = Vector2(0, -289)
+LINHAS = 1
+COLUNAS = 1
+
 [node name="barreiras" type="Node" parent="."]
 
 [node name="barreira" parent="barreiras" instance=ExtResource("2_rt8ef")]
@@ -78,9 +83,6 @@ position = Vector2(0, 64)
 
 [node name="barreira3" parent="barreiras" instance=ExtResource("2_rt8ef")]
 position = Vector2(384, 64)
-
-[node name="InimigoSpawn" parent="." instance=ExtResource("4_6q1pn")]
-position = Vector2(0, -295)
 
 [node name="Curupira" parent="." instance=ExtResource("3_5b2op")]
 position = Vector2(0, 256)
@@ -113,7 +115,7 @@ offset_top = -304.0
 offset_right = -296.0
 offset_bottom = -304.0
 
-[node name="Pontuação" parent="UI" instance=ExtResource("9_iu8bf")]
+[node name="Pontuação" parent="." instance=ExtResource("9_iu8bf")]
 offset_left = -680.0
 offset_top = -392.0
 offset_right = -680.0
@@ -128,6 +130,8 @@ position = Vector2(651, -352)
 [connection signal="body_entered" from="paredes/parede_direita" to="Curupira" method="_on_parede_direita_body_entered"]
 [connection signal="area_entered" from="paredes/chao" to="InimigoSpawn" method="_on_chao_area_entered"]
 [connection signal="adicionar_pontos" from="InimigoSpawn" to="UI/Pontuação" method="_on_inimigo_spawn_adicionar_pontos"]
+[connection signal="ganhou" from="InimigoSpawn" to="Curupira" method="_on_inimigo_spawn_ganhou"]
+[connection signal="perdeu" from="InimigoSpawn" to="Curupira" method="_on_inimigo_spawn_perdeu"]
 [connection signal="aparecer_pop_up" from="UI/BtnDuvida" to="UI/Control" method="_on_btn_duvida_aparecer_pop_up"]
 [connection signal="aparecer_pop_up_pause" from="UI/curupira-pause" to="UI/Curupira-pause" method="_on_curupirapause_aparecer_pop_up_pause"]
 [connection signal="mudar_sprite_btn" from="UI/Curupira-pause" to="UI/curupira-pause" method="_on_curupirapause_mudar_sprite_btn"]

@@ -1,18 +1,19 @@
-[gd_scene load_steps=8 format=3 uid="uid://b82w1fqpknadg"]
+[gd_scene load_steps=9 format=3 uid="uid://b82w1fqpknadg"]
 
 [ext_resource type="Script" uid="uid://cioda30ga6ob7" path="res://cenas/fases/fase_curupira/tela_derrota.gd" id="1_5lro8"]
 [ext_resource type="Texture2D" uid="uid://rym07tcpdlpt" path="res://cenas/fases/fase_curupira/assets/estaticos/ganhou.png" id="1_t3ybr"]
 [ext_resource type="FontFile" uid="uid://dcgork77dfg8o" path="res://cenas/fases/fase_curupira/resources/fontes/lemon_milk/LEMONMILK-Light.otf" id="2_8sh4d"]
 [ext_resource type="Texture2D" uid="uid://db3yi1pt5x5q1" path="res://assets/elementos/setas.png" id="3_qo304"]
 [ext_resource type="Texture2D" uid="uid://dw5w243mih82m" path="res://assets/elementos/painel_generico.png" id="4_lqo31"]
+[ext_resource type="FontFile" uid="uid://dcgork77dfg8o" path="res://assets/fontes/lemon_milk/LEMONMILK-Light.otf" id="6_m5bfi"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_qo304"]
 font = ExtResource("2_8sh4d")
 font_size = 50
 font_color = Color(0, 0, 0, 1)
 
-[sub_resource type="LabelSettings" id="LabelSettings_5lro8"]
-font = ExtResource("2_8sh4d")
+[sub_resource type="LabelSettings" id="LabelSettings_unkyx"]
+font = ExtResource("6_m5bfi")
 font_size = 65
 font_color = Color(0, 0, 0, 1)
 
@@ -55,36 +56,29 @@ anchor_bottom = 0.998698
 icon = ExtResource("3_qo304")
 metadata/_edit_use_anchors_ = true
 
-[node name="fundo_label_pontos" type="TextureRect" parent="TextureRect"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.289474
-anchor_top = 0.78125
-anchor_right = 0.710526
-anchor_bottom = 0.916667
-offset_right = 6.10352e-05
-grow_horizontal = 2
-grow_vertical = 0
+[node name="fundo_label_pontos" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 448.0
+offset_top = 656.0
+offset_right = 960.0
+offset_bottom = 743.0
 texture = ExtResource("4_lqo31")
 expand_mode = 1
-metadata/_edit_use_anchors_ = true
 
-[node name="label_pontos" type="Label" parent="TextureRect/fundo_label_pontos"]
+[node name="label_pontos" type="Label" parent="fundo_label_pontos"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -288.0
-offset_top = -44.0
-offset_right = 288.0
-offset_bottom = 44.0
+offset_left = -42.0
+offset_top = -11.5
+offset_right = 42.0
+offset_bottom = 11.5
 grow_horizontal = 2
 grow_vertical = 2
-text = "pontos: 0"
-label_settings = SubResource("LabelSettings_5lro8")
-horizontal_alignment = 1
-autowrap_mode = 2
+text = "PONTOS: 0"
+label_settings = SubResource("LabelSettings_unkyx")
 
 [connection signal="pressed" from="TextureRect/btn_voltar" to="." method="_on_btn_voltar_pressed"]

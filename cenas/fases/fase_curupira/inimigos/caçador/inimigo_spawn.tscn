@@ -6,7 +6,7 @@
 script = ExtResource("1_7ng05")
 
 [node name="movimento_timer" type="Timer" parent="."]
-wait_time = 0.25
+wait_time = 0.2
 autostart = true
 
 [node name="tiro_timer" type="Timer" parent="."]
