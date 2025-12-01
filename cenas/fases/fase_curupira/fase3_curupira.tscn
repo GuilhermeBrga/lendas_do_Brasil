@@ -136,6 +136,9 @@ position = Vector2(651, -352)
 [connection signal="adicionar_pontos" from="InimigoSpawn" to="UI/Pontuação" method="_on_inimigo_spawn_adicionar_pontos"]
 [connection signal="ganhou" from="InimigoSpawn" to="Curupira" method="_on_inimigo_spawn_ganhou"]
 [connection signal="perdeu" from="InimigoSpawn" to="Curupira" method="_on_inimigo_spawn_perdeu"]
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 [connection signal="aparecer_pop_up" from="UI/BtnDuvida" to="UI/Control" method="_on_btn_duvida_aparecer_pop_up"]
 [connection signal="aparecer_pop_up_pause" from="UI/curupira-pause" to="UI/Curupira-pause" method="_on_curupirapause_aparecer_pop_up_pause"]
