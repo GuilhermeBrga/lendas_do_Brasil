@@ -79,8 +79,8 @@ func emitir_particulas_vitoria(pode_emitir:bool):
 	particulas_vitoria.emitting = pode_emitir
 
 func _on_inimigo_spawn_perdeu() -> void:
-	vitoria_animacao()
+	derrota_animacao()
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
 	if area is Inimigo:
-		derrota_animacao()
+		morrer()

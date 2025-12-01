@@ -1,14 +1,13 @@
-[gd_scene load_steps=9 format=3 uid="uid://b82w1fqpknadg"]
+[gd_scene load_steps=8 format=3 uid="uid://b82w1fqpknadg"]
 
 [ext_resource type="Script" uid="uid://cioda30ga6ob7" path="res://cenas/fases/fase_curupira/tela_derrota.gd" id="1_5lro8"]
 [ext_resource type="Texture2D" uid="uid://rym07tcpdlpt" path="res://cenas/fases/fase_curupira/assets/estaticos/ganhou.png" id="1_t3ybr"]
-[ext_resource type="FontFile" uid="uid://dcgork77dfg8o" path="res://cenas/fases/fase_curupira/resources/fontes/lemon_milk/LEMONMILK-Light.otf" id="2_8sh4d"]
 [ext_resource type="Texture2D" uid="uid://db3yi1pt5x5q1" path="res://assets/elementos/setas.png" id="3_qo304"]
 [ext_resource type="Texture2D" uid="uid://dw5w243mih82m" path="res://assets/elementos/painel_generico.png" id="4_lqo31"]
-[ext_resource type="FontFile" uid="uid://dcgork77dfg8o" path="res://assets/fontes/lemon_milk/LEMONMILK-Light.otf" id="6_m5bfi"]
+[ext_resource type="FontFile" uid="uid://dcgork77dfg8o" path="res://cenas/fases/fase_curupira/resources/fontes/lemon_milk/LEMONMILK-Light.otf" id="6_m5bfi"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_qo304"]
-font = ExtResource("2_8sh4d")
+font = ExtResource("6_m5bfi")
 font_size = 50
 font_color = Color(0, 0, 0, 1)
 
