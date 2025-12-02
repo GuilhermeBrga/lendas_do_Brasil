@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://c1bdl38knhihc"
+path="res://.godot/imported/Fairy Lands _ FANTASY MUSIC in a Magical Forest _ Fantasy Ambience.mp3-f48191f760d6de13aeeb7ac81d06e770.mp3str"
+
+[deps]
+
+source_file="res://assets/musicas/fase_saci/Fairy Lands _ FANTASY MUSIC in a Magical Forest _ Fantasy Ambience.mp3"
+dest_files=["res://.godot/imported/Fairy Lands _ FANTASY MUSIC in a Magical Forest _ Fantasy Ambience.mp3-f48191f760d6de13aeeb7ac81d06e770.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

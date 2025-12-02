@@ -11,3 +11,7 @@ func _process(delta):
 		get_node("b_salvar_prog").visible = !get_node("b_salvar_prog").visible  
 		get_node("b_salvar_prog_obj").visible = !get_node("b_salvar_prog_obj").visible
 		get_node("Label_aviso").visible = !get_node("Label_aviso").visible
+
+
+func _on_audio_stream_player_finished() -> void:
+	$AudioStreamPlayer.play()

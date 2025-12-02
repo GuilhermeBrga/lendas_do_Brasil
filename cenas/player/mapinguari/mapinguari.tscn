@@ -167,7 +167,9 @@ radius = 89.0
 height = 186.0
 
 [node name="Mapinguari" type="CharacterBody2D"]
+texture_filter = 1
 script = ExtResource("1_dheja")
+speed = 400.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(237, 123)

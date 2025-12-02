@@ -1,62 +1,60 @@
-[gd_scene load_steps=7 format=3 uid="uid://d1ick4t08deon"]
+[gd_scene load_steps=8 format=3 uid="uid://d1ick4t08deon"]
 
-[ext_resource type="Script" uid="uid://ds8p1jknhtvmc" path="res://cenas/load_game/b_continuar.gd" id="1_cxrd8"]
+[ext_resource type="Script" uid="uid://cylbauh5eobrj" path="res://cenas/load_game/load_page.gd" id="1_cxrd8"]
 [ext_resource type="Script" uid="uid://c8nguio6o3dvw" path="res://cenas/load_game/b_novo_jogo.gd" id="2_11xsn"]
 [ext_resource type="Script" uid="uid://q7nvhgrvgliq" path="res://cenas/load_game/b_person.gd" id="3_dkqpg"]
 [ext_resource type="Script" uid="uid://8t3nj2dvluyf" path="res://cenas/load_game/b_config.gd" id="4_1noxb"]
+[ext_resource type="Texture2D" uid="uid://d3h5gtt08bn25" path="res://assets/cenarios/load.png" id="5_3q4di"]
 [ext_resource type="Script" uid="uid://b4gkjg60rndve" path="res://cenas/load_game/b_sair.gd" id="5_r3u38"]
-[ext_resource type="Texture2D" uid="uid://ckq08x22nahn2" path="res://assets/cenarios/Load.png" id="6_f6mmr"]
+[ext_resource type="AudioStream" uid="uid://cbv8wohfhh4q2" path="res://assets/musicas/geral/2 Hours Relaxing Celtic Music_ Flute Music, Fantasy Music, Beautiful Music, Relaxing Music.mp3" id="7_11xsn"]
 
 [node name="Node2D" type="Node2D"]
-
-[node name="b_continuar" type="Button" parent="."]
-offset_left = 579.0
-offset_top = 381.0
-offset_right = 1270.0
-offset_bottom = 490.0
-mouse_default_cursor_shape = 2
 script = ExtResource("1_cxrd8")
 
 [node name="b_novo_jogo" type="Button" parent="."]
-offset_left = 576.0
-offset_top = 509.0
-offset_right = 1273.0
-offset_bottom = 626.0
+offset_left = 618.0
+offset_top = 424.0
+offset_right = 1308.0
+offset_bottom = 537.0
 mouse_default_cursor_shape = 2
 script = ExtResource("2_11xsn")
 
 [node name="b_person" type="Button" parent="."]
-offset_left = 580.0
-offset_top = 645.0
-offset_right = 1270.0
-offset_bottom = 757.0
+offset_left = 616.0
+offset_top = 555.0
+offset_right = 1306.0
+offset_bottom = 667.0
 mouse_default_cursor_shape = 2
 script = ExtResource("3_dkqpg")
 
 [node name="b_config" type="Button" parent="."]
-offset_left = 576.0
-offset_top = 773.0
-offset_right = 1273.0
-offset_bottom = 892.0
+offset_left = 616.0
+offset_top = 687.0
+offset_right = 1305.0
+offset_bottom = 797.0
 mouse_default_cursor_shape = 2
 script = ExtResource("4_1noxb")
 
 [node name="b_sair" type="Button" parent="."]
-offset_left = 583.0
-offset_top = 910.0
-offset_right = 1268.0
-offset_bottom = 1014.0
+offset_left = 620.0
+offset_top = 820.0
+offset_right = 1301.0
+offset_bottom = 922.0
 mouse_default_cursor_shape = 2
 script = ExtResource("5_r3u38")
 
-[node name="painel" type="Sprite2D" parent="."]
-position = Vector2(961.501, 538.001)
-scale = Vector2(1.25847, 1.0625)
-texture = ExtResource("6_f6mmr")
+[node name="Load" type="Sprite2D" parent="."]
+position = Vector2(960.5, 543)
+scale = Vector2(1.24935, 1.06055)
+texture = ExtResource("5_3q4di")
 
-[connection signal="pressed" from="b_continuar" to="b_continuar" method="_on_pressed"]
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_11xsn")
+autoplay = true
+
 [connection signal="pressed" from="b_novo_jogo" to="b_novo_jogo" method="_on_pressed"]
 [connection signal="pressed" from="b_person" to="b_person" method="_on_pressed"]
 [connection signal="pressed" from="b_config" to="b_config" method="_on_pressed"]
 [connection signal="pressed" from="b_sair" to="b_sair" method="_on_pressed"]
 [connection signal="tree_exiting" from="b_sair" to="b_sair" method="_on_tree_exiting"]
+[connection signal="finished" from="AudioStreamPlayer" to="." method="_on_audio_stream_player_finished"]
