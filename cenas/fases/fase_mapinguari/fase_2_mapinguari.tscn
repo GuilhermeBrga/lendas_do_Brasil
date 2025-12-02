@@ -1,12 +1,14 @@
-[gd_scene load_steps=33 format=3 uid="uid://cp7s0ryvdyfks"]
+[gd_scene load_steps=40 format=3 uid="uid://cp7s0ryvdyfks"]
 
 [ext_resource type="PackedScene" uid="uid://baey0x4yo5o6l" path="res://cenas/player/mapinguari/mapinguari.tscn" id="1_0abp5"]
 [ext_resource type="Texture2D" uid="uid://cceairc2p8h3g" path="res://assets/cenarios/mapa_campo_arvores_pixel_art.png" id="1_ae5rn"]
 [ext_resource type="Script" uid="uid://b3tdnil33e6rb" path="res://cenas/fases/fase_mapinguari/fase_2_mapinguari.gd" id="1_x2ckb"]
-[ext_resource type="Script" uid="uid://dqluc03f3evhi" path="res://cenas/fases/fase_mapinguari/parede_baixo.gd" id="3_eph4h"]
 [ext_resource type="Script" uid="uid://cxpe0j5mbo7pe" path="res://cenas/fases/fase_mapinguari/sumidouro.gd" id="4_3gasl"]
+[ext_resource type="AudioStream" uid="uid://ddr0hetqyuapk" path="res://assets/musicas/fase_mapinguari/punch-431475.mp3" id="6_e8fnv"]
 [ext_resource type="Script" uid="uid://be6vs5vwfd8o7" path="res://cenas/fases/fase_mapinguari/colisao_player.gd" id="6_pvwd2"]
+[ext_resource type="AudioStream" uid="uid://bk7d0vcuqot3s" path="res://assets/musicas/fase_saci/shine-11-268907.mp3" id="7_pymld"]
 [ext_resource type="Texture2D" uid="uid://dxgvlftiykjsm" path="res://assets/elementos/mapa_mapinguari/dead_life.png" id="8_eph4h"]
+[ext_resource type="AudioStream" uid="uid://di656twhkxufp" path="res://assets/musicas/fase_saci/goodresult-82807.mp3" id="8_qoj2q"]
 [ext_resource type="Texture2D" uid="uid://ctwv8khygp4jn" path="res://assets/elementos/mapa_mapinguari/low_life.png" id="9_3gasl"]
 [ext_resource type="Texture2D" uid="uid://slgdb23lwd6y" path="res://assets/cutscenes/mapinguari_cutscene.png" id="9_sdx1u"]
 [ext_resource type="Texture2D" uid="uid://d2r45phh5yi3w" path="res://assets/elementos/mapa_mapinguari/mid_life.png" id="10_3iubb"]
@@ -19,6 +21,10 @@
 [ext_resource type="Texture2D" uid="uid://c0w7eefxpp5ut" path="res://assets/botoes/b_voltar_img.jpg" id="16_3iubb"]
 [ext_resource type="Script" uid="uid://dkbhd0ys5dc2" path="res://cenas/fases/fase_mapinguari/b_salvar_prog_obj.gd" id="17_e8fnv"]
 [ext_resource type="Texture2D" uid="uid://glmyn6v1wrfc" path="res://assets/botoes/b_salvar_img.jpg" id="18_loaxs"]
+[ext_resource type="Texture2D" uid="uid://nh8vtevdnq0n" path="res://assets/elementos/estrela1.png" id="19_eph4h"]
+[ext_resource type="Texture2D" uid="uid://t7gcrcgbeg28" path="res://assets/botoes/b_continuar_img.png" id="20_3gasl"]
+[ext_resource type="Script" uid="uid://b2jnjds5e33bq" path="res://cenas/fases/fase_mapinguari/b_vitoria.gd" id="20_3iubb"]
+[ext_resource type="AudioStream" uid="uid://cp2sud8vfct4w" path="res://assets/musicas/fase_mapinguari/Tribal Ritual _ Ambient Suspenseful Tribal _ D&D Fantasy Background Music _ RPG Playlist.mp3" id="23_loaxs"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0abp5"]
 size = Vector2(1944, 20)
@@ -62,6 +68,10 @@ font_color = Color(0, 0, 0, 1)
 [sub_resource type="LabelSettings" id="LabelSettings_qoj2q"]
 font_color = Color(0, 0, 0, 1)
 
+[sub_resource type="LabelSettings" id="LabelSettings_eph4h"]
+font_size = 50
+font_color = Color(0, 0, 0, 1)
+
 [node name="Fase2Mapinguari" type="Node2D"]
 script = ExtResource("1_x2ckb")
 
@@ -90,7 +100,6 @@ shape = SubResource("RectangleShape2D_8wfgj")
 
 [node name="parede_baixo" type="StaticBody2D" parent="."]
 position = Vector2(931, 189)
-script = ExtResource("3_eph4h")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="parede_baixo"]
 position = Vector2(28.5, 891)
@@ -124,7 +133,6 @@ shape = SubResource("RectangleShape2D_efji8")
 [node name="Mapinguari" parent="." instance=ExtResource("1_0abp5")]
 position = Vector2(301, 748)
 scale = Vector2(0.7, 0.7)
-collision_layer = 5
 
 [node name="colisao_player" type="Area2D" parent="Mapinguari"]
 position = Vector2(235.714, 124.286)
@@ -133,6 +141,15 @@ script = ExtResource("6_pvwd2")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Mapinguari/colisao_player"]
 position = Vector2(0, -1.42857)
 shape = SubResource("CircleShape2D_id5kr")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Mapinguari"]
+stream = ExtResource("6_e8fnv")
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="Mapinguari"]
+stream = ExtResource("7_pymld")
+
+[node name="AudioStreamPlayer3" type="AudioStreamPlayer" parent="Mapinguari"]
+stream = ExtResource("8_qoj2q")
 
 [node name="painel_pontos" type="Sprite2D" parent="."]
 position = Vector2(1804.58, 981.087)
@@ -155,11 +172,13 @@ scale = Vector2(0.263, 0.246)
 texture = ExtResource("8_eph4h")
 
 [node name="LowLife" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(1804, 952)
 scale = Vector2(0.263, 0.246)
 texture = ExtResource("9_3gasl")
 
 [node name="MidLife" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(1804, 952)
 scale = Vector2(0.2632, 0.2457)
 texture = ExtResource("10_3iubb")
@@ -264,11 +283,63 @@ text = "Será salvo apenas o seu progresso no mapa,
                  a fase começará do inicio!"
 label_settings = SubResource("LabelSettings_qoj2q")
 
-[node name="painel_status" type="Sprite2D" parent="."]
+[node name="painel_vitoria" type="Sprite2D" parent="."]
 visible = false
-position = Vector2(1748, 1006.13)
-scale = Vector2(0.348519, 0.105185)
+position = Vector2(964.249, 552.501)
 texture = ExtResource("10_f2ybp")
+
+[node name="moldura_vitoria" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(947.249, 559.501)
+scale = Vector2(2.87939, 2.58946)
+texture = ExtResource("14_eph4h")
+
+[node name="Estrela1" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(977, 330)
+scale = Vector2(0.312973, 0.287802)
+texture = ExtResource("19_eph4h")
+
+[node name="Estrela2" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(1132, 379)
+scale = Vector2(0.312973, 0.287802)
+texture = ExtResource("19_eph4h")
+
+[node name="Estrela3" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(829, 379)
+scale = Vector2(0.312973, 0.287802)
+texture = ExtResource("19_eph4h")
+
+[node name="Label_vitoria" type="Label" parent="."]
+visible = false
+offset_left = 668.0
+offset_top = 512.0
+offset_right = 1318.0
+offset_bottom = 717.0
+text = "Parabens você conseguiu
+     ajudar o Mapinguari!!!"
+label_settings = SubResource("LabelSettings_eph4h")
+
+[node name="B_vitoria" type="Button" parent="."]
+visible = false
+offset_left = 743.0
+offset_top = 714.0
+offset_right = 1218.0
+offset_bottom = 845.0
+mouse_default_cursor_shape = 2
+script = ExtResource("20_3iubb")
+
+[node name="B_vitoria_img" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(980, 779)
+scale = Vector2(0.25026, 0.249081)
+texture = ExtResource("20_3gasl")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("23_loaxs")
+autoplay = true
 
 [connection signal="ready" from="." to="." method="_on_ready"]
 [connection signal="body_entered" from="sumidouro" to="sumidouro" method="_on_body_entered"]
@@ -277,3 +348,5 @@ texture = ExtResource("10_f2ybp")
 [connection signal="pressed" from="b_cutscene" to="b_cutscene" method="_on_pressed"]
 [connection signal="pressed" from="b_fechar_menu_obj" to="b_fechar_menu_obj" method="_on_pressed"]
 [connection signal="pressed" from="b_salvar_prog_obj" to="b_salvar_prog_obj" method="_on_pressed"]
+[connection signal="pressed" from="B_vitoria" to="B_vitoria" method="_on_pressed"]
+[connection signal="finished" from="AudioStreamPlayer" to="." method="_on_audio_stream_player_finished"]

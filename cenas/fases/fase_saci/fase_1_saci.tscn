@@ -1,4 +1,4 @@
-[gd_scene load_steps=132 format=3 uid="uid://sqvfqfepglwm"]
+[gd_scene load_steps=135 format=3 uid="uid://sqvfqfepglwm"]
 
 [ext_resource type="Script" uid="uid://5b2rucdep6j5" path="res://cenas/fases/fase_saci/fase_1_saci.gd" id="1_qehg7"]
 [ext_resource type="Texture2D" uid="uid://c01giqxjrmub8" path="res://assets/cenarios/Labirinto na Floresta Encantada (1).png" id="2_wbix8"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://cp0q1jc3ne3g5" path="res://assets/elementos/moldura_personagem.png" id="5_kioyg"]
 [ext_resource type="Script" uid="uid://dktdkoiwqu588" path="res://cenas/fases/fase_saci/b_fechar_menu_obj.gd" id="6_xfiep"]
 [ext_resource type="Texture2D" uid="uid://c0w7eefxpp5ut" path="res://assets/botoes/b_voltar_img.jpg" id="7_3y8kd"]
+[ext_resource type="AudioStream" uid="uid://bk7d0vcuqot3s" path="res://assets/musicas/fase_saci/shine-11-268907.mp3" id="8_dtbik"]
 [ext_resource type="Script" uid="uid://btdy11cqq3odj" path="res://cenas/fases/fase_saci/b_salvar_prog_obj.gd" id="8_o4bns"]
 [ext_resource type="Texture2D" uid="uid://glmyn6v1wrfc" path="res://assets/botoes/b_salvar_img.jpg" id="9_c2vgv"]
 [ext_resource type="Texture2D" uid="uid://bu52o1b21ix7e" path="res://assets/elementos/mapa_saci/cachimbo.png" id="10_wbix8"]
@@ -26,6 +27,8 @@
 [ext_resource type="Script" uid="uid://b6d0lyvxsfmyr" path="res://cenas/fases/fase_saci/area_win.gd" id="24_oe5ex"]
 [ext_resource type="Texture2D" uid="uid://nh8vtevdnq0n" path="res://assets/elementos/estrela1.png" id="25_46wq6"]
 [ext_resource type="Script" uid="uid://djhcr8n1mkwsl" path="res://cenas/fases/fase_saci/check_win.gd" id="26_r6haj"]
+[ext_resource type="AudioStream" uid="uid://c1bdl38knhihc" path="res://assets/musicas/fase_saci/Fairy Lands _ FANTASY MUSIC in a Magical Forest _ Fantasy Ambience.mp3" id="27_wflcy"]
+[ext_resource type="AudioStream" uid="uid://di656twhkxufp" path="res://assets/musicas/fase_saci/goodresult-82807.mp3" id="28_3h1uw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gjcld"]
 size = Vector2(1944, 20)
@@ -936,6 +939,9 @@ script = ExtResource("11_3y8kd")
 position = Vector2(-10.3694, -19.9694)
 shape = SubResource("CircleShape2D_c2vgv")
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="colisao_cachimbo"]
+stream = ExtResource("8_dtbik")
+
 [node name="Cocar" type="Sprite2D" parent="."]
 position = Vector2(1606, 830)
 scale = Vector2(0.127834, 0.106423)
@@ -947,6 +953,9 @@ script = ExtResource("13_crjud")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="colisao_cocar"]
 position = Vector2(1606, 830)
 shape = SubResource("CircleShape2D_cfr3i")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="colisao_cocar"]
+stream = ExtResource("8_dtbik")
 
 [node name="FitaVermelha" type="Sprite2D" parent="."]
 position = Vector2(624.25, 279.188)
@@ -960,6 +969,9 @@ script = ExtResource("15_5hbjl")
 position = Vector2(625, 279)
 shape = SubResource("CircleShape2D_2ql1e")
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="colisao_fita"]
+stream = ExtResource("8_dtbik")
+
 [node name="Tambor" type="Sprite2D" parent="."]
 position = Vector2(929, 601.375)
 scale = Vector2(0.115607, 0.10376)
@@ -971,6 +983,9 @@ script = ExtResource("17_kkw2u")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="colisao_tambor"]
 position = Vector2(929, 602)
 shape = SubResource("CircleShape2D_7cbt1")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="colisao_tambor"]
+stream = ExtResource("8_dtbik")
 
 [node name="painel_objetivo" type="Sprite2D" parent="."]
 position = Vector2(1817.25, 232.875)
@@ -1177,6 +1192,9 @@ script = ExtResource("26_r6haj")
 position = Vector2(911, 956.5)
 shape = SubResource("RectangleShape2D_wflcy")
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="check_win"]
+stream = ExtResource("28_3h1uw")
+
 [node name="Estrela1" type="Sprite2D" parent="."]
 visible = false
 position = Vector2(1027, 232)
@@ -1195,6 +1213,11 @@ position = Vector2(958, 281)
 scale = Vector2(0.179451, 0.170993)
 texture = ExtResource("25_46wq6")
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("27_wflcy")
+volume_db = -15.786
+autoplay = true
+
 [connection signal="body_entered" from="colisao_cachimbo" to="colisao_cachimbo" method="_on_body_entered"]
 [connection signal="body_entered" from="colisao_cocar" to="colisao_cocar" method="_on_body_entered"]
 [connection signal="body_entered" from="colisao_fita" to="colisao_fita" method="_on_body_entered"]
@@ -1205,3 +1228,4 @@ texture = ExtResource("25_46wq6")
 [connection signal="pressed" from="b_continuar_obj" to="b_continuar_obj" method="_on_pressed"]
 [connection signal="body_entered" from="area_win" to="area_win" method="_on_body_entered"]
 [connection signal="body_entered" from="check_win" to="check_win" method="_on_body_entered"]
+[connection signal="finished" from="AudioStreamPlayer" to="." method="_on_audio_stream_player_finished"]

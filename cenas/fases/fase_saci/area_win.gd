@@ -10,5 +10,5 @@ func _on_body_entered(body: Node2D) -> void:
 		get_node("../Estrela1").visible = true
 		get_node("../Estrela2").visible = true
 		get_node("../Estrela3").visible = true
-		
 		get_node("../Estrela_win").visible = false
+		$"../check_win/AudioStreamPlayer".play()

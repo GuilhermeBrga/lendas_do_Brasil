@@ -1,5 +1,4 @@
 extends Button
 
-
 func _on_pressed() -> void:
-	get_tree().change_scene_to_file("res://cenas/load_game/load_page.tscn")
+	get_tree().change_scene_to_file("res://cenas/menu_inicial.tscn")
