@@ -70,6 +70,7 @@ func verificar_inimigos():
 	adicionar_pontos.emit()
 	if inimigos_vivos <= 0:
 		ganhou.emit()
+
 func mover_inimigos():
 	position.x += INIMIGOS_POSICAO_X_INCREMENTAR * direcao_movimento
 
