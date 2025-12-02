@@ -4,8 +4,8 @@ extends Node2D
 @export var COLUNAS = 11
 #const LINHAS = 5
 #const COLUNAS  = 11
-const ESPACAMENTO_HORIZONTAL = 32
-const ESPACAMENTO_VERTICAL = 32
+const ESPACAMENTO_HORIZONTAL = 64
+const ESPACAMENTO_VERTICAL = 64
 const ALTURA_INIMIGOS = 24
 
 var inimigo_cena

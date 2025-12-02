@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://4tw4qk3nx8sd"]
+[gd_scene load_steps=11 format=3 uid="uid://4tw4qk3nx8sd"]
 
 [ext_resource type="Script" uid="uid://dijbuspkt0dvy" path="res://cenas/mapa_fases/b_tutorial.gd" id="1_jpuch"]
 [ext_resource type="Texture2D" uid="uid://82cphtrb2hy5" path="res://assets/cenarios/mapa.png" id="2_wrbcl"]
@@ -13,66 +13,79 @@
 [sub_resource type="LabelSettings" id="LabelSettings_tbcqi"]
 font_color = Color(0, 0, 0, 1)
 
-[node name="Node2D" type="Node2D"]
+[node name="Node2D" type="Control"]
+layout_mode = 3
+anchor_right = 1.00417
+anchor_bottom = 1.00741
+offset_right = -0.00012207
+grow_horizontal = 2
+grow_vertical = 2
 
-[node name="b_tutorial" type="Button" parent="."]
-visible = false
-offset_left = 160.0
-offset_top = 751.0
-offset_right = 296.0
-offset_bottom = 866.0
+[node name="mapa" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.999483
+anchor_bottom = 0.999078
+offset_right = -391.004
+offset_bottom = -62.9965
+scale = Vector2(1.25456, 1.06152)
+texture = ExtResource("2_wrbcl")
+stretch_mode = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="b_tutorial" type="Button" parent="mapa"]
+offset_left = 128.0
+offset_top = 707.0
+offset_right = 236.0
+offset_bottom = 822.0
 mouse_default_cursor_shape = 2
 script = ExtResource("1_jpuch")
 
-[node name="b_fase_1" type="Button" parent="."]
-visible = false
-offset_left = 253.0
-offset_top = 354.0
-offset_right = 395.0
-offset_bottom = 476.0
+[node name="b_fase_1" type="Button" parent="mapa"]
+offset_left = 201.664
+offset_top = 333.484
+offset_right = 343.664
+offset_bottom = 455.484
 mouse_default_cursor_shape = 2
 script = ExtResource("6_wrbcl")
 
-[node name="b_fase_2" type="Button" parent="."]
-visible = false
-offset_left = 650.0
-offset_top = 308.0
-offset_right = 792.0
-offset_bottom = 430.0
+[node name="b_fase_2" type="Button" parent="mapa"]
+offset_left = 518.11
+offset_top = 290.15
+offset_right = 660.11
+offset_bottom = 412.15
 mouse_default_cursor_shape = 2
 script = ExtResource("3_hgwlt")
 
-[node name="b_fase_3" type="Button" parent="."]
-offset_left = 1024.0
-offset_top = 288.0
-offset_right = 1160.0
-offset_bottom = 440.0
+[node name="b_fase_3" type="Button" parent="mapa"]
+offset_left = 816.222
+offset_top = 271.309
+offset_right = 952.222
+offset_bottom = 423.309
 script = ExtResource("4_beojq")
+metadata/_edit_use_anchors_ = true
 
-[node name="b_fase_4" type="Button" parent="."]
-offset_left = 1173.0
-offset_top = 576.0
-offset_right = 1293.0
-offset_bottom = 704.0
+[node name="b_fase_4" type="Button" parent="mapa"]
+offset_left = 934.989
+offset_top = 542.618
+offset_right = 1054.99
+offset_bottom = 670.618
 script = ExtResource("5_wgau1")
+metadata/_edit_use_anchors_ = true
 
-[node name="mapa" type="Sprite2D" parent="."]
-position = Vector2(960.5, 540.5)
-scale = Vector2(1.25456, 1.06152)
-texture = ExtResource("2_wrbcl")
-
-[node name="voltar_load" type="Button" parent="."]
-offset_left = 72.0
-offset_top = 84.0
-offset_right = 336.0
-offset_bottom = 160.0
+[node name="voltar_btn" type="TextureButton" parent="mapa"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0371094
+anchor_top = 0.0732422
+anchor_right = 0.174479
+anchor_bottom = 0.147461
 mouse_default_cursor_shape = 2
+texture_normal = ExtResource("4_hgwlt")
+ignore_texture_size = true
+stretch_mode = 0
 script = ExtResource("3_tbcqi")
-
-[node name="b_voltar_img" type="Sprite2D" parent="."]
-position = Vector2(204.75, 121.75)
-scale = Vector2(0.546843, 0.624031)
-texture = ExtResource("4_hgwlt")
+metadata/_edit_use_anchors_ = true
 
 [node name="tutorial" type="Sprite2D" parent="."]
 visible = false
@@ -105,9 +118,9 @@ label_settings = SubResource("LabelSettings_tbcqi")
 position = Vector2(1808, 108)
 scale = Vector2(0.468055, 0.445833)
 
-[connection signal="pressed" from="b_tutorial" to="b_tutorial" method="_on_pressed"]
-[connection signal="pressed" from="b_fase_1" to="b_fase_1" method="_on_pressed"]
-[connection signal="pressed" from="b_fase_2" to="b_fase_2" method="_on_pressed"]
-[connection signal="pressed" from="b_fase_3" to="b_fase_3" method="_on_pressed"]
-[connection signal="pressed" from="b_fase_4" to="b_fase_4" method="_on_pressed"]
-[connection signal="pressed" from="voltar_load" to="voltar_load" method="_on_pressed"]
+[connection signal="pressed" from="mapa/b_tutorial" to="mapa/b_tutorial" method="_on_pressed"]
+[connection signal="pressed" from="mapa/b_fase_1" to="mapa/b_fase_1" method="_on_pressed"]
+[connection signal="pressed" from="mapa/b_fase_2" to="mapa/b_fase_2" method="_on_pressed"]
+[connection signal="pressed" from="mapa/b_fase_3" to="mapa/b_fase_3" method="_on_pressed"]
+[connection signal="pressed" from="mapa/b_fase_4" to="mapa/b_fase_4" method="_on_pressed"]
+[connection signal="pressed" from="mapa/voltar_btn" to="mapa/voltar_btn" method="_on_pressed"]

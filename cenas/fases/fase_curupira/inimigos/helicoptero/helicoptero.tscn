@@ -70,7 +70,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e6as3"]
-size = Vector2(112, 48)
+size = Vector2(168, 96)
 
 [sub_resource type="Curve" id="Curve_w23rb"]
 _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
@@ -81,12 +81,13 @@ colors = PackedColorArray(1, 0, 0, 1, 1, 1, 0, 1)
 
 [node name="Helicoptero" type="Node2D"]
 script = ExtResource("1_w23rb")
+velocidade = 250
 bala_cena = ExtResource("2_fykan")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
-position = Vector2(-16, 0)
-scale = Vector2(1.66667, 1.5)
+position = Vector2(0, 1.90735e-06)
+scale = Vector2(2.16667, 2.75)
 sprite_frames = SubResource("SpriteFrames_73sqt")
 animation = &"idle"
 frame_progress = 0.165956
@@ -95,12 +96,12 @@ speed_scale = 10.0
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(-16, 0)
+position = Vector2(-4, 0)
 shape = SubResource("RectangleShape2D_e6as3")
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
-position = Vector2(-16, 0)
-scale = Vector2(5.6, 2.4)
+position = Vector2(-4.00001, -2.38419e-06)
+scale = Vector2(8.4, 4.8)
 
 [node name="Timer" type="Timer" parent="."]
 autostart = true

@@ -3,7 +3,7 @@ extends Node2D
 class_name Helicoptero
 signal morreu
 var ta_vivo = true
-@export var velocidade = 200
+@export var velocidade = 350
 @export var bala_cena: PackedScene
 
 func _ready() -> void:

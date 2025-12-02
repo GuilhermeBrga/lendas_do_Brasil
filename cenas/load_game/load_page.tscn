@@ -4,57 +4,83 @@
 [ext_resource type="Script" uid="uid://c8nguio6o3dvw" path="res://cenas/load_game/b_novo_jogo.gd" id="2_11xsn"]
 [ext_resource type="Script" uid="uid://q7nvhgrvgliq" path="res://cenas/load_game/b_person.gd" id="3_dkqpg"]
 [ext_resource type="Script" uid="uid://8t3nj2dvluyf" path="res://cenas/load_game/b_config.gd" id="4_1noxb"]
-[ext_resource type="Texture2D" uid="uid://d3h5gtt08bn25" path="res://assets/cenarios/load.png" id="5_3q4di"]
+[ext_resource type="Texture2D" uid="uid://d3h5gtt08bn25" path="res://assets/cenarios/Load.png" id="5_3q4di"]
 [ext_resource type="Script" uid="uid://b4gkjg60rndve" path="res://cenas/load_game/b_sair.gd" id="5_r3u38"]
 [ext_resource type="AudioStream" uid="uid://cbv8wohfhh4q2" path="res://assets/musicas/geral/2 Hours Relaxing Celtic Music_ Flute Music, Fantasy Music, Beautiful Music, Relaxing Music.mp3" id="7_11xsn"]
 
-[node name="Node2D" type="Node2D"]
+[node name="Node2D" type="Control"]
+layout_mode = 3
+anchor_right = 1.0
+anchor_bottom = 1.00741
+grow_vertical = 2
+size_flags_horizontal = 8
 script = ExtResource("1_cxrd8")
 
-[node name="b_novo_jogo" type="Button" parent="."]
-offset_left = 618.0
-offset_top = 424.0
-offset_right = 1308.0
-offset_bottom = 537.0
+[node name="Load" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.99948
+anchor_bottom = 0.998165
+offset_right = -383.001
+offset_bottom = -62.0032
+scale = Vector2(1.24935, 1.06055)
+texture = ExtResource("5_3q4di")
+metadata/_edit_use_anchors_ = true
+
+[node name="b_novo_jogo" type="Button" parent="Load"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.322266
+anchor_top = 0.390625
+anchor_right = 0.679688
+anchor_bottom = 0.500977
+grow_horizontal = 2
+grow_vertical = 2
 mouse_default_cursor_shape = 2
 script = ExtResource("2_11xsn")
 
-[node name="b_person" type="Button" parent="."]
-offset_left = 616.0
-offset_top = 555.0
-offset_right = 1306.0
-offset_bottom = 667.0
+[node name="b_person" type="Button" parent="Load"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.320964
+anchor_top = 0.510742
+anchor_right = 0.679688
+anchor_bottom = 0.620117
+grow_horizontal = 2
+grow_vertical = 2
 mouse_default_cursor_shape = 2
 script = ExtResource("3_dkqpg")
+metadata/_edit_use_anchors_ = true
 
-[node name="b_config" type="Button" parent="."]
-offset_left = 616.0
-offset_top = 687.0
-offset_right = 1305.0
-offset_bottom = 797.0
+[node name="b_config" type="Button" parent="Load"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.320964
+anchor_top = 0.632812
+anchor_right = 0.679688
+anchor_bottom = 0.740234
 mouse_default_cursor_shape = 2
 script = ExtResource("4_1noxb")
+metadata/_edit_use_anchors_ = true
 
-[node name="b_sair" type="Button" parent="."]
-offset_left = 620.0
-offset_top = 820.0
-offset_right = 1301.0
-offset_bottom = 922.0
+[node name="b_sair" type="Button" parent="Load"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.320964
+anchor_top = 0.754883
+anchor_right = 0.679036
+anchor_bottom = 0.854492
 mouse_default_cursor_shape = 2
 script = ExtResource("5_r3u38")
-
-[node name="Load" type="Sprite2D" parent="."]
-position = Vector2(960.5, 543)
-scale = Vector2(1.24935, 1.06055)
-texture = ExtResource("5_3q4di")
+metadata/_edit_use_anchors_ = true
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_11xsn")
 autoplay = true
 
-[connection signal="pressed" from="b_novo_jogo" to="b_novo_jogo" method="_on_pressed"]
-[connection signal="pressed" from="b_person" to="b_person" method="_on_pressed"]
-[connection signal="pressed" from="b_config" to="b_config" method="_on_pressed"]
-[connection signal="pressed" from="b_sair" to="b_sair" method="_on_pressed"]
-[connection signal="tree_exiting" from="b_sair" to="b_sair" method="_on_tree_exiting"]
+[connection signal="pressed" from="Load/b_novo_jogo" to="Load/b_novo_jogo" method="_on_pressed"]
+[connection signal="pressed" from="Load/b_person" to="Load/b_person" method="_on_pressed"]
+[connection signal="pressed" from="Load/b_config" to="Load/b_config" method="_on_pressed"]
+[connection signal="pressed" from="Load/b_sair" to="Load/b_sair" method="_on_pressed"]
+[connection signal="tree_exiting" from="Load/b_sair" to="Load/b_sair" method="_on_tree_exiting"]
 [connection signal="finished" from="AudioStreamPlayer" to="." method="_on_audio_stream_player_finished"]

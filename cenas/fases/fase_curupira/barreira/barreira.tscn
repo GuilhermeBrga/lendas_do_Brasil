@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://by7dnckompj8h"]
+[gd_scene load_steps=9 format=3 uid="uid://by7dnckompj8h"]
 
 [ext_resource type="Script" uid="uid://dont4guhulaqj" path="res://cenas/fases/fase_curupira/barreira/barreira.gd" id="1_xotb8"]
 [ext_resource type="Texture2D" uid="uid://ckphgowce4guh" path="res://cenas/fases/fase_curupira/barreira/sprites/arvore-cheia.png" id="2_ir0aq"]
@@ -25,7 +25,10 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_k7itn"]
-size = Vector2(128, 128)
+size = Vector2(144, 184)
+
+[sub_resource type="LabelSettings" id="LabelSettings_4rlu0"]
+font_size = 30
 
 [sub_resource type="Curve" id="Curve_rmmch"]
 _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
@@ -35,12 +38,14 @@ point_count = 2
 script = ExtResource("1_xotb8")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(1.90735e-06, 9.53674e-07)
-scale = Vector2(0.125, 0.177778)
+texture_filter = 1
+position = Vector2(2.38419e-06, 31.96)
+scale = Vector2(0.2, 0.266778)
 sprite_frames = SubResource("SpriteFrames_fypnw")
 animation = &"vida-cheia"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 28)
 shape = SubResource("RectangleShape2D_k7itn")
 
 [node name="Label" type="Label" parent="."]
@@ -49,15 +54,17 @@ offset_top = -64.0
 offset_right = 132.0
 offset_bottom = -41.0
 text = "qweasd"
+label_settings = SubResource("LabelSettings_4rlu0")
 metadata/_edit_use_anchors_ = true
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_ir0aq")
 
 [node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+position = Vector2(0, 24)
 emitting = false
 amount = 120
-lifetime = 0.2
+lifetime = 0.41
 one_shot = true
 explosiveness = 1.0
 spread = 180.0
@@ -65,7 +72,7 @@ gravity = Vector2(0, 0)
 initial_velocity_min = 50.0
 initial_velocity_max = 500.0
 scale_amount_min = 2.0
-scale_amount_max = 4.0
+scale_amount_max = 10.0
 scale_amount_curve = SubResource("Curve_rmmch")
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]

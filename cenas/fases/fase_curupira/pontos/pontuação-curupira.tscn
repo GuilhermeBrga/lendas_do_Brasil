@@ -5,7 +5,7 @@
 
 [sub_resource type="LabelSettings" id="LabelSettings_jka1l"]
 font = ExtResource("2_khnun")
-font_size = 32
+font_size = 64
 
 [node name="Pontuação" type="Control"]
 layout_mode = 3
@@ -17,11 +17,12 @@ script = ExtResource("1_0s78r")
 metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="."]
-layout_mode = 0
-anchor_right = 1.0
-anchor_bottom = 1.075
-offset_right = -102.177
-offset_bottom = -4.66672
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 2.00391
+anchor_bottom = 2.15
+offset_right = -359.178
+offset_bottom = -47.6668
 text = "pontuação: 0"
 label_settings = SubResource("LabelSettings_jka1l")
 metadata/_edit_use_anchors_ = true

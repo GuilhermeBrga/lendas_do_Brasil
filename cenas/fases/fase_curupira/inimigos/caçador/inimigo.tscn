@@ -34,7 +34,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c1wlf"]
-size = Vector2(96, 176)
+size = Vector2(136, 240)
 
 [sub_resource type="Curve" id="Curve_ppreo"]
 _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
@@ -47,18 +47,15 @@ script = ExtResource("1_c1wlf")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
-position = Vector2(-3, 0)
-scale = Vector2(3, 3)
+position = Vector2(-1.90735e-06, 0)
+scale = Vector2(4.12903, 4.12903)
 sprite_frames = SubResource("SpriteFrames_c1wlf")
 animation = &"andar"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -4)
+position = Vector2(6, -4)
 scale = Vector2(0.5, 0.5)
 shape = SubResource("RectangleShape2D_c1wlf")
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("3_ppreo")
 
 [node name="CPUParticles2D" type="CPUParticles2D" parent="."]
 emitting = false
@@ -75,5 +72,8 @@ scale_amount_max = 20.0
 scale_amount_curve = SubResource("Curve_ppreo")
 color = Color(1, 0, 0, 1)
 color_initial_ramp = SubResource("Gradient_ppreo")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_ppreo")
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
