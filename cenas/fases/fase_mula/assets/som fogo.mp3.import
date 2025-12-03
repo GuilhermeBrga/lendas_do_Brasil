@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cwh7lf2ep6vwi"
+path="res://.godot/imported/som fogo.mp3-a5aab719295b6fe7ef975011dc4fef1d.mp3str"
+
+[deps]
+
+source_file="res://cenas/fases/fase_mula/assets/som fogo.mp3"
+dest_files=["res://.godot/imported/som fogo.mp3-a5aab719295b6fe7ef975011dc4fef1d.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

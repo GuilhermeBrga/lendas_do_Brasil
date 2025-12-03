@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://4tw4qk3nx8sd"]
+[gd_scene load_steps=13 format=3 uid="uid://4tw4qk3nx8sd"]
 
 [ext_resource type="Script" uid="uid://dijbuspkt0dvy" path="res://cenas/mapa_fases/b_tutorial.gd" id="1_jpuch"]
 [ext_resource type="Texture2D" uid="uid://82cphtrb2hy5" path="res://assets/cenarios/mapa.png" id="2_wrbcl"]
@@ -9,6 +9,8 @@
 [ext_resource type="Texture2D" uid="uid://dw5w243mih82m" path="res://assets/elementos/painel_generico.png" id="5_beojq"]
 [ext_resource type="Script" uid="uid://bqy5tb3ubw1i1" path="res://cenas/mapa_fases/b_fase_4.gd" id="5_wgau1"]
 [ext_resource type="Script" uid="uid://4dyudlj2uqhf" path="res://cenas/mapa_fases/b_fase_1.gd" id="6_wrbcl"]
+[ext_resource type="Script" uid="uid://dkn6wpofttnqd" path="res://cenas/mapa_fases/b_fase_5.gd" id="7_wgau1"]
+[ext_resource type="Script" uid="uid://c2f02tdsxlvuk" path="res://cenas/mapa_fases/b_fase_6.gd" id="8_63kmp"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_tbcqi"]
 font_color = Color(0, 0, 0, 1)
@@ -34,6 +36,7 @@ stretch_mode = 2
 metadata/_edit_use_anchors_ = true
 
 [node name="b_tutorial" type="Button" parent="mapa"]
+layout_mode = 0
 offset_left = 128.0
 offset_top = 707.0
 offset_right = 236.0
@@ -42,6 +45,7 @@ mouse_default_cursor_shape = 2
 script = ExtResource("1_jpuch")
 
 [node name="b_fase_1" type="Button" parent="mapa"]
+layout_mode = 0
 offset_left = 201.664
 offset_top = 333.484
 offset_right = 343.664
@@ -50,6 +54,7 @@ mouse_default_cursor_shape = 2
 script = ExtResource("6_wrbcl")
 
 [node name="b_fase_2" type="Button" parent="mapa"]
+layout_mode = 0
 offset_left = 518.11
 offset_top = 290.15
 offset_right = 660.11
@@ -58,6 +63,7 @@ mouse_default_cursor_shape = 2
 script = ExtResource("3_hgwlt")
 
 [node name="b_fase_3" type="Button" parent="mapa"]
+layout_mode = 0
 offset_left = 816.222
 offset_top = 271.309
 offset_right = 952.222
@@ -66,12 +72,29 @@ script = ExtResource("4_beojq")
 metadata/_edit_use_anchors_ = true
 
 [node name="b_fase_4" type="Button" parent="mapa"]
+layout_mode = 0
 offset_left = 934.989
 offset_top = 542.618
 offset_right = 1054.99
 offset_bottom = 670.618
 script = ExtResource("5_wgau1")
 metadata/_edit_use_anchors_ = true
+
+[node name="b_fase_5" type="Button" parent="mapa"]
+layout_mode = 0
+offset_left = 1191.0
+offset_top = 407.0
+offset_right = 1297.0
+offset_bottom = 538.0
+script = ExtResource("7_wgau1")
+
+[node name="b_fase_6" type="Button" parent="mapa"]
+layout_mode = 0
+offset_left = 1276.14
+offset_top = 634.939
+offset_right = 1380.14
+offset_bottom = 758.939
+script = ExtResource("8_63kmp")
 
 [node name="voltar_btn" type="TextureButton" parent="mapa"]
 layout_mode = 1
@@ -95,6 +118,7 @@ texture = ExtResource("5_beojq")
 
 [node name="Label_tutorial" type="Label" parent="."]
 visible = false
+layout_mode = 0
 offset_left = 91.0
 offset_top = 380.0
 offset_right = 372.0
@@ -123,4 +147,6 @@ scale = Vector2(0.468055, 0.445833)
 [connection signal="pressed" from="mapa/b_fase_2" to="mapa/b_fase_2" method="_on_pressed"]
 [connection signal="pressed" from="mapa/b_fase_3" to="mapa/b_fase_3" method="_on_pressed"]
 [connection signal="pressed" from="mapa/b_fase_4" to="mapa/b_fase_4" method="_on_pressed"]
+[connection signal="pressed" from="mapa/b_fase_5" to="mapa/b_fase_5" method="_on_pressed"]
+[connection signal="pressed" from="mapa/b_fase_6" to="mapa/b_fase_6" method="_on_pressed"]
 [connection signal="pressed" from="mapa/voltar_btn" to="mapa/voltar_btn" method="_on_pressed"]

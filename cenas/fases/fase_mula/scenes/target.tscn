@@ -1,0 +1,108 @@
+[gd_scene load_steps=14 format=3 uid="uid://bl0qbe02pm8cd"]
+
+[ext_resource type="Script" uid="uid://ch3tht42sb6wk" path="res://cenas/fases/fase_mula/scripts/target.gd" id="1_xv4js"]
+[ext_resource type="Texture2D" uid="uid://bmxov7y3b7amv" path="res://cenas/fases/fase_mula/assets/fogoFinal.png" id="2_e1yvt"]
+[ext_resource type="AudioStream" uid="uid://cwh7lf2ep6vwi" path="res://cenas/fases/fase_mula/assets/som fogo.mp3" id="3_5ebp1"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_hfy33"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5ebp1"]
+atlas = ExtResource("2_e1yvt")
+region = Rect2(167, 0, 167, 124)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uqips"]
+atlas = ExtResource("2_e1yvt")
+region = Rect2(334, 0, 167, 124)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ufrq1"]
+atlas = ExtResource("2_e1yvt")
+region = Rect2(0, 248, 167, 124)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8d2pw"]
+atlas = ExtResource("2_e1yvt")
+region = Rect2(334, 0, 167, 124)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vwgc3"]
+atlas = ExtResource("2_e1yvt")
+region = Rect2(167, 0, 167, 124)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_187ua"]
+atlas = ExtResource("2_e1yvt")
+region = Rect2(501, 0, 167, 124)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kr5f8"]
+atlas = ExtResource("2_e1yvt")
+region = Rect2(0, 124, 167, 124)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i5jb4"]
+atlas = ExtResource("2_e1yvt")
+region = Rect2(167, 124, 167, 124)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_l6kq0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5ebp1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uqips")
+}],
+"loop": false,
+"name": &"appear",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ufrq1")
+}],
+"loop": false,
+"name": &"hidden",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8d2pw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vwgc3")
+}],
+"loop": false,
+"name": &"hide",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_187ua")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kr5f8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i5jb4")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 6.0
+}]
+
+[node name="Target" type="StaticBody2D"]
+input_pickable = true
+physics_material_override = SubResource("PhysicsMaterial_hfy33")
+script = ExtResource("1_xv4js")
+
+[node name="anim" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_l6kq0")
+animation = &"appear"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(12, -53, 20, -46, 36, -25, 42, 8, 43, 16, 43, 16, 49, 35, 43, 45, 14, 50, -18, 52, -39, 43, -49, 32, -46, 12, -38, -22, -28, -39, -9, -53)
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 1.5
+one_shot = true
+
+[node name="HitSoundPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_5ebp1")
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

@@ -1,0 +1,51 @@
+[gd_scene load_steps=6 format=3 uid="uid://cxsomm2s0j8bb"]
+
+[ext_resource type="Script" uid="uid://dxkn1qagy7jn0" path="res://cenas/fases/fase_mula/scripts/main.gd" id="1_jyhfs"]
+[ext_resource type="Texture2D" uid="uid://mayorybm8pop" path="res://cenas/fases/fase_mula/assets/bg mula.jpeg" id="2_tbgi4"]
+[ext_resource type="PackedScene" uid="uid://bl0qbe02pm8cd" path="res://cenas/fases/fase_mula/scenes/target.tscn" id="3_tefeu"]
+[ext_resource type="PackedScene" uid="uid://3441ns0335t8" path="res://cenas/fases/fase_mula/scenes/count_down.tscn" id="4_o6xl0"]
+[ext_resource type="FontFile" uid="uid://ofyno6ylm2b2" path="res://cenas/fases/fase_mula/assets/LEMONMILK-Bold.otf" id="5_lbne0"]
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_jyhfs")
+
+[node name="BG" type="TextureRect" parent="."]
+offset_right = 1924.0
+offset_bottom = 1081.0
+texture = ExtResource("2_tbgi4")
+expand_mode = 2
+
+[node name="Target3" parent="." instance=ExtResource("3_tefeu")]
+position = Vector2(444, 760)
+scale = Vector2(0.8, 0.8)
+
+[node name="Target5" parent="." instance=ExtResource("3_tefeu")]
+position = Vector2(1227, 892)
+scale = Vector2(0.8, 0.8)
+
+[node name="Target2" parent="." instance=ExtResource("3_tefeu")]
+position = Vector2(704, 917)
+scale = Vector2(0.8, 0.8)
+
+[node name="Target4" parent="." instance=ExtResource("3_tefeu")]
+position = Vector2(936, 776)
+scale = Vector2(0.8, 0.8)
+
+[node name="Target" parent="." instance=ExtResource("3_tefeu")]
+position = Vector2(1392, 749)
+scale = Vector2(0.8, 0.8)
+
+[node name="CountDown" parent="." instance=ExtResource("4_o6xl0")]
+position = Vector2(-70, -100)
+scale = Vector2(1.5, 1.5)
+
+[node name="ScoreDisplayLabel" type="Label" parent="."]
+offset_left = 1633.0
+offset_top = 52.0
+offset_right = 1874.0
+offset_bottom = 107.0
+theme_override_fonts/font = ExtResource("5_lbne0")
+theme_override_font_sizes/font_size = 40
+text = "Pontos: 0"
+
+[connection signal="gameOver" from="CountDown" to="." method="_on_count_down_game_over"]

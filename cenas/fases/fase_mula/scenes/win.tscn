@@ -1,0 +1,45 @@
+[gd_scene load_steps=4 format=3 uid="uid://c27whxcaerkm5"]
+
+[ext_resource type="Texture2D" uid="uid://hlavvam651wb" path="res://cenas/fases/fase_mula/assets/win mula.jpeg" id="1_hgi8f"]
+[ext_resource type="Script" uid="uid://c8oidx7o6od61" path="res://cenas/fases/fase_mula/scripts/win.gd" id="1_tmki8"]
+[ext_resource type="Texture2D" uid="uid://ittvexf77ti3" path="res://cenas/fases/fase_mula/assets/setas.png" id="2_tmki8"]
+
+[node name="win" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_tmki8")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = -12.0
+offset_top = -184.0
+offset_right = 1938.0
+offset_bottom = 1229.0
+texture = ExtResource("1_hgi8f")
+expand_mode = 5
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 25.0
+offset_top = 956.0
+offset_right = 1503.0
+offset_bottom = 1069.0
+theme_override_font_sizes/font_size = 40
+text = "O sol nasce! O tempo se esgota, e a Fúria foi controlada. A mulher acorda no 
+amanhecer, menos atormentada e com um vislumbre de paz em sua alma."
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 1785.0
+offset_top = 960.0
+offset_right = 1880.0
+offset_bottom = 1055.0
+icon = ExtResource("2_tmki8")
+flat = true
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

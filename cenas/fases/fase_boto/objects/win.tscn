@@ -1,0 +1,54 @@
+[gd_scene load_steps=4 format=3 uid="uid://copr2ldutfajj"]
+
+[ext_resource type="Texture2D" uid="uid://boq614fisuv4x" path="res://cenas/fases/fase_boto/art/win final.jpeg" id="1_sk2xc"]
+[ext_resource type="Script" uid="uid://dodi6gyvni4x7" path="res://cenas/fases/fase_boto/objects/win.gd" id="1_xyxfc"]
+[ext_resource type="Texture2D" uid="uid://p13ehnh5n2ra" path="res://cenas/fases/fase_boto/art/setas.png" id="2_rdoxn"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_xyxfc")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1.0
+offset_top = -23.0
+offset_right = 6.0
+offset_bottom = 11.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_sk2xc")
+expand_mode = 5
+stretch_mode = 6
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -870.0
+offset_top = 58.0
+offset_right = 935.0
+offset_bottom = 187.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 45
+text = "
+Naquela noite, a mulher desapareceu junto do boto… e jamais foi vista novamente."
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 1753.0
+offset_top = 951.0
+offset_right = 1848.0
+offset_bottom = 1046.0
+icon = ExtResource("2_rdoxn")
+flat = true
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

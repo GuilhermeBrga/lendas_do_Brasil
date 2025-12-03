@@ -1,4 +1,4 @@
-extends Node2D
+extends Control
 
 
 func _on_audio_stream_player_finished() -> void:

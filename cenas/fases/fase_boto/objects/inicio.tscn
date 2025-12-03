@@ -1,0 +1,49 @@
+[gd_scene load_steps=4 format=3 uid="uid://bqg6hgc1oklqf"]
+
+[ext_resource type="Script" uid="uid://c2vqbdi3vnq7u" path="res://cenas/fases/fase_boto/objects/inicio.gd" id="1_8ywv6"]
+[ext_resource type="Texture2D" uid="uid://bptsueod7s7s4" path="res://cenas/fases/fase_boto/art/inicio2 final.jpeg" id="2_8wt14"]
+[ext_resource type="Texture2D" uid="uid://p13ehnh5n2ra" path="res://cenas/fases/fase_boto/art/setas.png" id="3_8wt14"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -710.0
+offset_top = -253.0
+offset_right = 1140.0
+offset_bottom = 638.0
+script = ExtResource("1_8ywv6")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 710.0
+offset_top = 232.0
+offset_right = 2638.0
+offset_bottom = 1336.0
+texture = ExtResource("2_8wt14")
+expand_mode = 5
+stretch_mode = 6
+
+[node name="Button" type="Button" parent="."]
+z_index = 1
+layout_mode = 0
+offset_left = 2495.0
+offset_top = 1219.0
+offset_right = 2594.0
+offset_bottom = 1314.0
+text = "
+"
+icon = ExtResource("3_8wt14")
+flat = true
+
+[node name="Label" type="Label" parent="."]
+z_index = 1
+layout_mode = 0
+offset_left = 785.0
+offset_top = 1242.0
+offset_right = 2467.0
+offset_bottom = 1371.0
+theme_override_font_sizes/font_size = 45
+text = "Atraído pela festa, o boto deixa o rio em busca de uma mulher para encantar.
+"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
