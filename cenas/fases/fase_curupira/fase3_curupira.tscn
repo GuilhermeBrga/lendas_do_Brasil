@@ -79,13 +79,16 @@ anchor_bottom = -0.42963
 [node name="barreiras" type="Node" parent="."]
 
 [node name="barreira" parent="barreiras" instance=ExtResource("2_rt8ef")]
-position = Vector2(-760, 64)
+position = Vector2(-760, 72)
 
 [node name="barreira2" parent="barreiras" instance=ExtResource("2_rt8ef")]
-position = Vector2(0, 64)
+position = Vector2(-200, 72)
 
 [node name="barreira3" parent="barreiras" instance=ExtResource("2_rt8ef")]
 position = Vector2(760, 72)
+
+[node name="barreira4" parent="barreiras" instance=ExtResource("2_rt8ef")]
+position = Vector2(200, 72)
 
 [node name="paredes" type="Node" parent="."]
 
