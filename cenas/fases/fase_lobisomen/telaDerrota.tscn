@@ -1,0 +1,39 @@
+[gd_scene load_steps=4 format=3 uid="uid://dgghwnvcxv1kd"]
+
+[ext_resource type="Texture2D" uid="uid://b1g47jgjvn7tw" path="res://cenas/fases/fase_lobisomen/assets/derrota lobi.jpg" id="1_b1th6"]
+[ext_resource type="Script" uid="uid://sk8p1ovk5ec" path="res://cenas/fases/fase_lobisomen/button_mapa.gd" id="2_a35v4"]
+[ext_resource type="Script" uid="uid://c6afsoqj3y6o1" path="res://cenas/fases/fase_lobisomen/button_reinicia.gd" id="2_klywv"]
+
+[node name="TelaDerrota" type="Node2D"]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+texture_filter = 1
+offset_right = 638.0
+offset_bottom = 361.0
+texture = ExtResource("1_b1th6")
+expand_mode = 1
+
+[node name="ButtonMapa" type="Button" parent="."]
+offset_left = 264.0
+offset_top = 185.0
+offset_right = 373.0
+offset_bottom = 216.0
+mouse_default_cursor_shape = 2
+text = "Sair ao Mapa"
+script = ExtResource("2_a35v4")
+
+[node name="ButtonReinicia" type="Button" parent="."]
+offset_left = 245.0
+offset_top = 141.0
+offset_right = 394.0
+offset_bottom = 172.0
+mouse_default_cursor_shape = 2
+text = "Tente novamente!"
+script = ExtResource("2_klywv")
+
+[node name="Label" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
+
+[connection signal="pressed" from="ButtonMapa" to="ButtonMapa" method="_on_pressed"]
+[connection signal="pressed" from="ButtonReinicia" to="ButtonReinicia" method="_on_pressed"]

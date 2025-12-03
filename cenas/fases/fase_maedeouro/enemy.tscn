@@ -1,0 +1,75 @@
+[gd_scene load_steps=11 format=3 uid="uid://citgv4fosqca8"]
+
+[ext_resource type="Script" uid="uid://bcfwuae2xegos" path="res://cenas/fases/fase_maedeouro/enemy.gd" id="1_sefl1"]
+[ext_resource type="Texture2D" uid="uid://bmun8ma4ui2q0" path="res://cenas/fases/fase_maedeouro/assets/Derrick Death 2 Sheet.png" id="2_70gnf"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y30t8"]
+atlas = ExtResource("2_70gnf")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_stk72"]
+atlas = ExtResource("2_70gnf")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wvceg"]
+atlas = ExtResource("2_70gnf")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m4xq8"]
+atlas = ExtResource("2_70gnf")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gqttw"]
+atlas = ExtResource("2_70gnf")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8qjt7"]
+atlas = ExtResource("2_70gnf")
+region = Rect2(80, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_elu48"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y30t8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_stk72")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wvceg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m4xq8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gqttw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8qjt7")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_in3tx"]
+radius = 13.0
+
+[node name="Enemy" type="Area2D" groups=["inimigos"]]
+script = ExtResource("1_sefl1")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(1.7500002, 1.856061)
+scale = Vector2(2.28125, 2.4195075)
+sprite_frames = SubResource("SpriteFrames_elu48")
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(6, 1)
+shape = SubResource("CircleShape2D_in3tx")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]

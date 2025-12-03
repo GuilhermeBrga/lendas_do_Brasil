@@ -1,0 +1,38 @@
+[gd_scene load_steps=5 format=3 uid="uid://cxoib0iufvcol"]
+
+[ext_resource type="Texture2D" uid="uid://b6svrk7fyksft" path="res://cenas/fases/fase_maedeouro/assets/mae de ouro vitoria.jpg" id="1_hvduu"]
+[ext_resource type="Texture2D" uid="uid://dw5w243mih82m" path="res://assets/elementos/painel_generico.png" id="2_carew"]
+[ext_resource type="Texture2D" uid="uid://db3yi1pt5x5q1" path="res://assets/elementos/setas.png" id="3_1cto8"]
+[ext_resource type="Script" uid="uid://d1qrfx2nx6loy" path="res://cenas/fases/fase_maedeouro/button_mapa.gd" id="4_t3uf1"]
+
+[node name="TelaVitoria" type="Node2D"]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 638.0
+offset_bottom = 363.0
+texture = ExtResource("1_hvduu")
+expand_mode = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(318.00003, 277.00003)
+scale = Vector2(0.3832574, 0.11769966)
+texture = ExtResource("2_carew")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 167.0
+offset_top = 259.0
+offset_right = 471.0
+offset_bottom = 282.0
+theme_override_colors/font_color = Color(0.012617188, 0.012617188, 0.012617188, 1)
+text = "Parabéns Jogador, você concluiu a fase!"
+
+[node name="ButtonMapa" type="Button" parent="."]
+offset_left = 439.0
+offset_top = 288.0
+offset_right = 534.0
+offset_bottom = 383.0
+scale = Vector2(0.3, 0.3)
+icon = ExtResource("3_1cto8")
+script = ExtResource("4_t3uf1")
+
+[connection signal="pressed" from="ButtonMapa" to="ButtonMapa" method="_on_pressed"]

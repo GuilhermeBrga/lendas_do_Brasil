@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cg7vapvo0cifb"
+path="res://.godot/imported/Werewolf Howling Sound Effect [GkrSiw5LfYE].mp3-3249f593b3c2100e7526d6d7c85ef3dc.mp3str"
+
+[deps]
+
+source_file="res://cenas/fases/fase_lobisomen/assets/Werewolf Howling Sound Effect [GkrSiw5LfYE].mp3"
+dest_files=["res://.godot/imported/Werewolf Howling Sound Effect [GkrSiw5LfYE].mp3-3249f593b3c2100e7526d6d7c85ef3dc.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

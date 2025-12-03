@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dauuiq80kfn2s"
+path="res://.godot/imported/All Ghost Attack Scream Sounds (Phasmophobia) - Sound Effects for editing [R3KqAaggjgM].mp3-c84a009c51a2ccf240dd28b9fefa5184.mp3str"
+
+[deps]
+
+source_file="res://cenas/fases/fase_maedeouro/assets/All Ghost Attack Scream Sounds (Phasmophobia) - Sound Effects for editing [R3KqAaggjgM].mp3"
+dest_files=["res://.godot/imported/All Ghost Attack Scream Sounds (Phasmophobia) - Sound Effects for editing [R3KqAaggjgM].mp3-c84a009c51a2ccf240dd28b9fefa5184.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
