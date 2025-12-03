@@ -1,0 +1,44 @@
+[gd_scene load_steps=4 format=3 uid="uid://bdhvq0ly31cxe"]
+
+[ext_resource type="Script" uid="uid://dulwgw0sse6gf" path="res://cenas/fases/fase_mula/scripts/inicio.gd" id="1_q0xg8"]
+[ext_resource type="Texture2D" uid="uid://clsa3gx0dkreu" path="res://cenas/fases/fase_mula/assets/inicio mula.jpeg" id="2_yogrx"]
+[ext_resource type="Texture2D" uid="uid://ittvexf77ti3" path="res://cenas/fases/fase_mula/assets/setas.png" id="3_yogrx"]
+
+[node name="inicio" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_q0xg8")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = -2.0
+offset_top = -163.0
+offset_right = 1925.0
+offset_bottom = 1233.0
+texture = ExtResource("2_yogrx")
+expand_mode = 5
+stretch_mode = 5
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 1777.0
+offset_top = 944.0
+offset_right = 1874.0
+offset_bottom = 1039.0
+theme_override_font_sizes/font_size = 30
+icon = ExtResource("3_yogrx")
+flat = true
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 179.0
+offset_top = 13.0
+offset_right = 1841.0
+offset_bottom = 126.0
+theme_override_font_sizes/font_size = 40
+text = "É noite de quinta-feira. Você é a Mula Sem Cabeça. Corra contra o tempo e contenha
+ a fúria em seu peito para que a mulher possa ter um momento de paz no amanhecer."
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

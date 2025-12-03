@@ -1,0 +1,62 @@
+[gd_scene load_steps=6 format=3 uid="uid://b7k66h48ok27u"]
+
+[ext_resource type="Texture2D" uid="uid://bc7yul8pac8c3" path="res://cenas/fases/fase_boto/art/painel_generico.png" id="1_g5lpa"]
+[ext_resource type="Script" uid="uid://bfnma1pei76yl" path="res://cenas/fases/fase_boto/objects/tutorial_boto.gd" id="1_t5n2h"]
+[ext_resource type="Texture2D" uid="uid://hpebkuc10mik" path="res://cenas/fases/fase_boto/art/btn_fechar.png" id="3_8y7gk"]
+[ext_resource type="FontFile" uid="uid://u5dr2hjfv6w7" path="res://cenas/fases/fase_boto/art/LEMONMILK-Bold.otf" id="4_uwmew"]
+[ext_resource type="FontFile" uid="uid://ds87w8j8pvtua" path="res://cenas/fases/fase_boto/art/LEMONMILK-Light.otf" id="5_nuwjg"]
+
+[node name="Control" type="Control"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_t5n2h")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = -273.0
+offset_top = -239.0
+offset_right = 605.0
+offset_bottom = 600.0
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("1_g5lpa")
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = -147.0
+offset_top = 156.0
+offset_right = 389.0
+offset_bottom = 314.0
+scale = Vector2(0.5, 0.5)
+icon = ExtResource("3_8y7gk")
+flat = true
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = -143.0
+offset_top = -205.0
+offset_right = 133.0
+offset_bottom = -158.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_uwmew")
+theme_override_font_sizes/font_size = 35
+text = "como jogar"
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 0
+offset_left = -233.0
+offset_top = -115.0
+offset_right = 2250.0
+offset_bottom = 120.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("5_nuwjg")
+theme_override_font_sizes/font_size = 23
+text = "Pressione as setas no momento 
+certo, quando elas alcançarem 
+a área indicada.
+Você ganha pontos a cada 
+acerto. Para vencer, alcance
+300 pontos  antes da música 
+terminar."
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

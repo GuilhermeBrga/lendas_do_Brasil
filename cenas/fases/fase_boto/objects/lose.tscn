@@ -1,0 +1,48 @@
+[gd_scene load_steps=4 format=3 uid="uid://b6pug8bjqrxby"]
+
+[ext_resource type="Script" uid="uid://cek077k0hib4k" path="res://cenas/fases/fase_boto/objects/lose.gd" id="1_msil0"]
+[ext_resource type="Texture2D" uid="uid://b47q6q5ijfbm5" path="res://cenas/fases/fase_boto/art/lose final.jpeg" id="1_nx2rx"]
+[ext_resource type="Texture2D" uid="uid://p13ehnh5n2ra" path="res://cenas/fases/fase_boto/art/setas.png" id="3_ivl86"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_msil0")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 2.0
+offset_right = 2.0
+offset_bottom = 10.286
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_nx2rx")
+expand_mode = 5
+stretch_mode = 6
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 67.0
+offset_right = 1908.0
+offset_bottom = 130.0
+theme_override_font_sizes/font_size = 45
+text = "Naquela noite, o boto não conseguiu encantar a mulher… e retornou solitário às águas."
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 1765.0
+offset_top = 963.0
+offset_right = 1860.0
+offset_bottom = 1058.0
+icon = ExtResource("3_ivl86")
+flat = true
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
