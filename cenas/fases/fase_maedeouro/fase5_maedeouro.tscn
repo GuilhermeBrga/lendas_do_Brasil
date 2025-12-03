@@ -1,0 +1,36 @@
+[gd_scene load_steps=5 format=3 uid="uid://dlubrkcwvhs7i"]
+
+[ext_resource type="Script" uid="uid://dawl48ax1ihgw" path="res://cenas/fases/fase_maedeouro/fase_5_maedeouro.gd" id="1_544e2"]
+[ext_resource type="Texture2D" uid="uid://btimsgeplrhl7" path="res://cenas/fases/fase_maedeouro/assets/maedouro.jpg" id="2_ftvu1"]
+[ext_resource type="PackedScene" uid="uid://ckn0vj1y6ktky" path="res://cenas/fases/fase_maedeouro/fogueira.tscn" id="3_ovyd5"]
+[ext_resource type="PackedScene" uid="uid://citgv4fosqca8" path="res://cenas/fases/fase_maedeouro/enemy.tscn" id="12_uakdr"]
+
+[node name="Fase5Maedeouro" type="Node2D" groups=["inimigos"]]
+script = ExtResource("1_544e2")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+texture_filter = 1
+offset_right = 686.0
+offset_bottom = 362.0
+texture = ExtResource("2_ftvu1")
+expand_mode = 1
+
+[node name="Fogueira" parent="." instance=ExtResource("3_ovyd5")]
+position = Vector2(310, 284)
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[node name="SpawnPoint" type="Marker2D" parent="."]
+position = Vector2(552, 174)
+
+[node name="Enemy" parent="." instance=ExtResource("12_uakdr")]
+position = Vector2(724, 91)
+
+[node name="TimerVitoria" type="Timer" parent="."]
+wait_time = 30.0
+one_shot = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="area_entered" from="Enemy" to="." method="_on_enemy_area_entered"]
+[connection signal="timeout" from="TimerVitoria" to="." method="_on_timer_vitoria_timeout"]

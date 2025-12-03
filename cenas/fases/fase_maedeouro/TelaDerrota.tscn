@@ -1,0 +1,32 @@
+[gd_scene load_steps=4 format=3 uid="uid://c8we5wqjlexaw"]
+
+[ext_resource type="Texture2D" uid="uid://5fliicdw24cx" path="res://cenas/fases/fase_maedeouro/assets/derrota mae de ouro.jpg" id="1_6g8fy"]
+[ext_resource type="Script" uid="uid://d1qrfx2nx6loy" path="res://cenas/fases/fase_maedeouro/button_mapa.gd" id="2_1s4xr"]
+[ext_resource type="Script" uid="uid://dwdy7am87ysxn" path="res://cenas/fases/fase_maedeouro/button_reinicia.gd" id="3_knulc"]
+
+[node name="TelaDerrota" type="Node2D"]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 635.0
+offset_bottom = 355.0
+texture = ExtResource("1_6g8fy")
+expand_mode = 1
+
+[node name="ButtonMapa" type="Button" parent="."]
+offset_left = 243.0
+offset_top = 183.0
+offset_right = 391.0
+offset_bottom = 214.0
+text = "Retornar ao mapa"
+script = ExtResource("2_1s4xr")
+
+[node name="ButtonReinicia" type="Button" parent="."]
+offset_left = 241.0
+offset_top = 144.0
+offset_right = 393.0
+offset_bottom = 175.0
+text = "Tentar novamente"
+script = ExtResource("3_knulc")
+
+[connection signal="pressed" from="ButtonMapa" to="ButtonMapa" method="_on_pressed"]
+[connection signal="pressed" from="ButtonReinicia" to="ButtonReinicia" method="_on_pressed"]

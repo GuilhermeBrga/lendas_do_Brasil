@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://dypl2aea183ar"]
+
+[ext_resource type="Texture2D" uid="uid://dw5w243mih82m" path="res://assets/elementos/painel_generico.png" id="1_2jvim"]
+[ext_resource type="Texture2D" uid="uid://dmmbna02dloe4" path="res://cenas/fases/fase_lobisomen/assets/Screenshot_14.png" id="2_ux8bu"]
+[ext_resource type="Script" uid="uid://bk8tma2qgyrv5" path="res://cenas/fases/fase_lobisomen/button_instrucao.gd" id="3_yi0k6"]
+
+[node name="ControlesInstrucao" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(324, 182.5)
+scale = Vector2(0.73804104, 0.43265796)
+texture = ExtResource("1_2jvim")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(323, 171)
+scale = Vector2(0.5851588, 0.639323)
+texture = ExtResource("2_ux8bu")
+
+[node name="ButtonInstrucao" type="Button" parent="."]
+offset_left = 258.0
+offset_top = 309.0
+offset_right = 379.0
+offset_bottom = 340.0
+mouse_default_cursor_shape = 2
+text = "Começar"
+script = ExtResource("3_yi0k6")
+
+[connection signal="pressed" from="ButtonInstrucao" to="ButtonInstrucao" method="_on_pressed"]

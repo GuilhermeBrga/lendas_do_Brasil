@@ -1,0 +1,40 @@
+[gd_scene load_steps=5 format=3 uid="uid://dptn1tc1l45u"]
+
+[ext_resource type="Texture2D" uid="uid://5ifxvfechkwr" path="res://cenas/fases/fase_lobisomen/assets/vitoria lobisomen.jpg" id="1_ybtlc"]
+[ext_resource type="Texture2D" uid="uid://dw5w243mih82m" path="res://assets/elementos/painel_generico.png" id="2_breth"]
+[ext_resource type="Texture2D" uid="uid://db3yi1pt5x5q1" path="res://assets/elementos/setas.png" id="3_kbyk7"]
+[ext_resource type="Script" uid="uid://cuw6daa6g8oaq" path="res://cenas/fases/fase_lobisomen/button_vitoria.gd" id="4_3vkwc"]
+
+[node name="TelaVitoria" type="Node2D"]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 637.0
+offset_bottom = 360.0
+texture = ExtResource("1_ybtlc")
+expand_mode = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(315, 264)
+scale = Vector2(0.3701595, 0.13438626)
+texture = ExtResource("2_breth")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 219.0
+offset_top = 247.0
+offset_right = 412.0
+offset_bottom = 278.0
+theme_override_colors/font_color = Color(0.012617188, 0.012617188, 0.012617188, 1)
+theme_override_font_sizes/font_size = 22
+text = "Parabéns Jogador!"
+
+[node name="ButtonVitoria" type="Button" parent="."]
+offset_left = 425.0
+offset_top = 283.0
+offset_right = 520.0
+offset_bottom = 378.0
+scale = Vector2(0.3, 0.3)
+mouse_default_cursor_shape = 2
+icon = ExtResource("3_kbyk7")
+script = ExtResource("4_3vkwc")
+
+[connection signal="pressed" from="ButtonVitoria" to="ButtonVitoria" method="_on_pressed"]

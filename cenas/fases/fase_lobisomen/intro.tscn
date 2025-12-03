@@ -1,0 +1,43 @@
+[gd_scene load_steps=5 format=3 uid="uid://5dlrdpau2jn1"]
+
+[ext_resource type="Texture2D" uid="uid://w116twmnebtu" path="res://cenas/fases/fase_lobisomen/assets/capa lobisomen.jpg" id="1_ekrmm"]
+[ext_resource type="Texture2D" uid="uid://dw5w243mih82m" path="res://assets/elementos/painel_generico.png" id="2_cc723"]
+[ext_resource type="Texture2D" uid="uid://db3yi1pt5x5q1" path="res://assets/elementos/setas.png" id="3_nkrw7"]
+[ext_resource type="Script" uid="uid://dw3tmefxsggej" path="res://cenas/fases/fase_lobisomen/button.gd" id="4_0q1ui"]
+
+[node name="Intro" type="Node2D"]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 661.29517
+offset_bottom = 361.0
+texture = ExtResource("1_ekrmm")
+expand_mode = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(330.00003, 257.75)
+scale = Vector2(0.465262, 0.17818832)
+texture = ExtResource("2_cc723")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 159.0
+offset_top = 196.0
+offset_right = 504.0
+offset_bottom = 323.0
+theme_override_colors/font_color = Color(0.012617188, 0.012617188, 0.012617188, 1)
+text = "Ajude o Lobisomen a derrotar os esqueletos 
+que estão atormentando a floresta!
+
+Derrote os esqueletos e colete os itens 
+para vencer."
+horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="."]
+offset_left = 487.0
+offset_top = 293.0
+offset_right = 582.0
+offset_bottom = 388.0
+scale = Vector2(0.3, 0.3)
+icon = ExtResource("3_nkrw7")
+script = ExtResource("4_0q1ui")
+
+[connection signal="pressed" from="Button" to="Button" method="_on_pressed"]

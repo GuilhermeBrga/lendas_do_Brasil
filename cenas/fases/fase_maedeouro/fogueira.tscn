@@ -1,0 +1,74 @@
+[gd_scene load_steps=14 format=3 uid="uid://ckn0vj1y6ktky"]
+
+[ext_resource type="Script" uid="uid://nh0qnd374mt6" path="res://cenas/fases/fase_maedeouro/fogueira.gd" id="1_0y44x"]
+[ext_resource type="Texture2D" uid="uid://4kty2spdbvrp" path="res://cenas/fases/fase_maedeouro/assets/1.png" id="2_1ox2n"]
+[ext_resource type="Texture2D" uid="uid://cwyba0wbohm42" path="res://cenas/fases/fase_maedeouro/assets/2.png" id="3_kh861"]
+[ext_resource type="Texture2D" uid="uid://bl0xyoj77cfj7" path="res://cenas/fases/fase_maedeouro/assets/3.png" id="4_fcq8v"]
+[ext_resource type="Texture2D" uid="uid://br6d126p1yrpb" path="res://cenas/fases/fase_maedeouro/assets/4.png" id="5_mj3qd"]
+[ext_resource type="Texture2D" uid="uid://blsvg7tc5bevv" path="res://cenas/fases/fase_maedeouro/assets/5.png" id="6_f8fqn"]
+[ext_resource type="Texture2D" uid="uid://dmf1ld7ppfps4" path="res://cenas/fases/fase_maedeouro/assets/6.png" id="7_g5nuu"]
+[ext_resource type="Texture2D" uid="uid://l1ym17dr12g5" path="res://cenas/fases/fase_maedeouro/assets/7.png" id="8_bov5b"]
+[ext_resource type="Texture2D" uid="uid://dyxero2m1jleu" path="res://cenas/fases/fase_maedeouro/assets/8.png" id="9_xvmx5"]
+[ext_resource type="Texture2D" uid="uid://ck0fvuuvteb4y" path="res://cenas/fases/fase_maedeouro/assets/stone.png" id="10_qtgvc"]
+[ext_resource type="AudioStream" uid="uid://w3twtrkfphcp" path="res://cenas/fases/fase_maedeouro/assets/Burning Fire with sound effects free to use _ no copyright [GdwhlKKw0Lc].mp3" id="11_1ox2n"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ffrt8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_1ox2n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_kh861")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_fcq8v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_mj3qd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_f8fqn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_g5nuu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_bov5b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_xvmx5")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_xtquu"]
+radius = 27.89265
+
+[node name="Fogueira" type="Area2D" groups=["inimigos"]]
+script = ExtResource("1_0y44x")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.29150382, 0.28979495)
+sprite_frames = SubResource("SpriteFrames_ffrt8")
+autoplay = "default"
+frame_progress = 0.7697756
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 28)
+shape = SubResource("CircleShape2D_xtquu")
+
+[node name="Stone" type="Sprite2D" parent="."]
+position = Vector2(3, -47.999996)
+scale = Vector2(0.32250977, 0.5297851)
+texture = ExtResource("10_qtgvc")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("11_1ox2n")
+volume_db = -18.174
+autoplay = true
+max_distance = 759.0
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bb7gml7hd14ic"
+path="res://.godot/imported/Monplaisir - Soundtrack ♫ NO COPYRIGHT 8-bit Music [Ddrs6FXIJ-g].mp3-c708a94a5a43dd2d67537d4045fe3c94.mp3str"
+
+[deps]
+
+source_file="res://cenas/fases/fase_lobisomen/assets/Monplaisir - Soundtrack ♫ NO COPYRIGHT 8-bit Music [Ddrs6FXIJ-g].mp3"
+dest_files=["res://.godot/imported/Monplaisir - Soundtrack ♫ NO COPYRIGHT 8-bit Music [Ddrs6FXIJ-g].mp3-c708a94a5a43dd2d67537d4045fe3c94.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
