@@ -189,19 +189,16 @@ scale = Vector2(0.263185, 0.245988)
 texture = ExtResource("11_e8fnv")
 
 [node name="MapinguariCutscene" type="Sprite2D" parent="."]
-visible = false
 position = Vector2(962, 537)
 scale = Vector2(1.58987, 1.34559)
 texture = ExtResource("9_sdx1u")
 
 [node name="painel_cutscene" type="Sprite2D" parent="."]
-visible = false
 position = Vector2(987.5, 978.875)
 scale = Vector2(1.43394, 0.166567)
 texture = ExtResource("10_f2ybp")
 
 [node name="Label_cutscene" type="Label" parent="."]
-visible = false
 offset_left = 412.0
 offset_top = 918.0
 offset_right = 1535.0

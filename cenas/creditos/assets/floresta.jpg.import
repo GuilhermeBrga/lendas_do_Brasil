@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b1g47jgjvn7tw"
-path="res://.godot/imported/derrota lobi.jpg-9458a5f9d11a05f618133913d9d628fa.ctex"
+uid="uid://c7mfl7efaqi8q"
+path="res://.godot/imported/floresta.jpg-e88259d53185886095d7a9c7e93cc4b4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://cenas/fases/fase_lobisomen/assets/derrota lobi.jpg"
-dest_files=["res://.godot/imported/derrota lobi.jpg-9458a5f9d11a05f618133913d9d628fa.ctex"]
+source_file="res://cenas/creditos/assets/floresta.jpg"
+dest_files=["res://.godot/imported/floresta.jpg-e88259d53185886095d7a9c7e93cc4b4.ctex"]
 
 [params]
 

@@ -5,7 +5,7 @@ class_name Inimigo
 signal inimigo_destruido
 var config:Resource
 
-@onready var sprite = $Sprite2D
+@onready var sprite:Sprite2D = $Sprite2D
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var efeito_sonoro:AudioStreamPlayer = $AudioStreamPlayer
 

@@ -8,14 +8,15 @@
 [node name="Intro" type="Node2D"]
 
 [node name="TextureRect" type="TextureRect" parent="."]
-offset_right = 661.29517
-offset_bottom = 361.0
+offset_right = 640.0
+offset_bottom = 368.0
 texture = ExtResource("1_ekrmm")
 expand_mode = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(330.00003, 257.75)
-scale = Vector2(0.465262, 0.17818832)
+position = Vector2(330, 257.75)
+scale = Vector2(0.465262, 0.178188)
 texture = ExtResource("2_cc723")
 
 [node name="Label" type="Label" parent="."]
@@ -23,7 +24,7 @@ offset_left = 159.0
 offset_top = 196.0
 offset_right = 504.0
 offset_bottom = 323.0
-theme_override_colors/font_color = Color(0.012617188, 0.012617188, 0.012617188, 1)
+theme_override_colors/font_color = Color(0.0126172, 0.0126172, 0.0126172, 1)
 text = "Ajude o Lobisomen a derrotar os esqueletos 
 que estão atormentando a floresta!
 
@@ -39,5 +40,9 @@ offset_bottom = 388.0
 scale = Vector2(0.3, 0.3)
 icon = ExtResource("3_nkrw7")
 script = ExtResource("4_0q1ui")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(320, 184)
+zoom = Vector2(2.995, 2.935)
 
 [connection signal="pressed" from="Button" to="Button" method="_on_pressed"]

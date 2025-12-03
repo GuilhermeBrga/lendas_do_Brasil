@@ -35,6 +35,8 @@ texture = ExtResource("1_p8t3s")
 
 [node name="InimigoSpawn" parent="." instance=ExtResource("4_6q1pn")]
 position = Vector2(0, -416)
+LINHAS = 1
+COLUNAS = 1
 
 [node name="HelicopteroSpawner" parent="." instance=ExtResource("10_iu8bf")]
 position = Vector2(992, -496)

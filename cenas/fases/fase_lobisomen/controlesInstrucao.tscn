@@ -7,13 +7,13 @@
 [node name="ControlesInstrucao" type="Node2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(324, 182.5)
-scale = Vector2(0.73804104, 0.43265796)
+position = Vector2(304, 166)
+scale = Vector2(0.692483, 0.471991)
 texture = ExtResource("1_2jvim")
 
 [node name="Sprite2D2" type="Sprite2D" parent="."]
-position = Vector2(323, 171)
-scale = Vector2(0.5851588, 0.639323)
+position = Vector2(308, 150.875)
+scale = Vector2(0.587076, 0.744141)
 texture = ExtResource("2_ux8bu")
 
 [node name="ButtonInstrucao" type="Button" parent="."]
@@ -24,5 +24,9 @@ offset_bottom = 340.0
 mouse_default_cursor_shape = 2
 text = "Começar"
 script = ExtResource("3_yi0k6")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(304, 168)
+zoom = Vector2(3.155, 2.755)
 
 [connection signal="pressed" from="ButtonInstrucao" to="ButtonInstrucao" method="_on_pressed"]

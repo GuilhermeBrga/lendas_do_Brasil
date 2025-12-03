@@ -8,31 +8,37 @@
 [node name="TelaVitoria" type="Node2D"]
 
 [node name="TextureRect" type="TextureRect" parent="."]
-offset_right = 638.0
-offset_bottom = 363.0
+offset_right = 640.0
+offset_bottom = 383.0
 texture = ExtResource("1_hvduu")
 expand_mode = 1
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(318.00003, 277.00003)
-scale = Vector2(0.3832574, 0.11769966)
+position = Vector2(320.25, 321.375)
+scale = Vector2(0.383257, 0.1177)
 texture = ExtResource("2_carew")
 
 [node name="Label" type="Label" parent="."]
-offset_left = 167.0
-offset_top = 259.0
-offset_right = 471.0
-offset_bottom = 282.0
-theme_override_colors/font_color = Color(0.012617188, 0.012617188, 0.012617188, 1)
+offset_left = 169.25
+offset_top = 303.375
+offset_right = 473.25
+offset_bottom = 326.375
+theme_override_colors/font_color = Color(0.0126172, 0.0126172, 0.0126172, 1)
 text = "Parabéns Jogador, você concluiu a fase!"
+metadata/_edit_use_anchors_ = true
 
 [node name="ButtonMapa" type="Button" parent="."]
-offset_left = 439.0
-offset_top = 288.0
-offset_right = 534.0
-offset_bottom = 383.0
+offset_left = 441.25
+offset_top = 332.375
+offset_right = 536.25
+offset_bottom = 427.375
 scale = Vector2(0.3, 0.3)
 icon = ExtResource("3_1cto8")
 script = ExtResource("4_t3uf1")
+metadata/_edit_use_anchors_ = true
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(320, 192)
+zoom = Vector2(3.005, 2.83)
 
 [connection signal="pressed" from="ButtonMapa" to="ButtonMapa" method="_on_pressed"]

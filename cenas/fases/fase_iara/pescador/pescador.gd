@@ -6,11 +6,12 @@ func _ready() -> void:
 	$AnimatedSprite2D.play("apaixonado")
 
 func _on_simon_says_ganhar_signal() -> void:
+	Global.minigames_terminados -= 1
+	Global.terminou_minigame_iara = true
 	audio_assobio.play()
 	$CPUParticles2D.emitting = true
 	await audio_assobio.finished
 	get_tree().change_scene_to_file("res://cenas/fases/fase_iara/tela_vitoria.tscn")
-
 
 func _on_simon_says_perder_signal() -> void:
 	$AnimatedSprite2D.play("surpreso")

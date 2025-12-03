@@ -7,6 +7,7 @@ var cena_inimigo = preload("res://cenas/fases/fase_maedeouro/enemy.tscn")
 @onready var spawn_point = $SpawnPoint 
 @onready var timer_spawn = $Timer        # O Timer que cria os inimigos
 @onready var timer_vitoria = $TimerVitoria # O Timer de 30 segundos (Vitória)
+@onready var texto_timer:Label = $Label
 
 func _ready():
 	# INICIA TUDO DIRETO (Sem tutorial, sem pausa)
@@ -14,6 +15,10 @@ func _ready():
 	timer_spawn.start()
 	timer_vitoria.start()
 	print("Jogo começou! Sobreviva por " + str(timer_vitoria.wait_time) + " segundos.")
+	atualizar_texto_timer()
+
+func _process(delta):
+	atualizar_texto_timer()
 
 # --- SPAWN DE INIMIGOS ---
 func _on_timer_timeout() -> void:
@@ -52,4 +57,10 @@ func vitoria():
 
 func trocar_para_vitoria():
 	# Verifique se este caminho de arquivo está correto!
+	Global.minigames_terminados -= 1
+	Global.terminou_minigame_mae_ouro = true
 	get_tree().change_scene_to_file("res://cenas/fases/fase_maedeouro/telaVitoria.tscn")
+
+func atualizar_texto_timer():
+	var tempo = int(timer_vitoria.time_left)
+	texto_timer.text = "tempo restante: " + str(tempo) + "s"

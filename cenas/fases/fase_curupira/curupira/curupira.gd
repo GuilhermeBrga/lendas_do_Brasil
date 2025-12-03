@@ -56,6 +56,7 @@ func morrer():
 
 func _on_inimigo_spawn_ganhou() -> void:
 	Global.terminou_minigame_curupira = true
+	Global.minigames_terminados -= 1
 	vitoria_animacao()
 	
 

@@ -35,6 +35,8 @@ func _on_count_down_game_over():
 	hideAllTargets()
 	var final_points = Shared.endGame()
 	if final_points >= MIN_WIN_POINTS:
+		Global.minigames_terminados -= 1
+		Global.terminou_minigame_mula = true
 		get_tree().change_scene_to_file(WIN_SCENE)
 	else:
 		get_tree().change_scene_to_file(LOSE_SCENE)
