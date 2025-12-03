@@ -9,14 +9,24 @@
 font_size = 25
 font_color = Color(0, 0, 0, 1)
 
-[node name="IaraIntro" type="Node2D"]
+[node name="IaraIntro" type="Control"]
+layout_mode = 3
+anchor_right = 0.7125
+anchor_bottom = 0.711111
+metadata/_edit_use_anchors_ = true
 
 [node name="TextureRect" type="TextureRect" parent="."]
 texture_filter = 1
-offset_right = 1368.0
-offset_bottom = 768.0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.00365497
+anchor_right = 1.02339
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 size_flags_horizontal = 4
 texture = ExtResource("1_huqhn")
+metadata/_edit_use_anchors_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(672, 654.875)
@@ -24,20 +34,30 @@ scale = Vector2(1.36674, 0.264303)
 texture = ExtResource("2_re6pl")
 
 [node name="Label" type="Label" parent="."]
-offset_left = 112.0
-offset_top = 568.0
-offset_right = 1240.0
-offset_bottom = 752.0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0818713
+anchor_top = 0.739583
+anchor_right = 0.906433
+anchor_bottom = 0.979167
 text = "A sereia Iara deu de cara com um pescador desavisado, cabe a ela conseguir encantá-lo com a sua canção hipnotizante."
 label_settings = SubResource("LabelSettings_huqhn")
 autowrap_mode = 2
+metadata/_edit_use_anchors_ = true
 
 [node name="btn_intro_iara" type="Button" parent="."]
-offset_left = 1144.0
-offset_top = 664.0
-offset_right = 1239.0
-offset_bottom = 759.0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.836257
+anchor_top = 0.864583
+anchor_right = 0.905702
+anchor_bottom = 0.988281
 icon = ExtResource("1_ftarl")
 script = ExtResource("4_p5jgo")
+metadata/_edit_use_anchors_ = true
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(696, 384)
+zoom = Vector2(1.37, 1.41)
 
 [connection signal="pressed" from="btn_intro_iara" to="btn_intro_iara" method="_on_pressed"]

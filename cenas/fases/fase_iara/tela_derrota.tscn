@@ -8,30 +8,55 @@
 [sub_resource type="LabelSettings" id="LabelSettings_1cg1o"]
 font = ExtResource("4_iife0")
 font_size = 64
+font_color = Color(0, 0, 0, 1)
 
-[node name="TelaDerrota" type="Node2D"]
+[node name="TelaDerrota" type="Control"]
+layout_mode = 3
+anchor_right = 0.708333
+anchor_bottom = 0.711111
+metadata/_edit_use_anchors_ = true
 
 [node name="TextureRect" type="TextureRect" parent="."]
 texture_filter = 1
-offset_right = 1368.0
-offset_bottom = 768.0
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.00588
+anchor_bottom = 1.0
+offset_right = -23.0
+offset_bottom = -45.0
 size_flags_horizontal = 4
 texture = ExtResource("1_iife0")
+expand_mode = 1
 
 [node name="btn_voltar" type="Button" parent="."]
-offset_left = 1269.0
-offset_top = 616.0
-offset_right = 1364.0
-offset_bottom = 711.0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.917647
+anchor_top = 0.8125
+anchor_right = 0.9875
+anchor_bottom = 0.936198
 icon = ExtResource("3_ku6vq")
 script = ExtResource("3_ujybl")
+metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="."]
-offset_left = 88.0
-offset_top = 152.0
-offset_right = 1289.0
-offset_bottom = 238.0
-text = "e o pescador viveu mais um dia..."
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -577.0
+offset_top = -283.0
+offset_right = 577.0
+offset_bottom = -197.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "e o pescador vive mais um dia..."
 label_settings = SubResource("LabelSettings_1cg1o")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(672, 360)
+zoom = Vector2(1.429, 1.499)
 
 [connection signal="pressed" from="btn_voltar" to="btn_voltar" method="_on_pressed"]
