@@ -16,6 +16,9 @@ func _ready():
 
 func _on_timer_timeout():
 	hideIt()
+	await get_tree().create_timer(1.0).timeout
+	if Shared.isGamePlaying:
+		showIt()
 
 func hideIt():
 	isHidden = true
@@ -30,9 +33,13 @@ func showIt():
 		if Shared.isGamePlaying:
 			anim.play("idle")
 			isHidden = false
+			#$Timer.start(1.5)
+			timer.start(1.5)
 
 func _on_input_event(_viewport, event, _shape_idx):
+	#$Timer.stop()
 	if (event is InputEventScreenTouch or event is InputEventMouseButton) and event.is_pressed() and !isHidden:
+		timer.stop()
 		hideIt()
 		hit_sound.play()
 		Shared.points += 1

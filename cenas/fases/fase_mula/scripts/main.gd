@@ -9,7 +9,7 @@ extends Node2D
 @onready var score_display_label = $ScoreDisplayLabel
 const WIN_SCENE = "res://cenas/fases/fase_mula/scenes/win.tscn"
 const LOSE_SCENE = "res://cenas/fases/fase_mula/scenes/lose.tscn"
-const MIN_WIN_POINTS = 13
+const MIN_WIN_POINTS = 10
 
 const TUTORIAL_POPUP_SCENE = preload("res://cenas/fases/fase_mula/scenes/tutorial_mula.tscn")
 
