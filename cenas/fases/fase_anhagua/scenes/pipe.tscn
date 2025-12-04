@@ -1,0 +1,47 @@
+[gd_scene load_steps=6 format=3 uid="uid://cr64ujrduj7be"]
+
+[ext_resource type="Script" uid="uid://3afaanbfma0u" path="res://cenas/fases/fase_anhagua/scripts/pipe.gd" id="1_arpqm"]
+[ext_resource type="Texture2D" uid="uid://b5pca2lmpd3wh" path="res://cenas/fases/fase_anhagua/imgs/assets/personagens_sprites/TroncoVeado.png" id="2_arpqm"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_arpqm"]
+size = Vector2(130, 361.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ejsh2"]
+size = Vector2(126, 362)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tdldm"]
+size = Vector2(48, 303)
+
+[node name="Pipe" type="Area2D" groups=["pipes"]]
+script = ExtResource("1_arpqm")
+
+[node name="Lower" type="Sprite2D" parent="."]
+position = Vector2(0, 322)
+scale = Vector2(0.7, 1)
+texture = ExtResource("2_arpqm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2(-4, 321.25)
+scale = Vector2(0.7, 1)
+shape = SubResource("RectangleShape2D_arpqm")
+
+[node name="Upper" type="Sprite2D" parent="."]
+position = Vector2(0, -300)
+scale = Vector2(0.7, -1)
+texture = ExtResource("2_arpqm")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="."]
+position = Vector2(-5, -305)
+scale = Vector2(0.7, 1)
+shape = SubResource("RectangleShape2D_ejsh2")
+
+[node name="ScoreArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ScoreArea"]
+position = Vector2(98, 2.5)
+scale = Vector2(1, 100)
+shape = SubResource("RectangleShape2D_tdldm")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_entered" from="ScoreArea" to="." method="_on_score_area_body_entered"]

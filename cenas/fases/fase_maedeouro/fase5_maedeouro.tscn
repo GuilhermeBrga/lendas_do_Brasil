@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://dlubrkcwvhs7i"]
+[gd_scene load_steps=8 format=3 uid="uid://dlubrkcwvhs7i"]
 
 [ext_resource type="Script" uid="uid://dawl48ax1ihgw" path="res://cenas/fases/fase_maedeouro/fase_5_maedeouro.gd" id="1_544e2"]
 [ext_resource type="Texture2D" uid="uid://btimsgeplrhl7" path="res://cenas/fases/fase_maedeouro/assets/maedouro.jpg" id="2_ftvu1"]
 [ext_resource type="PackedScene" uid="uid://ckn0vj1y6ktky" path="res://cenas/fases/fase_maedeouro/fogueira.tscn" id="3_ovyd5"]
 [ext_resource type="FontFile" uid="uid://dcgork77dfg8o" path="res://cenas/fases/fase_curupira/resources/fontes/lemon_milk/LEMONMILK-Light.otf" id="5_kqf5a"]
+[ext_resource type="AudioStream" uid="uid://ct0na5mo7k7df" path="res://cenas/fases/fase_maedeouro/musica/Loonboon-_128kbit_AAC_.mp3" id="6_yl8e6"]
 [ext_resource type="PackedScene" uid="uid://citgv4fosqca8" path="res://cenas/fases/fase_maedeouro/enemy.tscn" id="12_uakdr"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_yl8e6"]
@@ -46,6 +47,11 @@ offset_right = 40.0
 offset_bottom = 23.0
 text = "tempo restante: 0s"
 label_settings = SubResource("LabelSettings_yl8e6")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_yl8e6")
+autoplay = true
+parameters/looping = true
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="area_entered" from="Enemy" to="." method="_on_enemy_area_entered"]

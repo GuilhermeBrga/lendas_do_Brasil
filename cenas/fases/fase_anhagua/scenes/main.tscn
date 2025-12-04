@@ -1,0 +1,59 @@
+[gd_scene load_steps=8 format=3 uid="uid://ckrb0f41ubxjk"]
+
+[ext_resource type="Script" uid="uid://dqs641t3qkd8s" path="res://cenas/fases/fase_anhagua/scripts/main.gd" id="1_sugp2"]
+[ext_resource type="PackedScene" uid="uid://d38gcg1m02u2d" path="res://cenas/fases/fase_anhagua/scenes/boto.tscn" id="2_0wfyh"]
+[ext_resource type="PackedScene" uid="uid://cr64ujrduj7be" path="res://cenas/fases/fase_anhagua/scenes/pipe.tscn" id="2_tbgi4"]
+[ext_resource type="Texture2D" uid="uid://uvtcr8fspvsr" path="res://cenas/fases/fase_anhagua/imgs/assets/BackVeado.jpg" id="3_tefeu"]
+[ext_resource type="PackedScene" uid="uid://b714w4w1xuqan" path="res://cenas/fases/fase_anhagua/scenes/ground.tscn" id="4_jyhfs"]
+[ext_resource type="PackedScene" uid="uid://dm1aemlv822nb" path="res://cenas/fases/fase_anhagua/scenes/game_over.tscn" id="6_tefeu"]
+[ext_resource type="AudioStream" uid="uid://cop61fgj4lngr" path="res://cenas/fases/fase_anhagua/musica/Pou-music-ost-Connect⁄Cliff-Jump⁄Cliff-Dash⁄Jet-Pou-_128kbit_AAC_.mp3" id="7_u1ykn"]
+
+[node name="Main" type="Node"]
+script = ExtResource("1_sugp2")
+pipe_scene = ExtResource("2_tbgi4")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 101.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.95, 1)
+texture = ExtResource("3_tefeu")
+
+[node name="Boto" parent="." instance=ExtResource("2_0wfyh")]
+
+[node name="Ground" parent="." instance=ExtResource("4_jyhfs")]
+z_index = 1
+position = Vector2(0, 836)
+
+[node name="PipeTimer" type="Timer" parent="."]
+wait_time = 1.5
+
+[node name="ScoreLabel" type="Label" parent="."]
+z_index = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -34.5
+offset_right = 34.5
+offset_bottom = 23.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 40
+text = "PONTUAÇÃO: 0"
+
+[node name="GameOver" parent="." instance=ExtResource("6_tefeu")]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(968, 448)
+zoom = Vector2(1.004, 1.206)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_u1ykn")
+autoplay = true
+parameters/looping = true
+
+[connection signal="hit" from="Ground" to="." method="_on_ground_hit"]
+[connection signal="timeout" from="PipeTimer" to="." method="_on_pipe_timer_timeout"]
+[connection signal="restart" from="GameOver" to="." method="_on_game_over_restart"]

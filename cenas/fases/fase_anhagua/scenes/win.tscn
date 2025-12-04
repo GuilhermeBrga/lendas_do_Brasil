@@ -1,0 +1,40 @@
+[gd_scene load_steps=3 format=3 uid="uid://ks20o1u4vc8a"]
+
+[ext_resource type="Texture2D" uid="uid://b3ncqdxk1hdng" path="res://cenas/fases/fase_anhagua/imgs/assets/TelaVitoriaVeado.jpg" id="1_r4oei"]
+[ext_resource type="Texture2D" uid="uid://br7mdok1gkif0" path="res://cenas/fases/fase_anhagua/imgs/setas.png" id="2_826fv"]
+
+[node name="Win" type="Control"]
+layout_mode = 3
+anchor_right = 0.608333
+anchor_bottom = 0.674074
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect" type="TextureRect" parent="."]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_top = -0.0123626
+anchor_right = 1.0011
+anchor_bottom = 0.88544
+offset_right = 174.72
+offset_bottom = 38.4
+scale = Vector2(0.87, 0.95)
+texture = ExtResource("1_r4oei")
+expand_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.910959
+anchor_top = 0.736264
+anchor_right = 0.992295
+anchor_bottom = 0.866758
+icon = ExtResource("2_826fv")
+metadata/_edit_use_anchors_ = true
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(584, 320)
+zoom = Vector2(1.644, 1.644)

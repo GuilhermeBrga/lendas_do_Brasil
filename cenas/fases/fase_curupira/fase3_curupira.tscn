@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://d18xdwmlk4eea"]
+[gd_scene load_steps=16 format=3 uid="uid://d18xdwmlk4eea"]
 
 [ext_resource type="Texture2D" uid="uid://daydicq1wmnvl" path="res://cenas/fases/fase_curupira/assets/estaticos/floresta.jpg" id="1_p8t3s"]
 [ext_resource type="PackedScene" uid="uid://by7dnckompj8h" path="res://cenas/fases/fase_curupira/barreira/barreira.tscn" id="2_rt8ef"]
@@ -10,6 +10,15 @@
 [ext_resource type="PackedScene" uid="uid://d2ireonfquauv" path="res://cenas/fases/fase_curupira/pontos/pontuação-curupira.tscn" id="9_iu8bf"]
 [ext_resource type="PackedScene" uid="uid://bhu0oqhplp0wr" path="res://cenas/fases/fase_curupira/tutorial/curupira-pause.tscn" id="9_ogakp"]
 [ext_resource type="PackedScene" uid="uid://cl3pjfnu5w71a" path="res://cenas/fases/fase_curupira/inimigos/helicoptero/HelicopteroSpawner.tscn" id="10_iu8bf"]
+[ext_resource type="AudioStream" uid="uid://cixoep8oipyki" path="res://cenas/fases/fase_curupira/musica/Plants-vs.-Zombies-_Main-Theme_-_128kbit_AAC__1.mp3" id="12_647rp"]
+
+[sub_resource type="GDScript" id="GDScript_r46gx"]
+script/source = "extends Node
+
+
+#func _on_audio_stream_player_finished() -> void:
+	#$AudioStreamPlayer.play()
+"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bmpif"]
 size = Vector2(41, 848)
@@ -22,6 +31,7 @@ size = Vector2(1912, 80)
 
 [node name="MainCurupira" type="Node"]
 process_mode = 1
+script = SubResource("GDScript_r46gx")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
@@ -35,8 +45,6 @@ texture = ExtResource("1_p8t3s")
 
 [node name="InimigoSpawn" parent="." instance=ExtResource("4_6q1pn")]
 position = Vector2(0, -416)
-LINHAS = 1
-COLUNAS = 1
 
 [node name="HelicopteroSpawner" parent="." instance=ExtResource("10_iu8bf")]
 position = Vector2(992, -496)
@@ -128,6 +136,11 @@ position = Vector2(0, 416)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="paredes/chao"]
 position = Vector2(0, 88)
 shape = SubResource("RectangleShape2D_wsbxb")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("12_647rp")
+autoplay = true
+parameters/looping = true
 
 [connection signal="adicionar_pontos" from="InimigoSpawn" to="UI/Pontuação" method="_on_inimigo_spawn_adicionar_pontos"]
 [connection signal="ganhou" from="InimigoSpawn" to="Curupira" method="_on_inimigo_spawn_ganhou"]

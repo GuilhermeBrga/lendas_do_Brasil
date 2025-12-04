@@ -8,8 +8,9 @@
 
 [node name="TextureRect" type="TextureRect" parent="."]
 texture_filter = 1
-offset_right = 638.0
-offset_bottom = 361.0
+offset_top = 12.0
+offset_right = 641.0
+offset_bottom = 372.0
 texture = ExtResource("1_b1th6")
 expand_mode = 1
 
@@ -31,9 +32,9 @@ mouse_default_cursor_shape = 2
 text = "Tente novamente!"
 script = ExtResource("2_klywv")
 
-[node name="Label" type="Label" parent="."]
-offset_right = 40.0
-offset_bottom = 23.0
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(320, 192)
+zoom = Vector2(2.998, 2.998)
 
 [connection signal="pressed" from="ButtonMapa" to="ButtonMapa" method="_on_pressed"]
 [connection signal="pressed" from="ButtonReinicia" to="ButtonReinicia" method="_on_pressed"]

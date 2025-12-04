@@ -1,0 +1,37 @@
+[gd_scene load_steps=6 format=3 uid="uid://d38gcg1m02u2d"]
+
+[ext_resource type="Script" uid="uid://syqskj8n05vu" path="res://scripts/boto.gd" id="1_803dr"]
+[ext_resource type="Texture2D" uid="uid://wtrkm4liax1q" path="res://imgs/assets/veado.png" id="2_m2knr"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mwhyp"]
+atlas = ExtResource("2_m2knr")
+region = Rect2(495, 188, 165, 188)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_sksdv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mwhyp")
+}],
+"loop": true,
+"name": &"andandando",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hxeco"]
+radius = 31.0
+height = 62.0
+
+[node name="Boto" type="CharacterBody2D"]
+script = ExtResource("1_803dr")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-1.90735e-06, 6)
+scale = Vector2(0.522411, 0.491409)
+sprite_frames = SubResource("SpriteFrames_sksdv")
+animation = &"andandando"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-5, 8)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_hxeco")
