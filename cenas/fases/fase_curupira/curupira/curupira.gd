@@ -55,8 +55,10 @@ func morrer():
 	get_tree().change_scene_to_file("res://cenas/fases/fase_curupira/tela_derrota.tscn")
 
 func _on_inimigo_spawn_ganhou() -> void:
-	Global.terminou_minigame_curupira = true
-	Global.minigames_terminados -= 1
+	if !Global.terminou_minigame_curupira:
+		print("foi")
+		Global.minigames_terminados -= 1
+		Global.terminou_minigame_curupira = true
 	vitoria_animacao()
 	
 

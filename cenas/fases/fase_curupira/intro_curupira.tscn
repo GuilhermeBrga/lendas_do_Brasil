@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://d18xdwmlk4eea"]
 
 [ext_resource type="Texture2D" uid="uid://ojg2pi18ve12" path="res://cenas/fases/fase_curupira/assets/estaticos/curupira-intro.png" id="1_p46ee"]
-[ext_resource type="Texture2D" uid="uid://dw5w243mih82m" path="res://assets/elementos/painel_generico.png" id="2_vgcqp"]
+[ext_resource type="Texture2D" uid="uid://dw5w243mih82m" path="res://cenas/fases/fase_anhagua/imgs/assets/elementos/painel_generico.png" id="2_vgcqp"]
 [ext_resource type="Texture2D" uid="uid://db3yi1pt5x5q1" path="res://assets/elementos/setas.png" id="3_i08su"]
 [ext_resource type="Script" uid="uid://dsb8lwl0hwmjs" path="res://cenas/fases/fase_curupira/btn_curupira_intro.gd" id="4_p3q2r"]
 

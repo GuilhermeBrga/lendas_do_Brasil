@@ -6,8 +6,9 @@ func _ready() -> void:
 	$AnimatedSprite2D.play("apaixonado")
 
 func _on_simon_says_ganhar_signal() -> void:
-	Global.minigames_terminados -= 1
-	Global.terminou_minigame_iara = true
+	if !Global.terminou_minigame_iara:
+		Global.minigames_terminados -= 1
+		Global.terminou_minigame_iara = true
 	audio_assobio.play()
 	$CPUParticles2D.emitting = true
 	await audio_assobio.finished

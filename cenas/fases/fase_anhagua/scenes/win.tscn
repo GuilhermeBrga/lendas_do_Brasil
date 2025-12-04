@@ -1,5 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://ks20o1u4vc8a"]
+[gd_scene load_steps=4 format=3 uid="uid://ks20o1u4vc8a"]
 
+[ext_resource type="Script" uid="uid://d2ffe6afvug3u" path="res://cenas/fases/fase_anhagua/scenes/win.gd" id="1_juwke"]
 [ext_resource type="Texture2D" uid="uid://b3ncqdxk1hdng" path="res://cenas/fases/fase_anhagua/imgs/assets/TelaVitoriaVeado.jpg" id="1_r4oei"]
 [ext_resource type="Texture2D" uid="uid://br7mdok1gkif0" path="res://cenas/fases/fase_anhagua/imgs/setas.png" id="2_826fv"]
 
@@ -9,6 +10,7 @@ anchor_right = 0.608333
 anchor_bottom = 0.674074
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_juwke")
 metadata/_edit_use_anchors_ = true
 
 [node name="TextureRect" type="TextureRect" parent="."]
@@ -38,3 +40,5 @@ metadata/_edit_use_anchors_ = true
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(584, 320)
 zoom = Vector2(1.644, 1.644)
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

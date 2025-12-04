@@ -39,8 +39,9 @@ func _on_game_win():
 	#var w = win_screen.instantiate()
 	#get_tree().get_root().add_child(w)
 	#get_tree().paused = true
-	Global.minigames_terminados -= 1
-	Global.terminou_minigame_boto = true
+	if !Global.terminou_minigame_boto:
+		Global.minigames_terminados -= 1
+		Global.terminou_minigame_boto = true
 	get_tree().paused = false
 	get_tree().change_scene_to_file(WIN_SCENE_PATH)
 

@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://bxcj5ba2433yu"]
+[gd_scene load_steps=4 format=3 uid="uid://bxcj5ba2433yu"]
 
 [ext_resource type="Texture2D" uid="uid://22k5gmnudwke" path="res://cenas/fases/fase_anhagua/imgs/assets/GameOverVeado.jpg" id="1_ouftm"]
+[ext_resource type="Script" uid="uid://c6unx0t8rqfp" path="res://cenas/fases/fase_anhagua/scenes/game_over.gd" id="1_vxqir"]
 [ext_resource type="Texture2D" uid="uid://br7mdok1gkif0" path="res://cenas/fases/fase_anhagua/imgs/setas.png" id="2_dh54o"]
 
 [node name="GameOver" type="Control"]
@@ -9,6 +10,7 @@ anchor_right = 0.608333
 anchor_bottom = 0.674074
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_vxqir")
 metadata/_edit_use_anchors_ = true
 
 [node name="TextureRect" type="TextureRect" parent="."]
@@ -35,3 +37,5 @@ metadata/_edit_use_anchors_ = true
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(632, 384)
 zoom = Vector2(1.519, 1.408)
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://d18xdwmlk4eea"]
+[gd_scene load_steps=15 format=3 uid="uid://d18xdwmlk4eea"]
 
 [ext_resource type="Texture2D" uid="uid://daydicq1wmnvl" path="res://cenas/fases/fase_curupira/assets/estaticos/floresta.jpg" id="1_p8t3s"]
 [ext_resource type="PackedScene" uid="uid://by7dnckompj8h" path="res://cenas/fases/fase_curupira/barreira/barreira.tscn" id="2_rt8ef"]
@@ -12,16 +12,8 @@
 [ext_resource type="PackedScene" uid="uid://cl3pjfnu5w71a" path="res://cenas/fases/fase_curupira/inimigos/helicoptero/HelicopteroSpawner.tscn" id="10_iu8bf"]
 [ext_resource type="AudioStream" uid="uid://cixoep8oipyki" path="res://cenas/fases/fase_curupira/musica/Plants-vs.-Zombies-_Main-Theme_-_128kbit_AAC__1.mp3" id="12_647rp"]
 
-[sub_resource type="GDScript" id="GDScript_r46gx"]
-script/source = "extends Node
-
-
-#func _on_audio_stream_player_finished() -> void:
-	#$AudioStreamPlayer.play()
-"
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bmpif"]
-size = Vector2(41, 848)
+size = Vector2(41, 896)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fwclt"]
 size = Vector2(40, 365)
@@ -31,7 +23,6 @@ size = Vector2(1912, 80)
 
 [node name="MainCurupira" type="Node"]
 process_mode = 1
-script = SubResource("GDScript_r46gx")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
@@ -106,7 +97,7 @@ position = Vector2(200, 72)
 position = Vector2(-704, 0)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="paredes/parede_esquerda"]
-position = Vector2(-232, 24)
+position = Vector2(-232, 0)
 shape = SubResource("RectangleShape2D_bmpif")
 
 [node name="parede_direita" type="Area2D" parent="paredes"]

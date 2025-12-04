@@ -1,11 +1,155 @@
-[gd_scene load_steps=4 format=3 uid="uid://cmch3q8ym5xtw"]
+[gd_scene load_steps=31 format=3 uid="uid://cmch3q8ym5xtw"]
 
 [ext_resource type="Texture2D" uid="uid://c7mfl7efaqi8q" path="res://cenas/creditos/assets/floresta.jpg" id="1_3wq0f"]
-[ext_resource type="FontFile" uid="uid://dcgork77dfg8o" path="res://assets/fontes/lemon_milk/LEMONMILK-Light.otf" id="2_p4bwi"]
+[ext_resource type="FontFile" uid="uid://dcgork77dfg8o" path="res://cenas/fases/fase_curupira/resources/fontes/lemon_milk/LEMONMILK-Light.otf" id="2_p4bwi"]
+[ext_resource type="Texture2D" uid="uid://cs47fa4l1bi3a" path="res://cenas/fases/fase_anhagua/imgs/assets/personagens_sprites/1_saci.png" id="3_w3uxd"]
+[ext_resource type="Texture2D" uid="uid://t8uyid3gaah" path="res://cenas/fases/fase_anhagua/imgs/assets/personagens_sprites/5_mapinguari.png" id="4_o46be"]
+[ext_resource type="Texture2D" uid="uid://cb4uuso4l6mw6" path="res://cenas/fases/fase_anhagua/imgs/assets/personagens_sprites/2_curupira.png" id="5_2ny56"]
+[ext_resource type="Texture2D" uid="uid://d38jxqv7oypmo" path="res://cenas/fases/fase_anhagua/imgs/assets/personagens_sprites/3_iara.png" id="6_gcux1"]
+[ext_resource type="Texture2D" uid="uid://bmyg5aergms4c" path="res://cenas/fases/fase_anhagua/imgs/assets/personagens_sprites/10_boto.png" id="7_swy5q"]
+[ext_resource type="Texture2D" uid="uid://bm7kuy7qx0t4i" path="res://cenas/fases/fase_anhagua/imgs/assets/personagens_sprites/4_mula.png" id="8_154rs"]
+[ext_resource type="Texture2D" uid="uid://ctcnoyanbtmvd" path="res://cenas/fases/fase_anhagua/imgs/assets/personagens_sprites/8_lobisomem.png" id="9_154rs"]
+[ext_resource type="Texture2D" uid="uid://2w0q7sdjxrxi" path="res://cenas/fases/fase_anhagua/imgs/assets/personagens_sprites/7_mĈe d'ouro.png" id="10_vomq1"]
+[ext_resource type="Texture2D" uid="uid://cc0iknkfwmu3a" path="res://cenas/fases/fase_anhagua/imgs/assets/personagens_sprites/6_anhangu .png" id="11_ss2xs"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_w3uxd"]
 font = ExtResource("2_p4bwi")
 font_size = 84
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o46be"]
+atlas = ExtResource("3_w3uxd")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2ny56"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o46be")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2ny56"]
+atlas = ExtResource("4_o46be")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gcux1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2ny56")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gcux1"]
+atlas = ExtResource("5_2ny56")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_khhy3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gcux1")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_khhy3"]
+atlas = ExtResource("6_gcux1")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_swy5q"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_khhy3")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vomq1"]
+atlas = ExtResource("7_swy5q")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ss2xs"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vomq1")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ad0ab"]
+atlas = ExtResource("8_154rs")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_eict5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ad0ab")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ss2xs"]
+atlas = ExtResource("9_154rs")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ad0ab"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ss2xs")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eict5"]
+atlas = ExtResource("10_vomq1")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1eb2w"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eict5")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1eb2w"]
+atlas = ExtResource("11_ss2xs")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kb063"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1eb2w")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="Creditos" type="Control"]
 layout_mode = 3
@@ -15,47 +159,87 @@ grow_horizontal = 2
 grow_vertical = 2
 metadata/_edit_use_anchors_ = true
 
-[node name="Camera2D" type="Camera2D" parent="."]
-
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 1
 anchors_preset = -1
-anchor_right = 0.658333
-anchor_bottom = 0.585185
+anchor_right = 1.11392
+anchor_bottom = 1.01266
+offset_bottom = 6.10352e-05
 texture = ExtResource("1_3wq0f")
 metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="TextureRect"]
 layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.0977057
-anchor_top = 0.0949367
-anchor_right = 0.902294
-anchor_bottom = 0.272152
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -581.5
+offset_top = 48.0
+offset_right = 581.5
+offset_bottom = 160.0
 grow_horizontal = 2
-grow_vertical = 2
 text = "obrigado por jogar"
 label_settings = SubResource("LabelSettings_w3uxd")
-metadata/_edit_use_anchors_ = true
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(704, 320)
+zoom = Vector2(1.365, 1.688)
 
 [node name="personagens" type="Node" parent="."]
 
-[node name="saci" type="Sprite2D" parent="personagens"]
+[node name="saci" type="AnimatedSprite2D" parent="personagens"]
+texture_filter = 1
+position = Vector2(376, 512)
+scale = Vector2(5, 5.5)
+sprite_frames = SubResource("SpriteFrames_2ny56")
+frame_progress = 0.0881701
 
-[node name="mapinguari" type="Sprite2D" parent="personagens"]
+[node name="mapinguari" type="AnimatedSprite2D" parent="personagens"]
+texture_filter = 1
+position = Vector2(240, 440)
+scale = Vector2(5, 5.5)
+sprite_frames = SubResource("SpriteFrames_gcux1")
 
-[node name="curupira" type="Sprite2D" parent="personagens"]
+[node name="curupira" type="AnimatedSprite2D" parent="personagens"]
+texture_filter = 1
+position = Vector2(992, 496)
+scale = Vector2(5, 5.5)
+sprite_frames = SubResource("SpriteFrames_khhy3")
 
-[node name="iara" type="Sprite2D" parent="personagens"]
+[node name="iara" type="AnimatedSprite2D" parent="personagens"]
+texture_filter = 1
+position = Vector2(1136, 448)
+scale = Vector2(5, 5.5)
+sprite_frames = SubResource("SpriteFrames_swy5q")
 
-[node name="boto" type="Sprite2D" parent="personagens"]
+[node name="boto" type="AnimatedSprite2D" parent="personagens"]
+texture_filter = 1
+position = Vector2(88, 368)
+scale = Vector2(5, 5.5)
+sprite_frames = SubResource("SpriteFrames_ss2xs")
+frame_progress = 0.401367
 
-[node name="mula" type="Sprite2D" parent="personagens"]
+[node name="mula" type="AnimatedSprite2D" parent="personagens"]
+texture_filter = 1
+position = Vector2(1208, 328)
+scale = Vector2(5, 5.5)
+sprite_frames = SubResource("SpriteFrames_eict5")
+frame_progress = 0.377555
 
-[node name="lobisomen" type="Sprite2D" parent="personagens"]
+[node name="lobisomen" type="AnimatedSprite2D" parent="personagens"]
+texture_filter = 1
+position = Vector2(544, 488)
+scale = Vector2(5, 5.5)
+sprite_frames = SubResource("SpriteFrames_ad0ab")
 
-[node name="mae_ouro" type="Sprite2D" parent="personagens"]
+[node name="mae_ouro" type="AnimatedSprite2D" parent="personagens"]
+texture_filter = 1
+position = Vector2(856, 496)
+scale = Vector2(5, 5.5)
+sprite_frames = SubResource("SpriteFrames_1eb2w")
 
-[node name="anhagua" type="Sprite2D" parent="personagens"]
-
-[node name="corpo_seco" type="Sprite2D" parent="personagens"]
+[node name="anhagua" type="AnimatedSprite2D" parent="personagens"]
+texture_filter = 1
+position = Vector2(704, 312)
+scale = Vector2(5, 5.5)
+sprite_frames = SubResource("SpriteFrames_kb063")

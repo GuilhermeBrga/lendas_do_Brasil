@@ -1,18 +1,31 @@
-[gd_scene load_steps=16 format=3 uid="uid://4tw4qk3nx8sd"]
+[gd_scene load_steps=50 format=3 uid="uid://4tw4qk3nx8sd"]
 
 [ext_resource type="Script" uid="uid://dijbuspkt0dvy" path="res://cenas/mapa_fases/b_tutorial.gd" id="1_jpuch"]
 [ext_resource type="Script" uid="uid://d6cj8smcj55g" path="res://cenas/mapa_fases/mapa_fases.gd" id="1_lae6v"]
-[ext_resource type="Texture2D" uid="uid://82cphtrb2hy5" path="res://assets/cenarios/mapa.png" id="2_wrbcl"]
+[ext_resource type="Texture2D" uid="uid://82cphtrb2hy5" path="res://cenas/fases/fase_anhagua/imgs/assets/cenarios/mapa.png" id="2_wrbcl"]
 [ext_resource type="Script" uid="uid://dgtmgsvrno4cv" path="res://cenas/mapa_fases/b_fase_2.gd" id="3_hgwlt"]
 [ext_resource type="Script" uid="uid://6d18qt7xbtfo" path="res://cenas/mapa_fases/voltar_load.gd" id="3_tbcqi"]
 [ext_resource type="Script" uid="uid://b31nry8tgkor8" path="res://cenas/mapa_fases/b_fase_3.gd" id="4_beojq"]
-[ext_resource type="Texture2D" uid="uid://c0w7eefxpp5ut" path="res://assets/botoes/b_voltar_img.jpg" id="4_hgwlt"]
-[ext_resource type="Texture2D" uid="uid://dw5w243mih82m" path="res://assets/elementos/painel_generico.png" id="5_beojq"]
+[ext_resource type="Texture2D" uid="uid://c0w7eefxpp5ut" path="res://cenas/fases/fase_anhagua/imgs/assets/botoes/b_voltar_img.jpg" id="4_hgwlt"]
+[ext_resource type="Texture2D" uid="uid://dw5w243mih82m" path="res://cenas/fases/fase_anhagua/imgs/assets/elementos/painel_generico.png" id="5_beojq"]
 [ext_resource type="Script" uid="uid://bqy5tb3ubw1i1" path="res://cenas/mapa_fases/b_fase_4.gd" id="5_wgau1"]
 [ext_resource type="Script" uid="uid://4dyudlj2uqhf" path="res://cenas/mapa_fases/b_fase_1.gd" id="6_wrbcl"]
 [ext_resource type="Script" uid="uid://dkn6wpofttnqd" path="res://cenas/mapa_fases/b_fase_5.gd" id="7_wgau1"]
 [ext_resource type="Script" uid="uid://c2f02tdsxlvuk" path="res://cenas/mapa_fases/b_fase_6.gd" id="8_63kmp"]
-[ext_resource type="FontFile" uid="uid://dcgork77dfg8o" path="res://assets/fontes/lemon_milk/LEMONMILK-Light.otf" id="12_u2gmh"]
+[ext_resource type="FontFile" uid="uid://dcgork77dfg8o" path="res://cenas/fases/fase_curupira/resources/fontes/lemon_milk/LEMONMILK-Light.otf" id="12_u2gmh"]
+[ext_resource type="Texture2D" uid="uid://3phnq3nxeunq" path="res://assets/elementos/check.png" id="14_epun0"]
+[ext_resource type="Texture2D" uid="uid://dw5w243mih82m" path="res://assets/elementos/painel_generico.png" id="15_pbsca"]
+[ext_resource type="FontFile" uid="uid://dcgork77dfg8o" path="res://assets/fontes/lemon_milk/LEMONMILK-Light.otf" id="16_6tsyj"]
+[ext_resource type="Texture2D" uid="uid://db3yi1pt5x5q1" path="res://assets/elementos/setas.png" id="16_es42t"]
+[ext_resource type="Texture2D" uid="uid://cs47fa4l1bi3a" path="res://cenas/fases/fase_anhagua/imgs/assets/personagens_sprites/1_saci.png" id="18_j1mp4"]
+[ext_resource type="Texture2D" uid="uid://t8uyid3gaah" path="res://cenas/fases/fase_anhagua/imgs/assets/personagens_sprites/5_mapinguari.png" id="19_iwaqg"]
+[ext_resource type="Texture2D" uid="uid://cb4uuso4l6mw6" path="res://cenas/fases/fase_anhagua/imgs/assets/personagens_sprites/2_curupira.png" id="20_us8gg"]
+[ext_resource type="Texture2D" uid="uid://d38jxqv7oypmo" path="res://cenas/fases/fase_anhagua/imgs/assets/personagens_sprites/3_iara.png" id="21_1ppqk"]
+[ext_resource type="Texture2D" uid="uid://bmyg5aergms4c" path="res://cenas/fases/fase_anhagua/imgs/assets/personagens_sprites/10_boto.png" id="22_gne4e"]
+[ext_resource type="Texture2D" uid="uid://bm7kuy7qx0t4i" path="res://cenas/fases/fase_anhagua/imgs/assets/personagens_sprites/4_mula.png" id="23_50sts"]
+[ext_resource type="Texture2D" uid="uid://ctcnoyanbtmvd" path="res://cenas/fases/fase_anhagua/imgs/assets/personagens_sprites/8_lobisomem.png" id="24_lvcvn"]
+[ext_resource type="Texture2D" uid="uid://2w0q7sdjxrxi" path="res://cenas/fases/fase_anhagua/imgs/assets/personagens_sprites/7_mĈe d'ouro.png" id="25_5vq3d"]
+[ext_resource type="Texture2D" uid="uid://cc0iknkfwmu3a" path="res://cenas/fases/fase_anhagua/imgs/assets/personagens_sprites/6_anhangu .png" id="26_3qard"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_tbcqi"]
 font_color = Color(0, 0, 0, 1)
@@ -20,6 +33,153 @@ font_color = Color(0, 0, 0, 1)
 [sub_resource type="LabelSettings" id="LabelSettings_lae6v"]
 font = ExtResource("12_u2gmh")
 font_size = 50
+
+[sub_resource type="Curve" id="Curve_lae6v"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Gradient" id="Gradient_lae6v"]
+colors = PackedColorArray(1, 1, 0, 1, 1, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_hnldv"]
+font = ExtResource("16_6tsyj")
+font_size = 51
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o46be"]
+atlas = ExtResource("18_j1mp4")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_iyvni"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o46be")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2ny56"]
+atlas = ExtResource("19_iwaqg")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6v12y"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2ny56")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gcux1"]
+atlas = ExtResource("20_us8gg")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fish5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gcux1")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_khhy3"]
+atlas = ExtResource("21_1ppqk")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8njl8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_khhy3")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vomq1"]
+atlas = ExtResource("22_gne4e")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_nn1fy"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vomq1")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ad0ab"]
+atlas = ExtResource("23_50sts")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ij3ly"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ad0ab")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ss2xs"]
+atlas = ExtResource("24_lvcvn")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_37qn1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ss2xs")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eict5"]
+atlas = ExtResource("25_5vq3d")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6j1rs"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eict5")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1eb2w"]
+atlas = ExtResource("26_3qard")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rhxcq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1eb2w")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="Node2D" type="Control"]
 layout_mode = 3
@@ -117,6 +277,20 @@ offset_top = 784.0
 offset_right = 918.0
 offset_bottom = 904.0
 
+[node name="b_fase_9" type="Button" parent="mapa"]
+layout_mode = 0
+offset_left = 580.0
+offset_top = 769.0
+offset_right = 701.0
+offset_bottom = 889.0
+
+[node name="b_creditos" type="Button" parent="mapa"]
+layout_mode = 0
+offset_left = 657.0
+offset_top = 543.0
+offset_right = 772.0
+offset_bottom = 663.0
+
 [node name="voltar_btn" type="TextureButton" parent="mapa"]
 layout_mode = 1
 anchors_preset = -1
@@ -160,6 +334,7 @@ ouvi falar conhecimento é poder...
 label_settings = SubResource("LabelSettings_tbcqi")
 
 [node name="Config" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(1808, 108)
 scale = Vector2(0.468055, 0.445833)
 
@@ -176,6 +351,180 @@ grow_horizontal = 2
 text = "minigames restantes:"
 label_settings = SubResource("LabelSettings_lae6v")
 
+[node name="UI" type="Node" parent="."]
+
+[node name="concluido_saci" type="Sprite2D" parent="UI"]
+visible = false
+texture_filter = 1
+position = Vector2(408, 352)
+scale = Vector2(0.128906, 0.142578)
+texture = ExtResource("14_epun0")
+
+[node name="concluido_mapiguari" type="Sprite2D" parent="UI"]
+visible = false
+texture_filter = 1
+position = Vector2(808, 304)
+scale = Vector2(0.128906, 0.142578)
+texture = ExtResource("14_epun0")
+
+[node name="concluido_curupira" type="Sprite2D" parent="UI"]
+visible = false
+texture_filter = 1
+position = Vector2(1192, 288)
+scale = Vector2(0.128906, 0.142578)
+texture = ExtResource("14_epun0")
+
+[node name="concluido_iara" type="Sprite2D" parent="UI"]
+visible = false
+texture_filter = 1
+position = Vector2(1320, 568)
+scale = Vector2(0.128906, 0.142578)
+texture = ExtResource("14_epun0")
+
+[node name="concluido_boto" type="Sprite2D" parent="UI"]
+visible = false
+texture_filter = 1
+position = Vector2(1656, 432)
+scale = Vector2(0.128906, 0.142578)
+texture = ExtResource("14_epun0")
+
+[node name="concluido_mula" type="Sprite2D" parent="UI"]
+visible = false
+texture_filter = 1
+position = Vector2(1760, 672)
+scale = Vector2(0.128906, 0.142578)
+texture = ExtResource("14_epun0")
+
+[node name="concluido_mae_ouro" type="Sprite2D" parent="UI"]
+visible = false
+texture_filter = 1
+position = Vector2(1168, 832)
+scale = Vector2(0.128906, 0.142578)
+texture = ExtResource("14_epun0")
+
+[node name="concluido_lobisomem" type="Sprite2D" parent="UI"]
+visible = false
+texture_filter = 1
+position = Vector2(1464, 848)
+scale = Vector2(0.128906, 0.142578)
+texture = ExtResource("14_epun0")
+
+[node name="concluido_anhagua" type="Sprite2D" parent="UI"]
+visible = false
+texture_filter = 1
+position = Vector2(888, 816)
+scale = Vector2(0.128906, 0.142578)
+texture = ExtResource("14_epun0")
+
+[node name="particulas_creditos" type="CPUParticles2D" parent="."]
+position = Vector2(896, 640)
+emitting = false
+amount = 35
+lifetime = 0.7
+emission_shape = 2
+emission_sphere_radius = 65.63
+gravity = Vector2(0, -980)
+scale_amount_min = 4.0
+scale_amount_max = 24.0
+scale_amount_curve = SubResource("Curve_lae6v")
+color_initial_ramp = SubResource("Gradient_lae6v")
+
+[node name="pop-up" type="Node" parent="."]
+
+[node name="TextureRect" type="TextureRect" parent="pop-up"]
+visible = false
+z_index = 1
+offset_left = 552.0
+offset_top = 168.0
+offset_right = 1430.0
+offset_bottom = 1007.0
+texture = ExtResource("15_pbsca")
+
+[node name="Label" type="Label" parent="pop-up/TextureRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -367.0
+offset_top = -339.5
+offset_right = 415.0
+offset_bottom = 377.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Você é uma pessoa curiosa e quer aprender mais sobre as figuras do folclore brasileiro. Neste jogo educativo, seu objetivo é aprender sobre pelo menos seis figuras do folclore. Divirta-se!"
+label_settings = SubResource("LabelSettings_hnldv")
+autowrap_mode = 2
+
+[node name="Button" type="Button" parent="pop-up/TextureRect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.84738
+anchor_top = 0.0381406
+anchor_right = 0.955581
+anchor_bottom = 0.151371
+grow_horizontal = 2
+grow_vertical = 2
+icon = ExtResource("16_es42t")
+metadata/_edit_use_anchors_ = true
+
+[node name="personagens" type="Node" parent="."]
+
+[node name="saci" type="AnimatedSprite2D" parent="personagens"]
+texture_filter = 1
+position = Vector2(320, 280)
+scale = Vector2(5, 5.5)
+sprite_frames = SubResource("SpriteFrames_iyvni")
+
+[node name="mapinguari" type="AnimatedSprite2D" parent="personagens"]
+texture_filter = 1
+position = Vector2(728, 224)
+scale = Vector2(5, 5.5)
+sprite_frames = SubResource("SpriteFrames_6v12y")
+
+[node name="curupira" type="AnimatedSprite2D" parent="personagens"]
+texture_filter = 1
+position = Vector2(1096, 208)
+scale = Vector2(5, 5.5)
+sprite_frames = SubResource("SpriteFrames_fish5")
+
+[node name="iara" type="AnimatedSprite2D" parent="personagens"]
+texture_filter = 1
+position = Vector2(1240, 480)
+scale = Vector2(5, 5.5)
+sprite_frames = SubResource("SpriteFrames_8njl8")
+
+[node name="boto" type="AnimatedSprite2D" parent="personagens"]
+texture_filter = 1
+position = Vector2(1560, 352)
+scale = Vector2(5, 5.5)
+sprite_frames = SubResource("SpriteFrames_nn1fy")
+
+[node name="mula" type="AnimatedSprite2D" parent="personagens"]
+texture_filter = 1
+position = Vector2(1552, 728)
+scale = Vector2(5, 5.5)
+sprite_frames = SubResource("SpriteFrames_ij3ly")
+
+[node name="lobisomen" type="AnimatedSprite2D" parent="personagens"]
+texture_filter = 1
+position = Vector2(1080, 752)
+scale = Vector2(5, 5.5)
+sprite_frames = SubResource("SpriteFrames_37qn1")
+
+[node name="mae_ouro" type="AnimatedSprite2D" parent="personagens"]
+texture_filter = 1
+position = Vector2(1480, 896)
+scale = Vector2(5, 5.5)
+sprite_frames = SubResource("SpriteFrames_6j1rs")
+
+[node name="anhagua" type="AnimatedSprite2D" parent="personagens"]
+texture_filter = 1
+position = Vector2(672, 888)
+scale = Vector2(5, 5.5)
+sprite_frames = SubResource("SpriteFrames_rhxcq")
+
 [connection signal="pressed" from="mapa/b_tutorial" to="mapa/b_tutorial" method="_on_pressed"]
 [connection signal="pressed" from="mapa/b_fase_1" to="mapa/b_fase_1" method="_on_pressed"]
 [connection signal="pressed" from="mapa/b_fase_2" to="mapa/b_fase_2" method="_on_pressed"]
@@ -185,4 +534,7 @@ label_settings = SubResource("LabelSettings_lae6v")
 [connection signal="pressed" from="mapa/b_fase_6" to="mapa/b_fase_6" method="_on_pressed"]
 [connection signal="pressed" from="mapa/b_fase_7" to="." method="_on_b_fase_7_pressed"]
 [connection signal="pressed" from="mapa/b_fase_8" to="." method="_on_b_fase_8_pressed"]
+[connection signal="pressed" from="mapa/b_fase_9" to="." method="_on_b_fase_9_pressed"]
+[connection signal="pressed" from="mapa/b_creditos" to="." method="_on_b_creditos_pressed"]
 [connection signal="pressed" from="mapa/voltar_btn" to="mapa/voltar_btn" method="_on_pressed"]
+[connection signal="pressed" from="pop-up/TextureRect/Button" to="." method="_on_button_pressed"]

@@ -12,6 +12,7 @@ func _on_pressed() -> void:
 	get_node("../B_vitoria").visible = false
 	get_node("../B_vitoria_img").visible = false
 	
-	Global.minigames_terminados -= 1
-	Global.terminou_minigame_mapinguari = true
+	if !Global.terminou_minigame_mapinguari:
+		Global.minigames_terminados -= 1
+		Global.terminou_minigame_mapinguari = true
 	get_tree().change_scene_to_file("res://cenas/mapa_fases/mapa_fases.tscn")

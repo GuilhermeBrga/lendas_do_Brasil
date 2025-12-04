@@ -57,8 +57,9 @@ func vitoria():
 
 func trocar_para_vitoria():
 	# Verifique se este caminho de arquivo está correto!
-	Global.minigames_terminados -= 1
-	Global.terminou_minigame_mae_ouro = true
+	if Global.terminou_minigame_mae_ouro:
+		Global.minigames_terminados -= 1
+		Global.terminou_minigame_mae_ouro = true
 	get_tree().change_scene_to_file("res://cenas/fases/fase_maedeouro/telaVitoria.tscn")
 
 func atualizar_texto_timer():

@@ -6,6 +6,7 @@ const limite_para_terminar = 6
 var pontos_curupira = 0
 var pontos_iara = 0
 
+var primeira_vez_pop_up = true
 
 var minigames_terminados = limite_para_terminar
 var terminou_minigame_saci = false
@@ -16,6 +17,7 @@ var terminou_minigame_boto = false
 var terminou_minigame_mula = false
 var terminou_minigame_lobisomen = false
 var terminou_minigame_mae_ouro = false
+var terminou_minigame_anhagua = false
 
 #lobisomen
 var coletaveis_pegos = 0

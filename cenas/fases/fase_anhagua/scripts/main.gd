@@ -93,6 +93,10 @@ func stop_game():
 		# Se a pontuação for menor que 7, vai para Game Over
 		get_tree().change_scene_to_file("res://cenas/fases/fase_anhagua/scenes/gameOver.tscn")
 	else:
+		if !Global.terminou_minigame_anhagua:
+			Global.minigames_terminados -= 1
+			Global.terminou_minigame_anhagua = true
+
 		# Se a pontuação for 7 ou mais, vai para Win
 		get_tree().change_scene_to_file("res://cenas/fases/fase_anhagua/scenes/win.tscn")
 
