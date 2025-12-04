@@ -5,12 +5,9 @@ var score := 0
 #@onready var win_screen = preload("res://objects/win.tscn")
 #@onready var lose_screen = preload("res://objects/lose.tscn")
 #@onready var game_ui_node = $GameUI # Novo
-#const WIN_SCENE_PATH = "res://objects/win.tscn"
 const WIN_SCENE_PATH = "res://cenas/fases/fase_boto/objects/win.tscn"
-#const LOSE_SCENE_PATH = "res://objects/lose.tscn"
 const LOSE_SCENE_PATH = "res://cenas/fases/fase_boto/objects/lose.tscn"
 
-#const TUTORIAL_POPUP_SCENE = preload("res://objects/tutorial_boto.tscn")
 const TUTORIAL_POPUP_SCENE = preload("res://cenas/fases/fase_boto/objects/tutorial_boto.tscn")
 
 signal game_win
@@ -29,6 +26,7 @@ func start_game_after_tutorial():
 	#game_ui_node.visible = true # Novo
 	var level_editor_node = $LevelEditor
 	if is_instance_valid(level_editor_node):
+		level_editor_node.start_level()
 		level_editor_node.level_finished.connect(EndGame)
 	else:
 		# Útil para debug se você não souber o caminho correto
@@ -39,8 +37,6 @@ func _on_game_win():
 	#var w = win_screen.instantiate()
 	#get_tree().get_root().add_child(w)
 	#get_tree().paused = true
-	Global.minigames_terminados -= 1
-	Global.terminou_minigame_boto = true
 	get_tree().paused = false
 	get_tree().change_scene_to_file(WIN_SCENE_PATH)
 

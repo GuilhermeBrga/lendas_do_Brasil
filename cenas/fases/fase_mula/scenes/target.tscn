@@ -104,5 +104,7 @@ one_shot = true
 [node name="HitSoundPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_5ebp1")
 
+[node name="CooldownTimer" type="Timer" parent="."]
+
 [connection signal="input_event" from="." to="." method="_on_input_event"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

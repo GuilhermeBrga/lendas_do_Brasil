@@ -65,7 +65,7 @@ text = "Toque nos fogos sempre que
 aparecerem na tela.
 Cada fogo acertado vale
 1 ponto. Para vencer, 
-você precisa fazer 13 pontos 
+você precisa fazer 10 pontos 
 antes que o tempo acabe."
 
 [connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]
