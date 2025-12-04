@@ -1,4 +1,4 @@
-[gd_scene load_steps=50 format=3 uid="uid://4tw4qk3nx8sd"]
+[gd_scene load_steps=48 format=3 uid="uid://4tw4qk3nx8sd"]
 
 [ext_resource type="Script" uid="uid://dijbuspkt0dvy" path="res://cenas/mapa_fases/b_tutorial.gd" id="1_jpuch"]
 [ext_resource type="Script" uid="uid://d6cj8smcj55g" path="res://cenas/mapa_fases/mapa_fases.gd" id="1_lae6v"]
@@ -7,15 +7,13 @@
 [ext_resource type="Script" uid="uid://6d18qt7xbtfo" path="res://cenas/mapa_fases/voltar_load.gd" id="3_tbcqi"]
 [ext_resource type="Script" uid="uid://b31nry8tgkor8" path="res://cenas/mapa_fases/b_fase_3.gd" id="4_beojq"]
 [ext_resource type="Texture2D" uid="uid://c0w7eefxpp5ut" path="res://cenas/fases/fase_anhagua/imgs/assets/botoes/b_voltar_img.jpg" id="4_hgwlt"]
-[ext_resource type="Texture2D" uid="uid://dw5w243mih82m" path="res://cenas/fases/fase_anhagua/imgs/assets/elementos/painel_generico.png" id="5_beojq"]
 [ext_resource type="Script" uid="uid://bqy5tb3ubw1i1" path="res://cenas/mapa_fases/b_fase_4.gd" id="5_wgau1"]
 [ext_resource type="Script" uid="uid://4dyudlj2uqhf" path="res://cenas/mapa_fases/b_fase_1.gd" id="6_wrbcl"]
 [ext_resource type="Script" uid="uid://dkn6wpofttnqd" path="res://cenas/mapa_fases/b_fase_5.gd" id="7_wgau1"]
 [ext_resource type="Script" uid="uid://c2f02tdsxlvuk" path="res://cenas/mapa_fases/b_fase_6.gd" id="8_63kmp"]
-[ext_resource type="FontFile" uid="uid://dcgork77dfg8o" path="res://cenas/fases/fase_curupira/resources/fontes/lemon_milk/LEMONMILK-Light.otf" id="12_u2gmh"]
 [ext_resource type="Texture2D" uid="uid://3phnq3nxeunq" path="res://assets/elementos/check.png" id="14_epun0"]
-[ext_resource type="Texture2D" uid="uid://dw5w243mih82m" path="res://assets/elementos/painel_generico.png" id="15_pbsca"]
-[ext_resource type="FontFile" uid="uid://dcgork77dfg8o" path="res://assets/fontes/lemon_milk/LEMONMILK-Light.otf" id="16_6tsyj"]
+[ext_resource type="Texture2D" uid="uid://dw5w243mih82m" path="res://cenas/fases/fase_anhagua/imgs/assets/elementos/painel_generico.png" id="15_pbsca"]
+[ext_resource type="FontFile" uid="uid://dcgork77dfg8o" path="res://cenas/fases/fase_curupira/resources/fontes/lemon_milk/LEMONMILK-Light.otf" id="16_6tsyj"]
 [ext_resource type="Texture2D" uid="uid://db3yi1pt5x5q1" path="res://assets/elementos/setas.png" id="16_es42t"]
 [ext_resource type="Texture2D" uid="uid://cs47fa4l1bi3a" path="res://cenas/fases/fase_anhagua/imgs/assets/personagens_sprites/1_saci.png" id="18_j1mp4"]
 [ext_resource type="Texture2D" uid="uid://t8uyid3gaah" path="res://cenas/fases/fase_anhagua/imgs/assets/personagens_sprites/5_mapinguari.png" id="19_iwaqg"]
@@ -31,7 +29,7 @@
 font_color = Color(0, 0, 0, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_lae6v"]
-font = ExtResource("12_u2gmh")
+font = ExtResource("16_6tsyj")
 font_size = 50
 
 [sub_resource type="Curve" id="Curve_lae6v"]
@@ -309,7 +307,12 @@ metadata/_edit_use_anchors_ = true
 visible = false
 position = Vector2(230, 543.938)
 scale = Vector2(0.353075, 0.417014)
-texture = ExtResource("5_beojq")
+texture = ExtResource("15_pbsca")
+
+[node name="Config" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(1808, 108)
+scale = Vector2(0.468055, 0.445833)
 
 [node name="Label_tutorial" type="Label" parent="."]
 visible = false
@@ -332,11 +335,6 @@ ouvi falar conhecimento é poder...
              Boa sorte e bom jogo!
 "
 label_settings = SubResource("LabelSettings_tbcqi")
-
-[node name="Config" type="Sprite2D" parent="."]
-visible = false
-position = Vector2(1808, 108)
-scale = Vector2(0.468055, 0.445833)
 
 [node name="personagem_restantes" type="Label" parent="."]
 layout_mode = 1
